@@ -52,3 +52,7 @@ _✨ [Sorabot](https://100oj.com/zh/%E5%B7%A5%E5%85%B7/SoraBot%E4%BD%BF%E7%94%A8
 ## 🎉 使用
 
 请参考[Sorabot](https://100oj.com/zh/%E5%B7%A5%E5%85%B7/SoraBot%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97)的文档。
+
+## 特别感谢
+- [nonebot/nonebot2](https://github.com/nonebot/nonebot2)
+- [Sorabot](https://100oj.com/zh/%E5%B7%A5%E5%85%B7/SoraBot%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97)
