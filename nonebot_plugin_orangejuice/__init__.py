@@ -8,7 +8,7 @@ __plugin_meta = PluginMetadata(
     supported_adapters={"~onebot.v11"},
     extra={
         'author': 'Polaris_Light',
-        'version': '0.1.0',
+        'version': '0.2.0',
         'priority': 10
     }
 )
