@@ -1,6 +1,6 @@
 from nonebot.plugin import PluginMetadata
 
-__plugin_meta = PluginMetadata(
+__plugin_meta__ = PluginMetadata(
     name='100orangejuice',
     description='100orangejuice',
     usage= r'See Sorabot Docs.',
