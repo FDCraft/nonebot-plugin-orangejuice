@@ -6,9 +6,10 @@ __plugin_meta__ = PluginMetadata(
     usage= r'See Sorabot Docs.',
     type="application",
     supported_adapters={"~onebot.v11"},
+    homepage="https://github.com/FDCraft/nonebot-plugin-orangejuice",
     extra={
         'author': 'Polaris_Light',
-        'version': '0.2.0',
+        'version': '0.2.2',
         'priority': 10
     }
 )
