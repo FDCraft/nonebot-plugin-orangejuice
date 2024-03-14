@@ -1,6 +1,7 @@
 from typing import Tuple, Union
 
-import pymysql
+import aiomysql
+import asyncio
 
 from nonebot.adapters.onebot.v11 import Message, MessageSegment, GroupMessageEvent, PrivateMessageEvent 
 from nonebot.matcher import Matcher
@@ -15,21 +16,24 @@ groups = {'原版': 'ordinary', '合作': 'coop', '赏金': 'bounty', '其他': 
 
 class Card:
     def __init__(self) -> None:
-        self.db = pymysql.connect(
+        pass
+    async def get_data(self):
+        self.db = await aiomysql.connect(
             host='47.242.108.196',
             port=3306,
             user='guest',
             password='Sumika!System2',
-            database='data_oj'
+            db='data_oj'
         )
 
-        cursor = self.db.cursor()
+        cursor = await self.db.cursor()
 
         for table in tables:
-            cursor.execute(f"SELECT name_, i18nkey, groupData FROM {table}")
-            setattr(self, table, cursor.fetchall())
+            await cursor.execute(f"SELECT name_, i18nkey, groupData FROM {table}")
+            setattr(self, table, await cursor.fetchall())
         
         self.db.close()
+        return self
 
     async def help(self, matcher: Matcher):
         help_msg: str = '''橙汁查卡
@@ -135,4 +139,4 @@ class Card:
         except:
             await matcher.finish('诶鸭出错啦~')
 
-card = Card()
+card = asyncio.run(Card().get_data())
