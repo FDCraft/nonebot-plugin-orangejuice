@@ -1,10 +1,12 @@
-from typing import Tuple
+from typing import Tuple, Union
 
 import pymysql
 
-from nonebot.adapters.onebot.v11 import Message, MessageSegment
+from nonebot.adapters.onebot.v11 import Message, MessageSegment, GroupMessageEvent, PrivateMessageEvent 
 from nonebot.matcher import Matcher
 from nonebot.params import CommandArg
+
+from .Ess import ess
 
 BaseClass = Tuple[Tuple[str]]
 
@@ -32,15 +34,20 @@ class Card:
     async def help(self, matcher: Matcher):
         help_msg: str = '''橙汁查卡
     #card [name] [group]
+    查卡
+    #icon [name] [group]
+    查图标
     name为中文卡名
     group为 原版/合作/赏金/其他 或不填'''
         await matcher.send(help_msg)
 
-    async def card(self, matcher: Matcher, arg: Message = CommandArg()) -> None:
-        try:    
+    async def card(self, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent], arg: Message = CommandArg()) -> None:
+        try:
+            if isinstance(event, GroupMessageEvent) and event.group_id in ess.config['modules']['Card']:
+                return None
             args = arg.extract_plain_text().split(' ')
 
-            if args == [] or args is None or args[0] == 'help':
+            if args == [''] or args is None or args[0] == 'help':
                 await self.help(matcher)
                 return None
 
@@ -85,11 +92,13 @@ class Card:
         except:
             await matcher.finish('诶鸭出错啦~')
 
-    async def icon(self, matcher: Matcher, arg: Message = CommandArg()) -> None:
-        try:    
+    async def icon(self, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent], arg: Message = CommandArg()) -> None:
+        try:
+            if isinstance(event, GroupMessageEvent) and event.group_id in ess.config['modules']['Card']:
+                return None
             args = arg.extract_plain_text().split(' ')
 
-            if args == [] or args is None or args[0] == 'help':
+            if args == [''] or args is None or args[0] == 'help':
                 await self.help(matcher)
                 return None
 

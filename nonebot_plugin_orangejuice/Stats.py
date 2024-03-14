@@ -6,13 +6,18 @@ from nonebot.adapters.onebot.v11 import GroupMessageEvent, PrivateMessageEvent, 
 from nonebot.matcher import Matcher
 from nonebot.params import CommandArg
 
+from .Config import plugin_config
+from .Ess import ess
+
+steam_id_file_path: str = os.path.join(plugin_config.oj_data_path, 'steam_id.json')
+
 class Stats:
     def __init__(self) -> None:
-        if not os.path.exists('data/steam_id.json'):
-            if not os.path.exists('data'):
-                os.mkdir('data')
+        if not os.path.exists(steam_id_file_path):
+            if not os.path.exists(plugin_config.oj_data_path):
+                os.makedirs(plugin_config.oj_data_path)
                                 
-            with open('data/steam_id.json', 'w+') as f:
+            with open(steam_id_file_path, 'w+') as f:
                 """
                 steam_id.json
                 {
@@ -38,11 +43,11 @@ class Stats:
 
     async def bind(self, uid: str, steam64id: str, matcher: Matcher) -> None:
         try:
-            with open('data/steam_id.json', 'r', encoding='utf-8') as f:
+            with open(steam_id_file_path, 'r', encoding='utf-8') as f:
                 data: Dict[str, str] = json.load(f)
             data[uid] = steam64id
             json_data = json.dumps(data, indent=4)
-            with open('data/steam_id.json', 'w', encoding='utf-8') as f:
+            with open(steam_id_file_path, 'w', encoding='utf-8') as f:
                 f.write(json_data)
             await matcher.send('绑定成功~')
         except:
@@ -50,11 +55,11 @@ class Stats:
 
     async def unbind(self, uid: str, matcher: Matcher) -> None:
         try:
-            with open('data/steam_id.json', 'r', encoding='utf-8') as f:
+            with open(steam_id_file_path, 'r', encoding='utf-8') as f:
                 data: Dict[str, str] = json.load(f)
             flag: bool = bool(data.pop(uid, False))
             if flag:
-                with open('data/steam_id.json', 'w', encoding='utf-8') as f:
+                with open(steam_id_file_path, 'w', encoding='utf-8') as f:
                     json_data = json.dumps(data, indent=4)
                     f.write(json_data)
                 await matcher.send('解除绑定成功~')
@@ -65,7 +70,7 @@ class Stats:
 
     async def me(self, uid: str, limit: str, matcher: Matcher) -> None:
         try:
-            with open('data/steam_id.json', 'r', encoding='utf-8') as f:
+            with open(steam_id_file_path, 'r', encoding='utf-8') as f:
                 data: Dict[str, str] = json.load(f)
                 steam64id: Union[str, None] = data.get(uid, None)
             if steam64id == None:
@@ -83,13 +88,16 @@ class Stats:
         except:
             await matcher.finish('诶鸭出错啦~')
 
-    async def main(self, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent], arg: Message = CommandArg()) -> None:
+    async def stats(self, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent], arg: Message = CommandArg()) -> None:
+        if isinstance(event, GroupMessageEvent) and event.group_id in ess.config['modules']['Stats']:
+            return None
+
         args = arg.extract_plain_text().split(' ')
 
-        if args == [] or args is None or args[0] == 'help':
+        if args == [''] or args is None or args[0] == 'help':
             await self.help(matcher)
 
-        elif args[0] == 'bind':
+        if args[0] == 'bind':
             uid = str(event.user_id)
 
             if len(args) == 2:

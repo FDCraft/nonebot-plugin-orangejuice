@@ -9,17 +9,44 @@ __plugin_meta__ = PluginMetadata(
     homepage="https://github.com/FDCraft/nonebot-plugin-orangejuice",
     extra={
         'author': 'Polaris_Light',
-        'version': '0.2.2',
+        'version': '0.3.0',
         'priority': 10
     }
 )
 
-from nonebot import on_command
+import re
+
+from nonebot import on_command, on_regex
+from nonebot.matcher import Matcher
+
+from .Ess import ess
 
 from .Card import card
 from .Deck import deck
-from .Le import lulu, nanako, nico
+from .Emote import emote
+from .Le import le
 from .Stats import stats
+
+@on_command('#help', aliases={'#帮助'}, priority=10, block=True).handle()
+async def help(matcher: Matcher):
+    help_msg = '''100OrangeJuice
+    #ess help 基础管理模块帮助
+    #card help 查卡帮助
+    #icon help 查图标帮助
+    #stat help 统计帮助
+    #deck=[code] 卡组查看
+    #lulu 幸运蛋
+    #mw [num] 奇迹漫步
+    #7 浮游炮'''
+    await matcher.finish(help_msg)
+
+on_command(
+    '#ess',
+    aliases={'#Ess', '#Essential', '#essentilasx'},
+    priority=10,
+    block=True,
+    handlers=[ess.ess]
+)
 
 on_command(
     '#card',
@@ -40,14 +67,14 @@ on_command(
     aliases={'#stats', '#sd'},
     priority=10,
     block=True,
-    handlers=[stats.main]
+    handlers=[stats.stats]
 )
 
 on_command(
     '#deck=',
     priority=10,
     block=True,
-    handlers=[deck]
+    handlers=[deck.deck]
 )
 
 on_command(
@@ -55,7 +82,7 @@ on_command(
     aliases={'#幸运蛋'},
     priority=10,
     block=True,
-    handlers=[lulu]
+    handlers=[le.lulu]
 )
 
 on_command(
@@ -63,7 +90,7 @@ on_command(
     aliases={'#奇迹漫步'},
     priority=10,
     block=True,
-    handlers=[nico]
+    handlers=[le.nico]
 )
 
 on_command(
@@ -71,8 +98,12 @@ on_command(
     aliases={'#浮游炮'},
     priority=10,
     block=True,
-    handlers=[nanako]
+    handlers=[le.nanako]
 )
 
+on_regex(
+    r"^\:[a-z0-9_]+\:$",
+    flags=re.IGNORECASE,
+    handlers=[emote.emote])
 
 
