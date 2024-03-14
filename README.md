@@ -18,6 +18,7 @@ _✨ [Sorabot](https://100oj.com/zh/%E5%B7%A5%E5%85%B7/SoraBot%E4%BD%BF%E7%94%A8
 <img src="https://img.shields.io/badge/python-3.8+-blue.svg" alt="python">
 
 </div>
+
 ##  ⚠ 警告
 
 本项目尚处于快速开发阶段，配置文件可能会经常变动，在更新版本前请务必做好数据的备份！
