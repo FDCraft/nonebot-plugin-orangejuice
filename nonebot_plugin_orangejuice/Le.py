@@ -1,7 +1,8 @@
 import random
-from typing import Union
+import time
+from typing import Union, List
 
-from nonebot.adapters.onebot.v11 import Message, GroupMessageEvent, PrivateMessageEvent
+from nonebot.adapters.onebot.v11 import Bot, Message, GroupMessageEvent, PrivateMessageEvent
 from nonebot.matcher import Matcher
 from nonebot.params import CommandArg
 
@@ -58,9 +59,28 @@ class Le:
             result.append(random.choice(ordinary_list)[0])
         await matcher.finish(f'奇迹漫步结果：\n{", ".join(result)}')
 
-    async def divination(self, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent], arg: Message = CommandArg()) -> None:
+    async def divination(self, bot: Bot, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent], arg: Message = CommandArg()) -> None:
         if isinstance(event, GroupMessageEvent) and event.group_id in ess.config['modules']['Le']:
             return None
+        
+        arg = arg.extract_plain_text()
+        now = time.localtime()
+        seed = round(abs(hash("Polaris_Light" + str(now.tm_yday)+ str(now.tm_year) + "XYZ") / 3.0 + hash("QWERTY" + arg + str(event.user_id) + "0*8&6" + str(now.tm_mday) + "kjhg") / 3.0))
+        random.seed(seed)
+
+        divination_list: List[str] = ['大吉', '吉', '中吉', '小吉', '半吉', '末吉', '末小吉', '凶', '小凶', '半凶', '末凶', '大凶']
+        result = random.choice(divination_list)
+
+        if '女装' in arg:
+            result = '必须大吉！建议马上开始'
+
+        for name in bot.config.nickname:
+            if bot.config.nickname in arg:
+                result = '你好像有那个大病'
+
+        user_name = event.sender.card if event.sender.card != '' else event.sender.nickname
+        now = time.localtime()
+        await matcher.finish(f'今天是{now.tm_year}年{now.tm_mon}月{now.tm_mday}日\n{user_name}所求事项：【{arg}】\n\n结果：【{result}】')
 
 
 le = Le()

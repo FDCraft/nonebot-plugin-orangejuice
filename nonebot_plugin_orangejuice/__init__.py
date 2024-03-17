@@ -1,5 +1,7 @@
 from nonebot.plugin import PluginMetadata
 
+from .Config import Config
+
 __plugin_meta__ = PluginMetadata(
     name='100orangejuice',
     description='100orangejuice',
@@ -7,9 +9,10 @@ __plugin_meta__ = PluginMetadata(
     type="application",
     supported_adapters={"~onebot.v11"},
     homepage="https://github.com/FDCraft/nonebot-plugin-orangejuice",
+    config=Config,
     extra={
         'author': 'Polaris_Light',
-        'version': '0.3.1',
+        'version': '0.4.0',
         'priority': 10
     }
 )
@@ -37,7 +40,8 @@ async def help(matcher: Matcher):
     #deck=[code] 卡组查看
     #lulu 幸运蛋
     #mw [num] 奇迹漫步
-    #7 浮游炮'''
+    #7 浮游炮
+    #zb [something] 占卜'''
     await matcher.finish(help_msg)
 
 on_command(
@@ -100,6 +104,15 @@ on_command(
     block=True,
     handlers=[le.nanako]
 )
+
+on_command(
+    '#zb',
+    aliases={'#占卜'},
+    priority=10,
+    block=True,
+    handlers=[le.divination]
+)
+
 
 on_regex(
     r"^\:[a-z0-9_]+\:$",

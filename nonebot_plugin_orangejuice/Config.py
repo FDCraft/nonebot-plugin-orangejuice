@@ -1,9 +1,21 @@
 from typing import Optional, List, Literal
-from pydantic import Extra, BaseModel
+from pydantic import BaseModel
 
-from nonebot import get_driver
+try:
+    # pydantic v2
+    from nonebot import get_plugin_config
+except ImportError:
+    # pydantic v1
+    from nonebot import get_driver
 
-class Config(BaseModel, extra=Extra.ignore):
+class Config(BaseModel):
     oj_data_path: Optional[str] = 'data/100oj'
 
-plugin_config = Config.parse_obj(get_driver().config)
+plugin_config = None
+
+try:
+    # pydantic v2
+    plugin_config = get_plugin_config(Config)
+except:
+    # pydantic v1
+    plugin_config = Config.parse_obj(get_driver().config)
