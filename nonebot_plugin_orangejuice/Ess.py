@@ -25,8 +25,6 @@ class Args:
         self.target_gid: int = None
         self.send_uid: int = event.user_id
         self.send_gid: int = event.group_id if isinstance(event, GroupMessageEvent) else None
-        if isinstance(self.send_gid, tuple): #IDK :(
-            self.send_gid = self.send_gid[0]
         self.is_admin: bool = event.sender.role in ["admin", "owner"] if isinstance(event, GroupMessageEvent) else False
         self.is_superuser: bool = str(event.user_id) in bot.config.superusers
 
@@ -44,14 +42,14 @@ class Args:
                     case 'list' | '-l' | 'ls':
                         self.operate = 'list'
 
-                        self.invaild = True # ##ess module list [gid]
+                        self.invaild = True # #ess module list [gid]
                         self.target_gid = int(list_args[2]) if list_args[2].isdigit() else self.send_gid
 
                     case 'enable' | '-on':
                         self.operate = 'enable'
                         logger.error('?')
                         if list_args[2] in list(init_json['modules'].keys()):
-                            self.invaild = True # ##ess module enable [modulename] [gid]
+                            self.invaild = True # #ess module enable [modulename] [gid]
                             self.target_module = list_args[2]
                             self.target_gid = int(list_args[3]) if list_args[3].isdigit() else self.send_gid
 
@@ -60,9 +58,15 @@ class Args:
                         self.operate = 'disable'
                         logger.error('?')
                         if list_args[2] in list(init_json['modules'].keys()):
-                            self.invaild = True # ##ess module disable [modulename] [gid]
+                            self.invaild = True # #ess module disable [modulename] [gid]
                             self.target_module = list_args[2]
                             self.target_gid = int(list_args[3]) if list_args[3].isdigit() else self.send_gid
+            case 'save' | '-s':
+                self.invaild = True # #ess load
+                self.handle = 'save'
+            case 'load' | '-l':
+                self.invaild = True # #ess load
+                self.handle = 'load'                
             case _:
                 pass
 
@@ -113,11 +117,17 @@ class Ess:
 
     async def module(self, matcher: Matcher, args: Args) -> None:
 
+        if args.target_gid == None:
+            await matcher.finish('呜，请指定群号！')
+
+        if args.target_gid != args.send_gid and not args.is_superuser:
+            await matcher.finish('诶鸭你没有权限这样做啦！')
+
         if args.operate == 'enable':
             if args.target_gid in self.config['modules'][args.target_module]:
                 self.config['modules'][args.target_module].remove(args.target_gid)
             self.save_json()
-            await matcher.send(f'已在{args.target_gid}成功启用{args.target_module}模块！')
+            await matcher.finish(f'已在{args.target_gid}成功启用{args.target_module}模块！')
 
         elif args.operate == 'disable':
             if args.target_gid not in self.config['modules'][args.target_module]:
@@ -148,12 +158,6 @@ class Ess:
         
         if not args.invaild:
             await self.help(matcher)
-        
-        if args.target_gid == None:
-            await matcher.finish('呜，请指定群号！')
-
-        if args.target_gid != args.send_gid and not args.is_superuser:
-            await matcher.finish('诶鸭你没有权限这样做啦！')
 
         if hasattr(args, "handle"):
             await getattr(self, args.handle)(matcher, args)

@@ -75,7 +75,7 @@ class Le:
             result = '必须大吉！建议马上开始'
 
         for name in bot.config.nickname:
-            if bot.config.nickname in arg:
+            if name in arg:
                 result = '你好像有那个大病'
 
         user_name = event.sender.card if event.sender.card != '' else event.sender.nickname
