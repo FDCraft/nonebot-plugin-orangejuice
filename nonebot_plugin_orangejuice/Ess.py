@@ -1,9 +1,10 @@
+import datetime
 import json
 import os
-from typing import Annotated, Dict, List, Literal, Union
+import re
+from typing import Any, Dict, List, Union
 
 from nonebot import logger
-from nonebot.exception import ParserExit
 from nonebot.matcher import Matcher
 from nonebot.params import CommandArg
 from nonebot.adapters.onebot.v11 import Bot, Message, GroupMessageEvent, PrivateMessageEvent
@@ -17,6 +18,9 @@ class Args:
     def __init__(self, bot: Bot, event: Union[GroupMessageEvent, PrivateMessageEvent], arg: Message) -> None:
         global init_json
 
+        self.bot: Bot = bot
+        self.event: Union[GroupMessageEvent, PrivateMessageEvent] = event
+
         self.invaild: bool = False
         self.handle: str = None
         self.operate: str = None
@@ -28,11 +32,16 @@ class Args:
         self.is_admin: bool = event.sender.role in ["admin", "owner"] if isinstance(event, GroupMessageEvent) else False
         self.is_superuser: bool = str(event.user_id) in bot.config.superusers
 
-        list_args = arg.extract_plain_text().split(' ')
+        self.extra_data: Dict[str, Any] = {}
+
+        list_args = arg.to_rich_text().split(' ')
 
         while len(list_args) < 5:
             list_args.append('')
         logger.debug(f'参数解析结果：{list_args}')
+
+        for i in range(0,5):
+            list_args[i] = re.sub(r'\[at:qq=(.*?)\]', r'\1', list_args[i])
 
         match list_args[0]:
             case 'module' | '-m':
@@ -47,26 +56,47 @@ class Args:
 
                     case 'enable' | '-on':
                         self.operate = 'enable'
-                        logger.error('?')
                         if list_args[2] in list(init_json['modules'].keys()):
-                            self.invaild = True # #ess module enable [modulename] [gid]
+                            self.invaild = True # #ess module enable <modulename> [gid]
                             self.target_module = list_args[2]
                             self.target_gid = int(list_args[3]) if list_args[3].isdigit() else self.send_gid
 
 
                     case 'disable' | '-off':
                         self.operate = 'disable'
-                        logger.error('?')
                         if list_args[2] in list(init_json['modules'].keys()):
-                            self.invaild = True # #ess module disable [modulename] [gid]
+                            self.invaild = True # #ess module disable <modulename> [gid]
                             self.target_module = list_args[2]
                             self.target_gid = int(list_args[3]) if list_args[3].isdigit() else self.send_gid
+            
+            case 'mute':
+                self.handle = 'mute'
+                if list_args[1].isdigit():
+                    self.invaild = True # #ess mute <id> [time] [reason]
+                    self.target_uid = int(list_args[1])
+                    self.extra_data['mute_reason'] = list_args[3]
+                    if list_args[2] != '':
+                        if list_args[2].endswith('m'):
+                            self.extra_data['mute_time'] = int(list_args[2][:-1]) * 60
+                        elif list_args[2].endswith('h'):
+                            self.extra_data['mute_time'] = int(list_args[2][:-1]) * 3600
+                        elif list_args[2].endswith('d'):
+                            self.extra_data['mute_time'] = int(list_args[2][:-1]) * 3600 * 24
+                        elif list_args[2].endswith('s'):
+                            self.extra_data['mute_time'] = int(list_args[2][:-1])
+                        elif list_args[2].isdigit():
+                            self.extra_data['mute_time'] = int(list_args[2])
+                        else:
+                            self.invaild = False
+                    else:
+                        self.extra_data['mute_time'] = 30
+
             case 'save' | '-s':
                 self.invaild = True # #ess load
                 self.handle = 'save'
             case 'load' | '-l':
                 self.invaild = True # #ess load
-                self.handle = 'load'                
+                self.handle = 'load'
             case _:
                 pass
 
@@ -149,6 +179,35 @@ class Ess:
 
         else:
             await self.help(matcher)
+
+    async def save(self, matcher: Matcher, args: Args):
+        if not args.is_superuser:
+            await matcher.finish('诶鸭你没有权限这样做啦！')
+        
+        self.save_json()
+        await matcher.finish('已保存配置~')
+
+    async def load(self, matcher: Matcher, args: Args):
+        if not args.is_superuser:
+            await matcher.finish('诶鸭你没有权限这样做啦！')
+        
+        self.load_json()
+        await matcher.finish('已载入配置~')
+
+    async def mute(self, matcher: Matcher, args: Args):
+        ban_time = args.extra_data['mute_time']
+
+        now_time = datetime.datetime.now()
+        unban_time = now_time + datetime.timedelta(seconds=ban_time)
+        unban_time_str = unban_time.strftime("解禁时间:%Y年%m月%d日%H时%M分%S秒")
+        try:
+            info = await args.bot.get_group_member_info(group_id=args.event.group_id, user_id=args.target_uid)
+            name = info['card'] if info['card'] is not None and info['card'] != '' else info['nickname']
+            await args.bot.set_group_ban(group_id=args.event.group_id, user_id=args.target_uid, duration=ban_time)
+        except Exception as e:
+            await matcher.send('禁言失败(')
+
+        await matcher.send(f'被禁者:{name}\n禁言原因:{args.extra_data["mute_reason"]}\n被禁时间:{str(ban_time)}秒\n{unban_time_str}')
 
     async def ess(self, bot: Bot, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent], arg: Message = CommandArg()) -> None:
         args = Args(bot, event, arg)
