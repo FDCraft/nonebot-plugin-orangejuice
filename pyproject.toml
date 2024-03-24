@@ -1,9 +1,11 @@
 [project]
 name = "nonebot-plugin-orangejuice"
-version = "0.5.0"
+version = "0.6.0"
 dependencies = [
     "nonebot2>=2.0.0",
     "nonebot-adapter-onebot>=2.0.0-beta.1",
+    "aiohttp>=3.8.0",
+    "aiosqlite>=0.20.0",
     "aiomysql>=0.2.0",
     "FuzzyWuzzy>=0.18.0",
     "python-Levenshtein>=0.25.0"
@@ -23,6 +25,8 @@ Homepage = "https://github.com/FDCraft/nonebot-plugin-orangejuice"
 nonebot-adapter-onebot = ">=2.0.0-beta.1"
 nonebot2 = ">=2.0.0"
 python = "^3.8"
+aiohttp = ">=3.8.0"
 aiomysql = ">=0.2.0"
+aiosqlite = ">=0.20.0"
 FuzzyWuzzy = ">=0.18.0"
 python-Levenshtein = ">=0.25.0"

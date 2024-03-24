@@ -12,7 +12,7 @@ __plugin_meta__ = PluginMetadata(
     config=Config,
     extra={
         'author': 'Polaris_Light',
-        'version': '0.5.0',
+        'version': '0.6.0',
         'priority': 10
     }
 )
@@ -28,6 +28,7 @@ from .Card import card
 from .Deck import deck
 from .Emote import emote
 from .Le import le
+from .Mixer import mixer
 from .Stats import stats
 
 @on_command('#help', aliases={'#帮助'}, priority=10, block=True).handle()
@@ -72,6 +73,13 @@ on_command(
     priority=10,
     block=True,
     handlers=[stats.stats]
+)
+
+on_command(
+    '#m',
+    priority=10,
+    block=True,
+    handlers=[mixer.mixer]
 )
 
 on_command(

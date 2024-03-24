@@ -12,7 +12,7 @@ from nonebot.adapters.onebot.v11 import Bot, Message, GroupMessageEvent, Private
 from .Config import plugin_config
 
 ess_file_path: str = os.path.join(plugin_config.oj_data_path, 'essentialx.json')
-init_json: Dict[str, Union[Dict[str, List[str]], int]] = {"modules":{"Card":[],"Deck":[],"Emote":[],"Le":[],"Stats":[]},"version":1}
+init_json: Dict[str, Union[Dict[str, List[str]], int]] = {"modules":{"Card":[],"Deck":[],"Emote":[],"Le":[],"Stats":[],"Mixer":[]},"version":2}
 
 class Args:
     def __init__(self, bot: Bot, event: Union[GroupMessageEvent, PrivateMessageEvent], arg: Message) -> None:
@@ -110,6 +110,11 @@ class Ess:
 
         self.load_json()
 
+        if self.config["version"] == 1:
+            self.config["modules"]["Mixer"] = []
+            self.config["version"] = 2
+            self.save_json()
+
     def init_json(self):
         with open(ess_file_path, 'w+') as f:
             '''
@@ -120,9 +125,10 @@ class Ess:
                     "Deck": [], 
                     "Emote": [], 
                     "Le": [],
-                    "Stats": []
+                    "Stats": [],
+                    "Mixer": []
                 },
-                "version": 1
+                "version": 2
             }
             '''
             f.write(json.dumps(init_json, indent=4))
