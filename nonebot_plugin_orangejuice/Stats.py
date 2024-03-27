@@ -142,7 +142,7 @@ class Stats:
                 await self.cursor.execute('SELECT steam64id,renderType,sp1 FROM steamInfo WHERE steam64id = ?', (steam64id,))
                 data = await self.cursor.fetchall()
                 if data == [] or data is None:
-                    data = ((0, 0))
+                    data = ((steam64id, 0, 0),)
 
             if at:
                 uid = re.sub(r'\[at:qq=(.*?)\]', r'\1', at)
