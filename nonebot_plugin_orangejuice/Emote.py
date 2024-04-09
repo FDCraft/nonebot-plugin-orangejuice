@@ -17,7 +17,7 @@ class Emote:
             return None
 
         key = key.replace(':', '').lower()
-        folder_path = os.path.join(os.path.dirname(__file__), 'emotes')
+        folder_path = os.path.join(os.path.dirname(__file__), 'resources', 'emotes')
         img_name = f'{key}.png'
         img = Path(folder_path) / img_name
         poppo = Path(folder_path) / 'poppo.png'

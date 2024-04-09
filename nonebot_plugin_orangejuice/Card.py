@@ -72,7 +72,7 @@ class Card:
                 elif arg in groups.values():
                     target_group = arg
                 elif arg in tables:
-                    target_table = arg   
+                    target_table = arg
 
             id = ''
             now_score = 0
@@ -96,7 +96,7 @@ class Card:
                             now_table = table
                             now_score = score
             
-            if now_score < plugin_config.match_socre:
+            if now_score < plugin_config.match_score:
                 await matcher.send('没有这张卡啦~')
                 return None
 
@@ -155,7 +155,7 @@ class Card:
                             id = tuple[0]
                             now_score = score
             
-            if now_score < plugin_config.match_socre:
+            if now_score < plugin_config.match_score:
                 await matcher.send('没有这张卡啦~')
                 return None
 

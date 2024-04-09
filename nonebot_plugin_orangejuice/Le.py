@@ -1,13 +1,75 @@
 import random
 import time
-from typing import Union, List
+from typing import Union, List, Tuple
 
+from nonebot import require, logger
 from nonebot.adapters.onebot.v11 import Bot, Message, GroupMessageEvent, PrivateMessageEvent
+from nonebot.exception import ActionFailed
 from nonebot.matcher import Matcher
 from nonebot.params import CommandArg
 
+try:
+    scheduler = require("nonebot_plugin_apscheduler").scheduler
+except Exception:
+    scheduler = None
+    logger.warning("未安装定时插件依赖")
+
+from .Config import plugin_config
+
 from .Ess import ess
 from .Card import card
+
+
+class Check: 
+    def __init__(self) -> None:
+        self.cd = plugin_config.le_cd
+        self.max_count = plugin_config.le_max
+        self.user_cd = {}
+        self.user_count = {}
+        def reset_user_count():
+            self.user_count = {}
+
+        try:
+            scheduler.add_job(reset_user_count, "cron", hour="0", id="clear_le_max_count")
+        except ActionFailed as e:
+            logger.warning(f"定时任务添加失败，{repr(e)}")
+        
+    def check_cd(self, event: Union[GroupMessageEvent, PrivateMessageEvent]) -> bool:
+        if self.cd == 0:
+            return False
+        
+        user_id = event.user_id
+        current_time = int(time.time())
+        
+        if str(user_id) not in list(self.user_cd.keys()):
+            self.user_cd[f"{user_id}"] = current_time
+            return False
+        
+        delta_time = current_time - self.user_cd[f'{user_id}']
+        
+        if delta_time >= self.cd:
+            self.user_cd[f'{user_id}'] = current_time
+            return False
+        else:
+            return True
+    
+    def check_max(self, event: Union[GroupMessageEvent, PrivateMessageEvent]) -> bool:
+        if self.max_count == 0:
+            return False
+        
+        user_id = event.user_id
+    
+        if str(user_id) not in list(self.user_count.keys()):
+            self.user_count[f"{user_id}"] = 0
+
+        if self.user_count[f"{user_id}"] < self.max_count:
+            self.user_count[f"{user_id}"] += 1
+            return False
+        else:
+            return True
+        
+    def check(self, event: Union[GroupMessageEvent, PrivateMessageEvent]) -> bool:
+        return check.check_cd(event) or check.check_max(event)
 
 class Le:
     def __init__(self) -> None:
@@ -15,6 +77,9 @@ class Le:
 
     async def lulu(self, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent]) -> None:
         if isinstance(event, GroupMessageEvent) and event.group_id in ess.config['modules']['Le']:
+            return None
+        
+        if check.check(event):
             return None
         
         effect = random.randint(0, 2)
@@ -28,6 +93,9 @@ class Le:
     async def nanako(self, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent]) -> None:
         if isinstance(event, GroupMessageEvent) and event.group_id in ess.config['modules']['Le']:
             return None
+        
+        if check.check(event):
+            return None
 
         points = [0, 0, 0]
         for i in range(0, 7):
@@ -36,6 +104,9 @@ class Le:
     
     async def nico(self, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent], arg: Message = CommandArg()) -> None:
         if isinstance(event, GroupMessageEvent) and event.group_id in ess.config['modules']['Le']:
+            return None
+        
+        if check.check(event):
             return None
 
         text = arg.extract_plain_text()
@@ -53,6 +124,9 @@ class Le:
 
     async def divination(self, bot: Bot, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent], arg: Message = CommandArg()) -> None:
         if isinstance(event, GroupMessageEvent) and event.group_id in ess.config['modules']['Le']:
+            return None
+        
+        if check.check(event):
             return None
         
         arg = arg.extract_plain_text()
@@ -74,5 +148,5 @@ class Le:
         now = time.localtime()
         await matcher.finish(f'今天是{now.tm_year}年{now.tm_mon}月{now.tm_mday}日\n{user_name}所求事项：【{arg}】\n\n结果：【{result}】')
 
-
+check = Check()
 le = Le()

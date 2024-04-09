@@ -52,12 +52,14 @@ class Args:
                         self.operate = 'list'
 
                         self.invaild = True # #ess module list [gid]
+                        logger.trace('ess module list [gid] trigger.')
                         self.target_gid = int(list_args[2]) if list_args[2].isdigit() else self.send_gid
 
                     case 'enable' | '-on':
                         self.operate = 'enable'
                         if list_args[2] in list(init_json['modules'].keys()):
                             self.invaild = True # #ess module enable <modulename> [gid]
+                            logger.trace(f'ess module enable <modulename> [gid] trigger.')
                             self.target_module = list_args[2]
                             self.target_gid = int(list_args[3]) if list_args[3].isdigit() else self.send_gid
 
@@ -73,6 +75,7 @@ class Args:
                 self.handle = 'mute'
                 if list_args[1].isdigit():
                     self.invaild = True # #ess mute <id> [time] [reason]
+                    logger.trace(f'ess mute <id> [time] [reason] trigger.')
                     self.target_uid = int(list_args[1])
                     self.extra_data['mute_reason'] = list_args[3]
                     if list_args[2] != '':
@@ -92,13 +95,16 @@ class Args:
                         self.extra_data['mute_time'] = 30
 
             case 'save' | '-s':
-                self.invaild = True # #ess load
+                self.invaild = True # #ess save
+                logger.trace(f'ess save trigger.')
                 self.handle = 'save'
             case 'load' | '-l':
                 self.invaild = True # #ess load
+                logger.trace(f'ess load trigger.')
                 self.handle = 'load'
             case _:
                 pass
+
 
 
 class Ess:
@@ -142,6 +148,12 @@ class Ess:
         with open(ess_file_path, 'w', encoding='utf-8') as f:
             json_data = json.dumps(self.config, indent=4)
             f.write(json_data)
+
+    def check(self, event: Union[GroupMessageEvent, PrivateMessageEvent]) -> bool:
+        if event.user_id in self.config['blacklist']:
+            return False
+        else:
+            return True
     
 
     async def help(self, matcher: Matcher) -> None:

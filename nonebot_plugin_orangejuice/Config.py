@@ -10,7 +10,9 @@ except ImportError:
 
 class Config(BaseModel):
     oj_data_path: Optional[str] = 'data/100oj'
-    match_socre: Optional[int] = 75
+    match_score: Optional[int] = 75
+    le_cd: Optional[int] = 60
+    le_max: Optional[int] = 10
 
 plugin_config = None
 
