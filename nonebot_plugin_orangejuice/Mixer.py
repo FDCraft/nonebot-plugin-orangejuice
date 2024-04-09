@@ -12,7 +12,7 @@ from nonebot.params import CommandArg
 
 from .Ess import ess
 
-mixers_list = ["空袭","增幅","返回","炸弹","恩惠","混乱","冰冻","布雷","奇迹","随机传送","恢复","疾走","宝箱","BOSS HP+10","追星者","乞丐","玩家ATK+1","玩家DEF+1","玩家EVD+1","爆燃","翻转","BOSS ATK+1","BOSS DEF+1","BOSS EVD+1","鬼牌","破产","粘液","孢子",""]
+mixers_list = ["空袭 +10%","增幅 +10%","返回 +10%","炸弹 +10%","恩惠 +0%","混乱 +25%","冰冻 +10%","布雷 +25%","奇迹 +0%","随机传送 +25%","恢复 +0%","疾走 +10%","宝箱 +0%","BOSS HP+10 +25%","追星者 +0%","乞丐 +25%","玩家ATK+1 +0%","玩家DEF+1 +0%","玩家EVD+1 +0%","爆燃 +10%","翻转 +10%","BOSS ATK+1 +25%","BOSS DEF+1 +25%","BOSS EVD+1 +25%","鬼牌 +0%","破产 +25%","粘液 +25%","孢子 +10%",""]
 
 class Mixer:
     def __init__(self):
@@ -64,9 +64,9 @@ class Mixer:
         today_mixer = self.data.get(key, None)
         if today_mixer:
             if len(today_mixer) == 3:
-                await matcher.finish(date + f'\n[{mixers_list[today_mixer[0]]}], [{mixers_list[today_mixer[1]]}], [{mixers_list[today_mixer[2]]}]')
+                await matcher.finish(date + f'\n「{mixers_list[today_mixer[0]]}」, 「{mixers_list[today_mixer[1]]}」, 「{mixers_list[today_mixer[2]]}」')
             else:
-                await matcher.finish(date + f'\n[{mixers_list[today_mixer[0]]}], [{mixers_list[today_mixer[1]]}]')
+                await matcher.finish(date + f'\n「{mixers_list[today_mixer[0]]}」, 「{mixers_list[today_mixer[1]]}」')
         else:
             await matcher.finish('数据库里还没有这一天的混合器数据哦~')
 

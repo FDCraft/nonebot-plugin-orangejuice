@@ -1,12 +1,12 @@
 import json
 import os
 import re
-import requests
 from typing import Dict, Union
 
 from nonebot import logger
 
 import asyncio
+import aiohttp
 import aiosqlite
 
 from nonebot import logger
@@ -32,13 +32,15 @@ class Stats:
 
             await self.cursor.execute("CREATE TABLE IF NOT EXISTS steamInfo(qq VARCHAR(11) PRIMARY KEY,steam64id CHARACTER(17),renderType INTERGER,sp1 TINYINT,\
                                 sp1_1 TINYINT,sp1_2 TINYINT,sp1_3 TINYINT,sp1_4 TINYINT,sp1_5 TINYINT,sp1_6 TINYINT,sp1_31 TINYINT,sp1_37 TINYINT)")
-            await self.cursor.execute("INSERT INTO steamInfo VALUES (?, ?, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1)", ('995905922', '76561198857827726'))
+            await self.cursor.execute("INSERT INTO steamInfo VALUES (?, ?, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1)", ('995905922', '76561198857827726')) # Developer Sign
+            await self.cursor.execute("INSERT INTO steamInfo VALUES (?, ?, 0, 31, 1, 0, 0, 1, 0, 0, 1, 1)", ('535369354', '76561198361135527')) # Developer Sign
 
-            if os.path.exists(os.path.join(plugin_config.oj_data_path, 'steam_id.json')):
+            if os.path.exists(os.path.join(plugin_config.oj_data_path, 'steam_id.json')): # Change old json into database
                 with open(os.path.join(plugin_config.oj_data_path, 'steam_id.json'), 'r', encoding='utf-8') as f:
                     data: Dict[str, str] = json.load(f)
                     for qq, steam64id in data.items():
                         await self.cursor.execute("INSERT INTO steamInfo VALUES (?, ?, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)", (qq, steam64id))
+
             await self.db.commit()
             await self.db.close()
 
@@ -155,10 +157,16 @@ class Stats:
 
             
             img = f'https://interface.100oj.com/stat/render.php?steamid={data[0][0]}&render={data[0][1]}&sp1={data[0][2]}&limit={limit}'
-            if requests.get(img).content == b'': # Why aiohttp slower?
+            
+            async with aiohttp.ClientSession() as session:
+                req = await session.get(img)
+                data = await req.read()
+            
+            if data == b'':
                 await matcher.send(reply)
             else:
                 await matcher.send(MessageSegment.image(img))
+                
         except Exception as e:
             await matcher.send('诶鸭出错啦~')
             raise e
@@ -239,9 +247,9 @@ class Stats:
                 match args[1]:
                     case limit if limit.isdigit():
                         limit: str = str(min(int(args[1]), 10))
-                        await self.send_stats(matcher, uid=uid, limit=limit)
+                        await self.send_stats(matcher, steam64id=steam64id, limit=limit)
                     case _:
-                        await self.send_stats(matcher, uid=uid)
+                        await self.send_stats(matcher, steam64id=steam64id)
             case _:
                 await self.help(matcher)
 
