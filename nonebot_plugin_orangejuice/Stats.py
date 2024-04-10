@@ -3,7 +3,7 @@ import os
 import re
 from typing import Dict, Union
 
-from nonebot import logger
+from nonebot import logger, get_driver
 
 import asyncio
 import aiohttp
@@ -253,4 +253,9 @@ class Stats:
             case _:
                 await self.help(matcher)
 
-stats: Stats = asyncio.run(Stats().init_database())
+stats: Stats = Stats()
+driver = get_driver()
+
+@driver.on_startup
+async def init_card() -> None:
+    await stats.init_database()
