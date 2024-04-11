@@ -88,7 +88,7 @@ class Card:
                     target_table = arg
             
             for regex, key in self.regex.items():
-               if re.match(regex, name):
+               if re.match(regex, name, re.I):
                    name = key        
             
             for table in tables:

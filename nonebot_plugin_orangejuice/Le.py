@@ -18,7 +18,6 @@ except Exception:
 from .Config import plugin_config
 
 from .Ess import ess
-from .Card import card
 
 
 class Check: 
@@ -140,14 +139,18 @@ class Le:
         text = arg.extract_plain_text()
         num = min(int(text), 9) if (text := text[:1]).isdigit() and int(text) else 4
     
-        ordinary_list = []
-        for tuple in card.cardHyper:
-            if tuple[3] == 'ordinary':
-                ordinary_list.append(tuple)
-    
+        mw_list = ["平安的旅途","风信鸡的指引","烹饪时间","极速装置","束发魔女","主角的特权","甜点守护者","愤怒狂暴","湛蓝乌鸦·再临","给你的礼物",
+            "反射外装","决杀手术","奇迹红豆冰淇淋","星之再生","金蛋","三角力场","变化无常的风车","亚空间通道","阴谋机器人出动！","恶魔之手",
+            "阴谋的间谍行动～预备","坚实魔女","空间的跳跃(标记)","特别舞台","飞艇轰炸","束缚之锁","情报官","魔法狱火","记录重现","荒唐的性能",
+            "阴谋的操纵者","兔子模玩店","扩散光子步枪","永恒的观测者","浮游炮展开","融化的记忆","圣诞小姐的工作","海贼在天上飞？","店铺扩张战略","天使之手",
+            "超能模式！","永久流放","修罗场模式","玩偶使","白色圣诞大粉碎","赌博！","涡轮满载","×16大火箭","大爆炸铃","脱衣","隐身启动","劲敌","杀戮魔法",
+            "神出鬼没","兽之魔女","不动之物体","艾莉的奇迹","爆燃！","自爆","火箭炮","大火箭炮","乔纳桑·速袭","另一个最终兵器","露露的幸运蛋","星球的导火线",
+            "才气觉醒","水晶障壁","统治者","急速的亚莉希安罗妮","圣露眼","拜托了厨师长！","升档","炽热的商人之魂","月夜之舞","社交界亮相","黄昏色的梦",
+            "小麦格农炮","梦寐以求的世界","星星收集者","甜点天堂","甜点制作者的魔法","甜点成堆大作战","假想越狱","露露是厄运之龙","母亲之力","艾莉的超能奇迹","前主角的光辉时刻"]
+
         result = []
         for i in range(0, num):
-            result.append('「' + random.choice(ordinary_list)[1] + '」')
+            result.append('「' + random.choice(mw_list) + '」')
         await matcher.finish(f'奇迹漫步结果：\n{", ".join(result)}')
 
     async def divination(self, bot: Bot, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent], arg: Message = CommandArg()) -> None:
