@@ -189,7 +189,7 @@ class Ess:
         
         self.check_gid(gid)
             
-        if module and module in self.config['group_config_list'][gid]['module_disabled']:
+        if module and module in self.config['group_config_list'][str(gid)]['module_disabled']:
             return False
               
         return True
