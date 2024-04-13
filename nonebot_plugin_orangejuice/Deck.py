@@ -11,7 +11,7 @@ class Deck:
         pass
 
     async def deck(self, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent], arg: Message = CommandArg()) -> None:
-        if isinstance(event, GroupMessageEvent) and event.group_id in ess.config['modules']['Deck']:
+        if not ess.check(event, 'Deck'):
             return None
 
         deck = arg.extract_plain_text()

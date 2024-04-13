@@ -5,7 +5,6 @@ from typing import Dict, Union
 
 from nonebot import logger, get_driver
 
-import asyncio
 import aiohttp
 import aiosqlite
 
@@ -174,7 +173,7 @@ class Stats:
 
 
     async def stats(self, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent], arg: Message = CommandArg()) -> None:
-        if isinstance(event, GroupMessageEvent) and event.group_id in ess.config['modules']['Stats']:
+        if not ess.check(event, 'Stats'):
             return None
 
     

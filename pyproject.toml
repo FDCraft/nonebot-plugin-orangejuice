@@ -1,6 +1,6 @@
 [project]
 name = "nonebot-plugin-orangejuice"
-version = "0.9.1"
+version = "0.10.0"
 dependencies = [
     "nonebot2>=2.0.0",
     "nonebot-adapter-onebot>=2.0.0-beta.1",

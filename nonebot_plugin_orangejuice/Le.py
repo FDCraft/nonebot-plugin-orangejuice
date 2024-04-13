@@ -1,7 +1,7 @@
 import os
 import random
 import time
-from typing import Union, List, Tuple
+from typing import Union, List
 
 from nonebot import require, logger
 from nonebot.adapters.onebot.v11 import Bot, Message, MessageSegment, GroupMessageEvent, PrivateMessageEvent
@@ -19,8 +19,7 @@ from .Config import plugin_config
 
 from .Ess import ess
 
-
-class Check: 
+class Check:
     def __init__(self) -> None:
         self.cd = plugin_config.le_cd
         self.max_count = plugin_config.le_max
@@ -76,7 +75,7 @@ class Le:
         pass
 
     async def lulu(self, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent]) -> None:
-        if isinstance(event, GroupMessageEvent) and event.group_id in ess.config['modules']['Le']:
+        if not ess.check(event, 'Le'):
             return None
         
         if check.check(event):
@@ -118,7 +117,7 @@ class Le:
                 await matcher.finish(MessageSegment.image(os.path.join(image_path, 'le2b.png')) + '『露露的幸运蛋壳！』')
 
     async def nanako(self, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent]) -> None:
-        if isinstance(event, GroupMessageEvent) and event.group_id in ess.config['modules']['Le']:
+        if not ess.check(event, 'Le'):
             return None
         
         if check.check(event):
@@ -130,7 +129,7 @@ class Le:
         await matcher.finish(f'浮游炮展开结果：\nATK+{points[0]} DEF+{points[1]} EVD+{points[2]}')
     
     async def nico(self, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent], arg: Message = CommandArg()) -> None:
-        if isinstance(event, GroupMessageEvent) and event.group_id in ess.config['modules']['Le']:
+        if not ess.check(event, 'Le'):
             return None
         
         if check.check(event):
@@ -154,7 +153,7 @@ class Le:
         await matcher.finish(f'奇迹漫步结果：\n{", ".join(result)}')
 
     async def divination(self, bot: Bot, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent], arg: Message = CommandArg()) -> None:
-        if isinstance(event, GroupMessageEvent) and event.group_id in ess.config['modules']['Le']:
+        if not ess.check(event, 'Le'):
             return None
         
         if check.check(event):

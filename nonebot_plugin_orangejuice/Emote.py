@@ -13,7 +13,7 @@ class Emote:
         pass
 
     async def emote(self, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent], key: str = RegexStr()) -> None:
-        if isinstance(event, GroupMessageEvent) and event.group_id in ess.config['modules']['Emote']:
+        if not ess.check(event, 'Emote'):
             return None
 
         key = key.replace(':', '').lower()

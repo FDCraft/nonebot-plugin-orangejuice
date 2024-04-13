@@ -37,7 +37,7 @@ class Mixer:
                 return None
 
     async def mixer(self, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent], arg: Message = CommandArg()) -> None:
-        if isinstance(event, GroupMessageEvent) and event.group_id in ess.config['modules']['Mixer']:
+        if not ess.check(event, 'Mixer'):
             return None
         
         self.data = await self.get_data()

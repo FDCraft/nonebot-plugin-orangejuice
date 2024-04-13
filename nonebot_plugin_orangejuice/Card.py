@@ -4,10 +4,9 @@ import re
 from typing import Dict, Tuple, Union
 
 import aiomysql
-import asyncio
 from fuzzywuzzy import fuzz
 
-from nonebot import logger, get_driver
+from nonebot import get_driver
 from nonebot.adapters.onebot.v11 import Message, MessageSegment, GroupMessageEvent, PrivateMessageEvent 
 from nonebot.matcher import Matcher
 from nonebot.params import CommandArg
@@ -61,7 +60,7 @@ class Card:
 
     async def card(self, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent], arg: Message = CommandArg()) -> None:
         try:
-            if isinstance(event, GroupMessageEvent) and event.group_id in ess.config['modules']['Card']:
+            if not ess.check(event, 'Card'):
                 return None
             args = arg.extract_plain_text().split(' ')
 
@@ -130,7 +129,7 @@ class Card:
 
     async def icon(self, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent], arg: Message = CommandArg()) -> None:
         try:
-            if isinstance(event, GroupMessageEvent) and event.group_id in ess.config['modules']['Card']:
+            if not ess.check(event, 'Card'):
                 return None
             args = arg.extract_plain_text().split(' ')
 
