@@ -176,7 +176,8 @@ class Card:
 
             img = f'http://interface.100oj.com/interface/util/icon.php?key={id}&size=256&lossless=true'
             await matcher.send(MessageSegment.image(img))
-            return None                     
+            return None
+                    
         except Exception as e:
             await matcher.send('诶鸭出错啦~')
             raise e

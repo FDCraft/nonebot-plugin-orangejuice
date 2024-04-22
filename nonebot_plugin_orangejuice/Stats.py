@@ -1,20 +1,22 @@
 import json
 import os
 import re
-from typing import Dict, Union
+from typing import List, Dict, Union
 
 import aiohttp
 import aiosqlite
 
 from nonebot import logger, get_driver
-from nonebot.adapters.onebot.v11 import GroupMessageEvent, PrivateMessageEvent, Message, MessageSegment
+from nonebot.adapters.onebot.v11 import Bot, GroupMessageEvent, PrivateMessageEvent, Message, MessageSegment
 from nonebot.matcher import Matcher
 from nonebot.params import CommandArg
 
 from .Config import plugin_config
 from .Ess import ess
 
+help_image_path = os.path.join(os.path.dirname(__file__), 'resources', 'stats', 'help.png')
 steam_id_file_path: str = os.path.join(plugin_config.oj_data_path, 'steam_id.db')
+db_keys: List[str] = ['steam64id', 'renderType', 'sp1', 'sp1_1', 'sp1_2', 'sp1_3', 'sp1_4', 'sp1_5', 'sp1_6', 'sp1_31', 'sp1_37']
 
 class Stats:
     def __init__(seld) -> None:
@@ -50,7 +52,6 @@ class Stats:
         help_msg: str = '''橙汁个人统计图片生成
     #stat <steam64id> [limit]
     用于直接生成。limit为行数，可以不填，默认为5。
-    使用非初始样式时，不会生成PVP各角色出场次数和胜场的行。
     #stat bind <steam64id>
     用于将当前账号绑定到对应steam账户。重复使用会更新绑定。
     #stat unbind
@@ -58,8 +59,10 @@ class Stats:
     #stat me [limit]
     绑定steam64id后，使用本命令来快速生成自己的资料。
     #stat type <type>
-    更改出图类型。'''
-        await matcher.finish(help_msg)
+    更改出图类型。
+    #stats modify <uid> <key> <value>
+    直接操作数据库，需要有超级管理员权限。'''
+        await matcher.finish(help_msg + MessageSegment.image(help_image_path))
 
     async def bind(self, uid: str, steam64id: str, matcher: Matcher) -> None:
         try:
@@ -86,7 +89,7 @@ class Stats:
             await self.cursor.execute('SELECT * FROM steamInfo WHERE qq = ?', (uid,))
             data = await self.cursor.fetchall()
             if data == [] or data is None:
-                await matcher.send('你还没有绑定过steam哦~请使用 #stat bind <steam64id> 来进行绑定。')
+                await matcher.send('你还没有绑定过Steam哦~请使用 #stat bind <steam64id> 来进行绑定。')
                 return None        
             
             await self.cursor.execute('UPDATE steamInfo SET renderType = ? WHERE qq = ?', (type, uid))
@@ -101,7 +104,7 @@ class Stats:
             await self.cursor.execute('SELECT * FROM steamInfo WHERE qq = ?', (uid,))
             data = await self.cursor.fetchall()
             if data == [] or data is None:
-                await matcher.send('你还没有绑定过steam哦~请使用 #stat bind <steam64id> 来进行绑定。')
+                await matcher.send('你还没有绑定过Steam哦~请使用 #stat bind <steam64id> 来进行绑定。')
                 return None
             
             if pin == '0':
@@ -121,10 +124,34 @@ class Stats:
                     await self.db.commit()
                     await matcher.send('修改成功~')                    
                 else:
-                    await matcher.send('你无法使用这个 pin。')
+                    await matcher.send('你无法使用这个pin。')
         except Exception as e:
             await matcher.send('诶鸭出错啦~')
             raise e
+        
+    async def modify(self, matcher: Matcher, target_uid: str, key: str, value: str) -> None:
+        try:
+            if key == 'steam64id':
+                await self.cursor.execute('INSERT INTO steamInfo VALUES (?, ?, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) ON CONFLICT(qq) DO UPDATE SET steam64id = ?', (target_uid, value, value))
+                await self.db.commit()
+                await matcher.send(f'修改成功，绑定{value}到{target_uid}。')
+            else:
+                await self.cursor.execute('SELECT * FROM steamInfo WHERE qq = ?', (target_uid,))
+                data = await self.cursor.fetchall()
+                if data == [] or data is None:
+                    await matcher.send(f'{target_uid}还没有绑定Steam账号。')
+                    return None
+                if key not in db_keys:
+                    await matcher.send(f'有效的key应为:\n{", ".join(db_keys)}。')
+                    return None
+                
+                await self.cursor.execute(f'UPDATE steamInfo SET {key} = {value} WHERE qq = {target_uid}')
+                await self.db.commit()
+                await matcher.send(f'修改成功，修改{target_uid}的{key}为{value}。')
+                
+        except Exception as e:
+            await matcher.send('诶鸭出错啦~')
+            raise e                   
  
     async def send_stats(self, matcher: Matcher, uid: str = None, steam64id: str = None, at: str = None, limit: str = 5) -> None:
         try:
@@ -133,7 +160,7 @@ class Stats:
                 await self.cursor.execute('SELECT steam64id,renderType,sp1 FROM steamInfo WHERE qq = ?', (uid,))
                 data = await self.cursor.fetchall()
                 if data == [] or data is None:
-                    await matcher.send('你还没有绑定过steam哦~请使用 #stat bind <steam64id> 来进行绑定。')
+                    await matcher.send('你还没有绑定过Steam哦~请使用 #stat bind <steam64id> 来进行绑定。')
                     return None
                 
             if steam64id:
@@ -149,7 +176,7 @@ class Stats:
                 await self.cursor.execute('SELECT steam64id,renderType,sp1 FROM steamInfo WHERE qq = ?', (uid,))
                 data = await self.cursor.fetchall()
                 if data == [] or data is None:
-                    await matcher.send('Ta还没有绑定过steam哦~')
+                    await matcher.send('Ta还没有绑定过Steam哦~')
                     return None
 
             
@@ -170,7 +197,7 @@ class Stats:
 
 
 
-    async def stats(self, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent], arg: Message = CommandArg()) -> None:
+    async def stats(self, bot: Bot, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent], arg: Message = CommandArg()) -> None:
         if not ess.check(event, 'Stats'):
             return None
 
@@ -245,6 +272,14 @@ class Stats:
                         await self.send_stats(matcher, steam64id=steam64id, limit=limit)
                     case _:
                         await self.send_stats(matcher, steam64id=steam64id)
+            case 'modify':
+                if str(event.user_id) not in bot.config.superusers:
+                    return None
+                
+                target_uid, key, value = list_args[1:4]
+                target_uid = re.sub(r'\[at:qq=(.*?)\]', r'\1', target_uid)
+                logger.debug(f'{target_uid} {key} {value}')
+                await self.modify(matcher, target_uid, key, value)
             case _:
                 await self.help(matcher)
 
