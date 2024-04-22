@@ -233,11 +233,11 @@ class Stats:
                 match list_args[1]:
                     case '':
                         await matcher.finish('请输入出图类型代码。')
-                    case type if int(type) in range(0, 7):
+                    case type if int(type) in range(0, 8):
                         type = list_args[1]
                         await self.type(uid, type, matcher)
                     case _:
-                        await matcher.finish('这不是一个有效的出图类型代码。它应该介于0与6之间。')
+                        await matcher.finish('这不是一个有效的出图类型代码。它应该介于0与7之间。')
             case 'pin' | '-p':
                 uid = str(event.user_id)
                 match list_args[1]:
