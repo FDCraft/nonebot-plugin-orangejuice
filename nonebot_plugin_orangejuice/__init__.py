@@ -12,7 +12,7 @@ __plugin_meta__ = PluginMetadata(
     config=Config,
     extra={
         'author': 'Polaris_Light',
-        'version': '0.10.1',
+        'version': '0.11.0',
         'priority': 10
     }
 )
@@ -38,11 +38,11 @@ async def help(matcher: Matcher):
     #card help 查卡帮助
     #icon help 查图标帮助
     #stat help 统计帮助
-    #deck=[code] 卡组查看
+    #deck <code> 卡组查看
     #lulu 幸运蛋
     #mw [num] 奇迹漫步
     #7 浮游炮
-    #zb [something] 占卜'''
+    #zb <something> 占卜'''
     await matcher.finish(help_msg)
 
 on_command(
@@ -83,7 +83,7 @@ on_command(
 )
 
 on_command(
-    '#deck=',
+    '#deck',
     priority=10,
     block=True,
     handlers=[deck.deck]
@@ -99,7 +99,7 @@ on_command(
 
 on_command(
     '#mw',
-    aliases={'#奇迹漫步'},
+    aliases={'#奇迹漫步', '#喵呜'},
     priority=10,
     block=True,
     handlers=[le.nico]

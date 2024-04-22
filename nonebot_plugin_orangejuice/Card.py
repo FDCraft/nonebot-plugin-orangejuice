@@ -110,7 +110,7 @@ class Card:
                             now_table = table
                             now_score = score
             
-            if now_score < plugin_config.match_score:
+            if now_score < plugin_config.match_score or now_score <= 1:
                 await matcher.send('没有这张卡啦~')
                 return None
 

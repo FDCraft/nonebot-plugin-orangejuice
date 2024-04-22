@@ -1,7 +1,8 @@
+import json
 import os
 import random
 import time
-from typing import Union, List
+from typing import Union, Dict, List, Tuple
 
 from nonebot import require, logger
 from nonebot.adapters.onebot.v11 import Bot, Message, MessageSegment, GroupMessageEvent, PrivateMessageEvent
@@ -19,50 +20,109 @@ from .Config import plugin_config
 
 from .Ess import ess
 
+le_file_path: str = os.path.join(plugin_config.oj_data_path, 'le.json')
+init_json: Dict[str, Dict[str, Dict[str, int]]]
+init_json = {
+    "114514": {
+        "1919810": {
+            "count": 0,
+            "last_time": 0
+        }    
+    }
+}
+
 class Check:
     def __init__(self) -> None:
-        self.cd = plugin_config.le_cd
-        self.max_count = plugin_config.le_max
-        self.user_cd = {}
-        self.user_count = {}
-        def reset_user_count():
-            self.user_count = {}
+        if not os.path.exists(le_file_path):
+            if not os.path.exists(plugin_config.oj_data_path):
+                os.makedirs(plugin_config.oj_data_path)
+            self.init_json()  
 
+        self.load_json()
+        
+        def reset_user_count():
+            self.data = {}
+            self.save_json()
+            
         try:
-            scheduler.add_job(reset_user_count, "cron", hour="0", id="clear_le_max_count")
+            scheduler.add_job(reset_user_count, "cron", hour="0", id="clear_le")
         except ActionFailed as e:
             logger.warning(f"定时任务添加失败，{repr(e)}")
-        
+            
+    def init_json(self):
+        with open(le_file_path, 'w+') as f:
+            f.write(json.dumps(init_json, indent=4))
+
+    def load_json(self):
+        with open(le_file_path, 'r', encoding='utf-8') as f:
+            data: Dict[str, Dict[str, Dict[str, int]]]
+            data = json.load(f)
+            self.data = data
+
+    def save_json(self):
+        with open(le_file_path, 'w', encoding='utf-8') as f:
+            json_data = json.dumps(self.data, indent=4)
+            f.write(json_data)
+            
+    def check_uid(self, gid: Union[int, str], uid: Union[int, str]) -> None:
+        if str(gid) not in self.data:
+            self.data[str(gid)] = {}
+        if str(uid) not in self.data[str(gid)]:
+            self.data[str(gid)][str(uid)] = {
+                "count": 0,
+                "last_time": 0
+            }
+        self.save_json()
+
     def check_cd(self, event: Union[GroupMessageEvent, PrivateMessageEvent]) -> bool:
-        if self.cd == 0:
+        if isinstance(event, PrivateMessageEvent):
             return False
         
-        user_id = event.user_id
+        gid = event.group_id
+        uid = event.user_id
         current_time = int(time.time())
+
+        ess.check_gid(gid)
         
-        if str(user_id) not in list(self.user_cd.keys()):
-            self.user_cd[f"{user_id}"] = current_time
+        if ess.config['group_config_list'][str(gid)]['le_cd'] == 0:
             return False
         
-        delta_time = current_time - self.user_cd[f'{user_id}']
+        self.check_uid(gid, uid)
         
-        if delta_time >= self.cd:
-            self.user_cd[f'{user_id}'] = current_time
+        if str(uid) not in self.data[str(gid)]:
+            self.data[str(gid)][str(uid)]['last_time'] = current_time
+            return False
+        
+        delta_time = current_time - self.data[str(gid)][str(uid)]['last_time']
+        
+        if delta_time >= ess.config['group_config_list'][str(gid)]['le_cd']:
+            self.data[str(gid)][str(uid)]['last_time'] = current_time
+            self.save_json()
             return False
         else:
             return True
     
     def check_max(self, event: Union[GroupMessageEvent, PrivateMessageEvent]) -> bool:
-        if self.max_count == 0:
+        if isinstance(event, PrivateMessageEvent):
             return False
         
-        user_id = event.user_id
+        gid = event.group_id
+        uid = event.user_id
+        
+        ess.check_gid(gid)        
+        
+        if ess.config['group_config_list'][str(gid)]['le_max'] == 0:
+            return False
+        
+        self.check_uid(gid, uid)
     
-        if str(user_id) not in list(self.user_count.keys()):
-            self.user_count[f"{user_id}"] = 0
+        if str(uid) not in self.data[str(gid)]:
+            self.data[str(gid)][str(uid)]['count'] = 0
+            return False
 
-        if self.user_count[f"{user_id}"] < self.max_count:
-            self.user_count[f"{user_id}"] += 1
+        if self.data[str(gid)][str(uid)]['count'] < ess.config['group_config_list'][str(gid)]['le_max']:
+            self.data[str(gid)][str(uid)]['count'] += 1
+            self.save_json()
             return False
         else:
             return True

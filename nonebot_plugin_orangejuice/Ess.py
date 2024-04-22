@@ -12,7 +12,7 @@ from nonebot.adapters.onebot.v11 import Bot, Message, GroupMessageEvent, Private
 from .Config import plugin_config
 
 ess_file_path: str = os.path.join(plugin_config.oj_data_path, 'essentialx.json')
-init_json: Dict[str, Union[str, List[str], Dict[int, Dict[str, Union[int, str, bool, List[str], Dict[str, str]]]]]]
+init_json: Dict[str, Union[str, List[str], Dict[int, Dict[str, Union[int, str, bool, List[Union[str, Dict[str, str]]]]]]]]
 
 init_json = {
     "version": 3,
@@ -22,10 +22,12 @@ init_json = {
             "module_disabled": [
                 "Le"
             ],
-            "scheduler": {
-                "time": "0 0 * * *",
-                "content": "欢迎新人！"     
-            },
+            "scheduler": [
+                    {
+                    "time": "0 0 * * *",
+                    "content": "欢迎新人！"
+                }
+            ],
             "greet": "欢迎新人！",
             "isGreet": False,
             "le_cd": 60,
@@ -60,13 +62,17 @@ class Args:
         self.extra_data: Dict[str, Any] = {}
 
 
-        list_args = arg.to_rich_text().split(' ')
+        rich_text: str = arg.to_rich_text()
+        rich_text = re.sub(' +', ' ', rich_text)
+        
+        list_args = rich_text.split(' ')
 
         while len(list_args) < 5:
             list_args.append('')
+
         logger.debug(f'参数解析结果：{list_args}')
 
-        for i in range(0,5):
+        for i in range(0, len(list_args)):
             list_args[i] = re.sub(r'\[at:qq=(.*?)\]', r'\1', list_args[i])
 
         match list_args[0]:
@@ -151,7 +157,7 @@ class Ess:
                     if str(gid) not in new_config['group_config_list']:
                         new_config['group_config_list'][str(gid)] = {
                             "module_disabled": [],
-                            "scheduler": {},
+                            "scheduler": [],
                             "greet": "欢迎新人！",
                             "isGreet": False,
                             "le_cd": 60,
@@ -159,7 +165,7 @@ class Ess:
                         }
                     new_config['group_config_list'][gid]['module_disabled'].append(module)
             self.config = new_config
-            self.save_json()           
+            self.save_json()
 
 
     def init_json(self):
@@ -168,7 +174,7 @@ class Ess:
 
     def load_json(self):
         with open(ess_file_path, 'r', encoding='utf-8') as f:
-            data: Dict[str, Union[str, List[str], Dict[int, Dict[str, Union[int, str, bool, List[str], Dict[str, str]]]]]]
+            data: Dict[str, Union[str, List[str], Dict[int, Dict[str, Union[int, str, bool, List[Union[str, Dict[str, str]]]]]]]]
             data = json.load(f)
             self.config = data
 
@@ -198,7 +204,7 @@ class Ess:
         if str(gid) not in self.config['group_config_list']:
             self.config['group_config_list'][str(gid)] = {
                 "module_disabled": [],
-                "scheduler": {},
+                "scheduler": [],
                 "greet": "欢迎新人！",
                 "isGreet": False,
                 "le_cd": 60,

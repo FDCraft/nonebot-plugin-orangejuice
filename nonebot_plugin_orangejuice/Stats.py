@@ -3,12 +3,10 @@ import os
 import re
 from typing import Dict, Union
 
-from nonebot import logger, get_driver
-
 import aiohttp
 import aiosqlite
 
-from nonebot import logger
+from nonebot import logger, get_driver
 from nonebot.adapters.onebot.v11 import GroupMessageEvent, PrivateMessageEvent, Message, MessageSegment
 from nonebot.matcher import Matcher
 from nonebot.params import CommandArg
@@ -178,27 +176,25 @@ class Stats:
 
     
         rich_text: str = arg.to_rich_text()
+        rich_text = re.sub(' +', ' ', rich_text)
+        
+        list_args = rich_text.split(' ')
 
-        while '  ' in rich_text:
-            rich_text.replace('  ', ' ')
+        while len(list_args) < 3:
+            list_args.append('')
+            
+        logger.info(f'参数解析结果：{list_args}')
 
-        args = rich_text.split(' ')
-
-        while len(args) < 3:
-            args.append('')
-        logger.debug(f'参数解析结果：{args}')
-
-
-        match args[0]:
+        match list_args[0]:
             case 'help' | '':
                 await self.help(matcher)
             case 'bind' | '-b':
                 uid = str(event.user_id)
-                match args[1]:
+                match list_args[1]:
                     case '':
                         await matcher.finish('请输入steam64id。')
                     case steam64id if steam64id.isdigit() and steam64id.startswith('7656') and len(steam64id) == 17:
-                        steam64id = args[1]
+                        steam64id = list_args[1]
                         await self.bind(uid, steam64id, matcher)
                     case _:
                         await matcher.finish('这不是一个有效的steam64id。它应该是一个以7656开头、总长度为17位的纯数字。\n如果您不知道什么是steam64id，推荐在网络上了解更多的相关知识。')
@@ -207,45 +203,45 @@ class Stats:
                 await self.unbind(uid, matcher)
             case 'type' | '-t':
                 uid = str(event.user_id)
-                match args[1]:
+                match list_args[1]:
                     case '':
                         await matcher.finish('请输入出图类型代码。')
                     case type if int(type) in range(0, 7):
-                        type = args[1]
+                        type = list_args[1]
                         await self.type(uid, type, matcher)
                     case _:
                         await matcher.finish('这不是一个有效的出图类型代码。它应该介于0与6之间。')
             case 'pin' | '-p':
                 uid = str(event.user_id)
-                match args[1]:
+                match list_args[1]:
                     case '':
                         await matcher.finish('请输入pin代码。')
                     case pin if int(pin) in range(0, 7) or pin == '31' or pin == '37':
-                        pin = args[1]
+                        pin = list_args[1]
                         await self.pin(uid, pin, matcher)
                     case _:
                         await matcher.finish('这不是一个有效的pin代码。请在 https://interface.100oj.com/stat/pininfo.html 查看所有类型。')
             case 'me':
                 uid = str(event.user_id)
-                match args[1]:
-                    case limit if limit.isdigit():
-                        limit: str = str(min(int(args[1]), 10))
+                match list_args[1]:
+                    case limit if limit.isdigit() and int(limit):
+                        limit: str = str(min(int(list_args[1]), 10))
                         await self.send_stats(matcher, uid=uid, limit=limit)
                     case _:
                         await self.send_stats(matcher, uid=uid)
             case at if at.startswith('[at'):
-                at = args[0]
-                match args[1]:
-                    case limit if limit.isdigit():
-                        limit: str = str(min(int(args[1]), 10))
+                at = list_args[0]
+                match list_args[1]:
+                    case limit if limit.isdigit() and int(limit):
+                        limit: str = str(min(int(list_args[1]), 10))
                         await self.send_stats(matcher, at=at, limit=limit)
                     case _:
                         await self.send_stats(matcher, at=at)
             case steam64id if steam64id.isdigit() and steam64id.startswith('7656') and len(steam64id) == 17:
-                steam64id = args[0]
-                match args[1]:
-                    case limit if limit.isdigit():
-                        limit: str = str(min(int(args[1]), 10))
+                steam64id = list_args[0]
+                match list_args[1]:
+                    case limit if limit.isdigit() and int(limit):
+                        limit: str = str(min(int(list_args[1]), 10))
                         await self.send_stats(matcher, steam64id=steam64id, limit=limit)
                     case _:
                         await self.send_stats(matcher, steam64id=steam64id)
