@@ -13,10 +13,10 @@ from .Config import plugin_config
 
 ess_file_path: str = os.path.join(plugin_config.oj_data_path, 'essentialx.json')
 init_json: Dict[str, Union[str, List[str], Dict[int, Dict[str, Union[int, str, bool, List[Union[str, Dict[str, str]]]]]]]]
+current_modules: List[str] = ["Card", "Deck", "Emote", "Le", "Mixer", "Stats"]
 
 init_json = {
-    "version": 3,
-    "current_modules": ["Card", "Deck", "Emote", "Le", "Mixer", "Stats"],
+    "version": 4,
     "group_config_list": {
         "114514": {
             "module_disabled": [
@@ -87,18 +87,18 @@ class Args:
                         logger.trace('ess module list [gid] trigger.')
                         self.target_gid = int(list_args[2]) if list_args[2].isdigit() else self.send_gid
 
-                    case 'enable' | '-on':
+                    case 'enable' | '-on' | 'enabled':
                         self.operate = 'enable'
-                        if list_args[2] in ess.config['current_modules']:
+                        if list_args[2] in current_modules:
                             self.invaild = True # #ess module enable <modulename> [gid]
                             logger.trace(f'ess module enable <modulename> [gid] trigger.')
                             self.target_module = list_args[2]
                             self.target_gid = int(list_args[3]) if list_args[3].isdigit() else self.send_gid
 
 
-                    case 'disable' | '-off':
+                    case 'disable' | '-off' | 'disabled':
                         self.operate = 'disable'
-                        if list_args[2] in ess.config['current_modules']:
+                        if list_args[2] in current_modules:
                             self.invaild = True # #ess module disable <modulename> [gid]
                             logger.trace(f'ess module disable <modulename> [gid] trigger.')
                             self.target_module = list_args[2]
@@ -257,7 +257,7 @@ class Ess:
             enable_modules = []
             avaliable_modules = []
             
-            for module in self.config['current_modules']:
+            for module in current_modules:
                 enable_modules.append(module) if module not in self.config['group_config_list'][str(args.target_gid)]['module_disabled'] else avaliable_modules.append(module)
                        
             msg1 = "\n- " + "\n- ".join(enable_modules) if enable_modules != [] else ""
