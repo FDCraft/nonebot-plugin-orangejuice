@@ -123,5 +123,6 @@ on_command(
 
 
 on_message(
-    handlers=[emote.emote]
+    handlers=[emote.emote],
+    block=False
 )
