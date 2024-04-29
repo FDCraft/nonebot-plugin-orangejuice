@@ -19,7 +19,7 @@ __plugin_meta__ = PluginMetadata(
 
 import re
 
-from nonebot import on_command, on_regex
+from nonebot import on_command, on_message
 from nonebot.matcher import Matcher
 
 from .Ess import ess
@@ -122,7 +122,6 @@ on_command(
 )
 
 
-on_regex(
-    r"^\:[a-z0-9_]+\:$",
-    flags=re.IGNORECASE,
-    handlers=[emote.emote])
+on_message(
+    handlers=[emote.emote]
+)
