@@ -126,5 +126,3 @@ on_regex(
     r"^\:[a-z0-9_]+\:$",
     flags=re.IGNORECASE,
     handlers=[emote.emote])
-
-

@@ -77,7 +77,56 @@ _✨ [Sorabot](https://100oj.com/zh/%E5%B7%A5%E5%85%B7/SoraBot%E4%BD%BF%E7%94%A8
 
 ## 🎉 使用
 
-请参考[Sorabot](https://100oj.com/zh/%E5%B7%A5%E5%85%B7/SoraBot%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97)的文档，或输入 #help 指令来查看。
+与 [Sorabot](https://100oj.com/zh/%E5%B7%A5%E5%85%B7/SoraBot%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97) 的功能大致相似，指令头均为 \#。
+
+<details open>
+<summary>单独的命令</summary>
+
+| 命令           | 说明                               |
+| ------------  | --------------------------------- |
+| #help         | 查看帮助信息。                     |
+| #card <name>  | 查询橙汁卡牌信息，支持模糊搜索。 部分别名（如泥头车 -> 亚里希安罗妮）会使用插件内置的正则匹配表强制匹配。  |
+| #icon <name>  | 查询橙汁卡牌图标，支持模糊搜索。 部分别名（如泥头车 -> 亚里希安罗妮）会使用插件内置的正则匹配表强制匹配。  |
+| #deck <code>  | 获取卡组图片。后跟 12 位卡组代码。  |
+| #lulu         | 模拟露露的幸运蛋。                 |
+| #7            | 模拟浮游炮展开。                   |
+| #mw           | 模拟奇迹漫步。                     |
+| :<emote>:     | 发送橙汁表情。                     |
+
+</details>
+
+<detials open>
+<summary>橙汁数据查询</summary>
+
+| 命令                              | 说明                                                                                    |
+| -------------------------------  | --------------------------------------------------------------------------------------- |
+| #stat                            | 查看数据查询模块的帮助。                                                                   |
+| #stat bind <steam64id>           | 用于将 steam 绑定到 qq。重复使用会更新绑定。                                                |
+| #stat unbind                     | 删除自己的绑定。                                                                           |
+| #stat me \[limit\]               | 在绑定 steam 后，使用本命令来快速查询自己的数据。limit为显示的最高胜率角色数，可以不填，默认为5。|
+| #stat <steam64id> \[limit\]      | 使用 steam64id 快速查询对应玩家的数据。                                                     |
+| #stat <@qq> \[limit\]            | 通过 At 来查询对应玩家的统计数据。                                                          |
+| #stat type <id>                  | 切换生成的统计图片样式。id目前可取0~7，其中0为初始样式。                                      |
+| #stat pin <id>                   | 切换个人 pin 样式。                                                                        |
+| #stats modify <qq> <key> <value> | 直接修改数据库中某个玩家的数据，用于给予 pin。仅 Bot 的所有者可用使用本命令。                   |
+
+</detials>
+
+<details open>
+<summary>管理模块</summary>
+
+此模块命令仅群管理与 Bot 的所有者可以使用。
+
+| 命令                                                  | 说明                                                                           |
+| ---------------------------------------------------  | ------------------------------------------------------------------------------ |
+| #ess module|-m enable|-on <modulename> \[groupid\]   | 在群聊\[groupid\]开启名为\[modulename\]的模块。不填写\[groupid\]时默认使用本群id。 |
+| #ess module|-m disable|-off <modulename> \[groupid\] | 在群聊\[groupid\]关闭名为\[modulename\]的模块。不填写\[groupid\]时默认使用本群id。 |
+| #ess module|-m list|-l \[groupid\]                   | 列出群聊\[groupid]的模块列表。不填写\[groupid\]时默认使用本群id。                  |
+| #ess mute <qq|@qq> \[time\] \[reason\]               | 禁言\[qq\]。time 如为纯数字，则单位为s；接受 `数字 + s m h d`。                    |
+| #ess save|-s                                         | 将当前所有配置保存到本地文件。                                                    |
+| #ess load|-l                                         | 从本地文件重新载入全部配置。                                                      |
+
+</details>
 
 ## 特别感谢
 

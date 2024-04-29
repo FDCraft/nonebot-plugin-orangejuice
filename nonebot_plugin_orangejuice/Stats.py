@@ -156,7 +156,7 @@ class Stats:
     async def send_stats(self, matcher: Matcher, uid: str = None, steam64id: str = None, at: str = None, limit: str = 5) -> None:
         try:
             if uid:
-                reply = '唔~你还没有设置Steam个人资料为公开呢~'
+                reply = '唔~你还没有设置Steam个人资料为公开呢~\n更改为公开后可以先在https://interface.100oj.com/stat/player.php来查看是否已经可以查询到数据，确认可查到后再次使用该功能。'
                 await self.cursor.execute('SELECT steam64id,renderType,sp1 FROM steamInfo WHERE qq = ?', (uid,))
                 data = await self.cursor.fetchall()
                 if data == [] or data is None:
