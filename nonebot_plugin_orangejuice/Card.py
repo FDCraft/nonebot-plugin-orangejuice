@@ -91,6 +91,8 @@ class Card:
                    name = key        
             
             for table in tables:
+                if now_score == 101:
+                    break
                 if target_table and target_table != table:
                     continue
                 table_attr: BaseClass = getattr(self, table)
@@ -103,12 +105,16 @@ class Card:
                             now_id = tuple[0]
                             now_table = table
                             now_score = score
+                            if now_score == 100:
+                                break
                     else:
                         score = max(fuzz.ratio(B2Q(name), tuple[1]), fuzz.ratio(name, tuple[2])) + (1 if tuple[3] == 'ordinary' else 0)
                         if score > now_score:
                             now_id = tuple[0]
                             now_table = table
                             now_score = score
+                            if now_score == 101:
+                                break
             
             if now_score < plugin_config.match_score or now_score <= 1:
                 await matcher.send('没有这张卡啦~')

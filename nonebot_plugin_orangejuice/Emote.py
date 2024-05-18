@@ -16,7 +16,7 @@ class Emote:
 
     async def emote(self, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent], msg: str = EventPlainText()) -> None:
         keys: List[str] = re.findall(r'\:([a-zA-Z0-9_]+)\:', msg)
-        if keys == []:
+        if len(keys) > 8 or keys == []:
             return None
         
         if not ess.check(event, 'Emote'):
