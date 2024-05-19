@@ -39,6 +39,7 @@ async def help(matcher: Matcher):
     #icon help 查图标帮助
     #stat help 统计帮助
     #deck <code> 卡组查看
+    #m <count> 混合器查询
     #lulu 幸运蛋
     #mw [num] 奇迹漫步
     #7 浮游炮
