@@ -129,6 +129,20 @@ class Stats:
             await matcher.send('诶鸭出错啦~')
             raise e
         
+    async def get(self, matcher: Matcher, target_uid: str) -> None:
+        try:
+            await self.cursor.execute('SELECT * FROM steamInfo WHERE qq = ?', (target_uid, ))
+            data = await self.cursor.fetchall()
+            if data == [] or data is None:
+                await matcher.send(f'{target_uid}还没有绑定Steam账号。')
+                return None
+            
+            await self.db.commit()
+            await matcher.send(f'{target_uid} 的数据为 {data[0]}。')
+        except Exception as e:
+            await matcher.send('诶鸭出错啦~')
+            raise e 
+        
     async def modify(self, matcher: Matcher, target_uid: str, key: str, value: str) -> None:
         try:
             if key == 'steam64id':
@@ -136,18 +150,20 @@ class Stats:
                 await self.db.commit()
                 await matcher.send(f'修改成功，绑定{value}到{target_uid}。')
             else:
+                if key not in db_keys:
+                    await matcher.send(f'有效的key应为:\n{", ".join(db_keys)}。')
+                    return None
+                
                 await self.cursor.execute('SELECT * FROM steamInfo WHERE qq = ?', (target_uid,))
                 data = await self.cursor.fetchall()
                 if data == [] or data is None:
                     await matcher.send(f'{target_uid}还没有绑定Steam账号。')
                     return None
-                if key not in db_keys:
-                    await matcher.send(f'有效的key应为:\n{", ".join(db_keys)}。')
-                    return None
+
                 
                 await self.cursor.execute(f'UPDATE steamInfo SET {key} = {value} WHERE qq = {target_uid}')
                 await self.db.commit()
-                await matcher.send(f'修改成功，修改{target_uid}的{key}为{value}。')
+                await matcher.send(f'修改成功，修改 {target_uid} 的 {key} 为 {value}。')
                 
         except Exception as e:
             await matcher.send('诶鸭出错啦~')
@@ -272,13 +288,20 @@ class Stats:
                         await self.send_stats(matcher, steam64id=steam64id, limit=limit)
                     case _:
                         await self.send_stats(matcher, steam64id=steam64id)
+            case 'get':
+                if str(event.user_id) not in bot.config.superusers:
+                    return None
+                target_uid = list_args[1]
+                target_uid = re.sub(r'\[at:qq=(.*?)\]', r'\1', target_uid)
+                logger.debug(f'Get Trigger: {target_uid}')
+                await self.get(matcher, target_uid)
             case 'modify':
                 if str(event.user_id) not in bot.config.superusers:
                     return None
                 
                 target_uid, key, value = list_args[1:4]
                 target_uid = re.sub(r'\[at:qq=(.*?)\]', r'\1', target_uid)
-                logger.debug(f'{target_uid} {key} {value}')
+                logger.debug(f'Modify Trigger: {target_uid} {key} {value}')
                 await self.modify(matcher, target_uid, key, value)
             case _:
                 await self.help(matcher)
