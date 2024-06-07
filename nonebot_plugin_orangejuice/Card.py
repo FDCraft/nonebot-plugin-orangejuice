@@ -16,7 +16,7 @@ from .Ess import ess
 
 BaseClass = Tuple[Tuple[str, str, str, str]]
 
-tables = ('cardDeck', 'cardHyper', 'cardOther', 'unitCharacter', 'unitNPC') # cardBossSkill is special so not in here.
+tables = ['cardDeck', 'cardHyper', 'cardOther', 'unitCharacter', 'unitNPC'] # cardBossSkill is special so not in here.
 groups = {'原版': 'ordinary', '合作': 'coop', '赏金': 'bounty', '其他': 'other'}
 
 class Card:
@@ -36,6 +36,9 @@ class Card:
         for table in tables:
             await cursor.execute(f"SELECT i18nkey, name_, nameEn, groupData FROM {table}")
             setattr(self, table, await cursor.fetchall())
+            
+        await cursor.execute(f"SELECT i18nkey, name_, nameEn, descr, cost, level_, type_, isHyper, isHyperOnly FROM cardBossSkill")
+        self.cardBossSkill = await cursor.fetchall()
         
         self.db.close()
         
@@ -55,18 +58,18 @@ class Card:
     table为卡表，具体见数据库'''
         await matcher.send(help_msg)
         
-    def match(self, name: str, target_group: str = None, target_table: str = None) -> List[Tuple[str, str, str, str, str, int]]:
+    def match(self, name: str, target_group: str = None, target_table: str = None, search_boss: bool = False) -> List[Tuple[str, str, str, str, str, int]]:
         
         def B2Q(string: str):
             return string.replace('~', '～').replace('&', '＆').replace('(', '（').replace(')', '）').replace('!', '！')
         
-        result = [] # [(id, name, name_En, group, table, score)]
+        result = [] # [(id, name, name_En, group, table, score), (id, name, name_En, group, table, score, descr, cost, level, type, isHyper)]
         force_flag = False
 
         for regex, key in self.regex.items():
            if re.match(regex, name, re.I):
                name = key
-               force_flag == True
+               force_flag = True
                
         
         for table in tables:
@@ -84,8 +87,14 @@ class Card:
                     score = max(fuzz.ratio(B2Q(name), tuple[1]), fuzz.ratio(name, tuple[2]))
                     if (not force_flag and score >= plugin_config.match_score and score > 0) or (force_flag and score == 100):
                         result.append((tuple[0], tuple[1], tuple[2], tuple[3], table, score))
+                        
+        if search_boss and (not target_table or target_table == 'cardBossSkill'):
+            for tuple in self.cardBossSkill:
+                score = max(fuzz.ratio(B2Q(name), tuple[1]), fuzz.ratio(name.lower(), tuple[2].lower()))
+                if (not force_flag and score >= plugin_config.match_score and score > 0) or (force_flag and score == 100):
+                    result.append((tuple[0], tuple[1], tuple[2], 'coop', 'cardBossSkill', score, tuple[3], tuple[4], tuple[5], tuple[6], tuple[7]))
         
-        result.sort(key=lambda tuple: (tuple[5], tables[::-1].index(tuple[4]), list(groups.values())[::-1].index(tuple[3])), reverse=True)
+        result.sort(key=lambda tuple: (tuple[5], (tables + ['cardBossSkill'])[::-1].index(tuple[4]), list(groups.values())[::-1].index(tuple[3])), reverse=True)
         return result
     
     async def forward_send(self, bot: Bot, event: Union[GroupMessageEvent, PrivateMessageEvent], messages: List[MessageSegment]) -> None:
@@ -144,7 +153,7 @@ class Card:
                 elif arg in tables:
                     target_table = arg
                     
-            result = self.match(name, target_group, target_table)
+            result = self.match(name, target_group, target_table, True)
             
             if result == []:
                 await matcher.send('没有这张卡啦！')
@@ -159,12 +168,13 @@ class Card:
                     break
                 messages.append(MessageSegment.text(f'{count}.\n内部ID：{tuple[0]}\n中文名：{tuple[1]}\n英文名：{tuple[2]}\n组别：{tuple[3]}\n所在表：{tuple[4]}\n匹配分数：{tuple[5]}'))
                 if tuple[4].startswith('unit'):
-                    img = f'http://interface.100oj.com/interface/render/cardunit.php?key={tuple[0]}'
+                    img = f'https://interface.100oj.com/interface/render/cardunit.php?key={tuple[0]}'
                     messages.append(MessageSegment.image(img))
-
+                elif tuple[4] in tables:
+                    img = f'https://interface.100oj.com/interface/render/{tuple[4].lower()}.php?key={tuple[0]}'
+                    messages.append(MessageSegment.image(img))
                 else:
-                    img = f'http://interface.100oj.com/interface/render/{tuple[4].lower()}.php?key={tuple[0]}'
-                    messages.append(MessageSegment.image(img))
+                    messages.append(MessageSegment.text(f'「{tuple[1]}」({"[H] " if tuple[10] else ""}{tuple[9].upper()} {tuple[8]}/{tuple[7]})\n{tuple[6]}'))
                     
             await self.forward_send(bot, event, messages)
                           
@@ -196,14 +206,14 @@ class Card:
                 elif arg in tables:
                     target_table = arg
                     
-            result = self.match(name, target_group, target_table)
+            result = self.match(name, target_group, target_table, False)
             
             messages: List[MessageSegment] = []
             count = 0
             for tuple in result:
                 count += 1
                 messages.append(MessageSegment.text(f'{count}.\n内部ID：{tuple[0]}\n中文名：{tuple[1]}\n英文名：{tuple[2]}\n组别：{tuple[3]}\n所在表：{tuple[4]}\n匹配分数：{tuple[5]}'))
-                img = f'http://interface.100oj.com/interface/util/icon.php?key={tuple[0]}&size=256&lossless=true'
+                img = f'https://interface.100oj.com/interface/util/icon.php?key={tuple[0]}&size=256&lossless=true'
                 messages.append(MessageSegment.image(img))
                 
             await self.forward_send(bot, event, messages)
