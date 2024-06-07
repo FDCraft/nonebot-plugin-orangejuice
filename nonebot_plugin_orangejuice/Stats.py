@@ -267,7 +267,7 @@ class Stats:
             case 'me':
                 uid = str(event.user_id)
                 match list_args[1]:
-                    case limit if limit.isdigit() and int(limit):
+                    case limit if limit.isdigit():
                         limit: str = str(min(int(list_args[1]), 10))
                         await self.send_stats(matcher, uid=uid, limit=limit)
                     case _:
@@ -275,7 +275,7 @@ class Stats:
             case at if at.startswith('[at'):
                 at = list_args[0]
                 match list_args[1]:
-                    case limit if limit.isdigit() and int(limit):
+                    case limit if limit.isdigit():
                         limit: str = str(min(int(list_args[1]), 10))
                         await self.send_stats(matcher, at=at, limit=limit)
                     case _:
@@ -283,7 +283,7 @@ class Stats:
             case steam64id if steam64id.isdigit() and steam64id.startswith('7656') and len(steam64id) == 17:
                 steam64id = list_args[0]
                 match list_args[1]:
-                    case limit if limit.isdigit() and int(limit):
+                    case limit if limit.isdigit():
                         limit: str = str(min(int(list_args[1]), 10))
                         await self.send_stats(matcher, steam64id=steam64id, limit=limit)
                     case _:
