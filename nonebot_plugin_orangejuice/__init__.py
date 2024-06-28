@@ -12,7 +12,7 @@ __plugin_meta__ = PluginMetadata(
     config=Config,
     extra={
         'author': 'Polaris_Light',
-        'version': '0.12.0',
+        'version': '1.0.0',
         'priority': 10
     }
 )
