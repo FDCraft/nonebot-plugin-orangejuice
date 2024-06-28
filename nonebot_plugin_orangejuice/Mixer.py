@@ -18,10 +18,8 @@ class Mixer:
     def __init__(self):
         self.cache = TTLCache(maxsize=2, ttl=43200)
 
-    def get_time(self) -> int:
-        return int(time.time()) - self.get_today_time()
-    
-    def get_today_time(self) -> int:
+    @staticmethod
+    def get_today_time() -> int:
         return int(time.mktime(datetime.date.today().timetuple()))
     
     async def get_data(self) -> Union[dict, None]:
@@ -57,7 +55,7 @@ class Mixer:
         else:
             prefix = f'下{count}个混合器：'
             
-        if self.get_time() >= 57600: # 5-18 17:00 -> 5-19 16:00 
+        if int(time.time()) - self.get_today_time() >= 57600: # 5-18 17:00 -> 5-19 16:00 
             query_time = self.get_today_time() + 86400 + 57600 + count * 86400
         else: # 5-18 15:00 -> 5.18 16:00
             query_time = self.get_today_time() + 57600 + count * 86400
