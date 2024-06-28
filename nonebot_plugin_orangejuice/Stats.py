@@ -1,6 +1,8 @@
 import json
 import os
 import re
+from datetime import datetime
+from pathlib import Path
 from typing import List, Dict, Union
 
 import aiohttp
@@ -14,7 +16,7 @@ from nonebot.params import CommandArg
 from .Config import plugin_config
 from .Ess import ess
 
-help_image_path = os.path.join(os.path.dirname(__file__), 'resources', 'stats', 'help.png')
+image_path = Path(os.path.join(os.path.dirname(__file__), 'resources', 'stats'))
 steam_id_file_path: str = os.path.join(plugin_config.oj_data_path, 'steam_id.db')
 db_keys: List[str] = ['steam64id', 'renderType', 'sp1', 'sp1_1', 'sp1_2', 'sp1_3', 'sp1_4', 'sp1_5', 'sp1_6', 'sp1_31', 'sp1_37']
 
@@ -29,16 +31,16 @@ class Stats:
             self.db = await aiosqlite.connect(steam_id_file_path)
             self.cursor = await self.db.cursor()
 
-            await self.cursor.execute("CREATE TABLE IF NOT EXISTS steamInfo(qq VARCHAR(11) PRIMARY KEY,steam64id CHARACTER(17),renderType INTERGER,sp1 TINYINT,\
-                                sp1_1 TINYINT,sp1_2 TINYINT,sp1_3 TINYINT,sp1_4 TINYINT,sp1_5 TINYINT,sp1_6 TINYINT,sp1_31 TINYINT,sp1_37 TINYINT)")
-            await self.cursor.execute("INSERT INTO steamInfo VALUES (?, ?, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1)", ('995905922', '76561198857827726')) # Developer Sign
-            await self.cursor.execute("INSERT INTO steamInfo VALUES (?, ?, 0, 31, 1, 0, 0, 1, 0, 0, 1, 1)", ('535369354', '76561198361135527')) # Developer Sign
+            await self.cursor.execute('CREATE TABLE IF NOT EXISTS steamInfo(qq VARCHAR(11) PRIMARY KEY,steam64id CHARACTER(17),renderType INTERGER,sp1 TINYINT,\
+                                sp1_1 TINYINT,sp1_2 TINYINT,sp1_3 TINYINT,sp1_4 TINYINT,sp1_5 TINYINT,sp1_6 TINYINT,sp1_31 TINYINT,sp1_37 TINYINT)')
+            await self.cursor.execute('INSERT INTO steamInfo VALUES (?, ?, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1)', ('995905922', '76561198857827726')) # Developer Sign
+            await self.cursor.execute('INSERT INTO steamInfo VALUES (?, ?, 0, 31, 1, 0, 0, 1, 0, 0, 1, 1)', ('535369354', '76561198361135527')) # Developer Sign
 
             if os.path.exists(os.path.join(plugin_config.oj_data_path, 'steam_id.json')): # Change old json into database
                 with open(os.path.join(plugin_config.oj_data_path, 'steam_id.json'), 'r', encoding='utf-8') as f:
                     data: Dict[str, str] = json.load(f)
                     for qq, steam64id in data.items():
-                        await self.cursor.execute("INSERT INTO steamInfo VALUES (?, ?, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)", (qq, steam64id))
+                        await self.cursor.execute('INSERT INTO steamInfo VALUES (?, ?, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)', (qq, steam64id))
 
             await self.db.commit()
             await self.db.close()
@@ -47,6 +49,30 @@ class Stats:
         self.cursor = await self.db.cursor()
 
         return self
+    
+    @staticmethod
+    def get_jrrp(string: str):
+        now = datetime.now()
+        num1 = round((abs((hash('Polaris_Light' + str(now.timetuple().tm_yday)+ str(now.year) + 'XYZ') / 3.0 + hash('QWERTY' + string + '0*8&6' + str(now.day) + '96485.3365') / 3.0) / 527.0) % 1000.0))
+        num2 = round(num1 / 995.0 * 99.0) if num1 < 996 else 100
+        return num2
+    
+    async def lucky_orb(self, matcher: Matcher, uid: str) -> None:
+        jrrp = self.get_jrrp(uid)
+        if jrrp == 100: # A way to test this function
+            await self.cursor.execute('SELECT sp1, sp1_4 FROM steamInfo WHERE qq = ?', (uid,))
+            data = await self.cursor.fetchall()
+            logger.info(f'Lucky Orb!: {uid}, {data}')
+            
+            if data[0][1] == 0:
+                await matcher.send(MessageSegment.image(image_path / 'sp1_4.png') + '『Lucky Orb！』')
+                await self.cursor.execute('UPDATE steamInfo SET sp1_4 = ? WHERE qq = ?', ('1', uid))
+                if data[0][0] == 0:
+                    await self.cursor.execute('UPDATE steamInfo SET sp1 = ? WHERE qq = ?', ('4', uid))
+                await self.db.commit()
+        else:
+            return None
+    
     
     async def help(self, matcher: Matcher) -> None:
         help_msg: str = '''橙汁个人统计图片生成
@@ -62,7 +88,7 @@ class Stats:
     更改出图类型。
     #stats modify <uid> <key> <value>
     直接操作数据库，需要有超级管理员权限。'''
-        await matcher.finish(help_msg + MessageSegment.image(help_image_path))
+        await matcher.finish(help_msg + MessageSegment.image(image_path / 'help.png') + MessageSegment.image(image_path / 'pin.png'))
 
     async def bind(self, uid: str, steam64id: str, matcher: Matcher) -> None:
         try:
@@ -168,10 +194,12 @@ class Stats:
         except Exception as e:
             await matcher.send('诶鸭出错啦~')
             raise e                   
- 
+
     async def send_stats(self, matcher: Matcher, uid: str = None, steam64id: str = None, at: str = None, limit: str = 5) -> None:
         try:
             if uid:
+                await self.lucky_orb(matcher, uid)
+                
                 reply = '唔~你还没有设置Steam个人资料为公开呢~\n更改为公开后可以先在https://interface.100oj.com/stat/player.php来查看是否已经可以查询到数据，确认可查到后再次使用该功能。'
                 await self.cursor.execute('SELECT steam64id,renderType,sp1 FROM steamInfo WHERE qq = ?', (uid,))
                 data = await self.cursor.fetchall()
@@ -187,7 +215,7 @@ class Stats:
                     data = ((steam64id, 0, 0),)
 
             if at:
-                uid = re.sub(r'\[at:qq=(.*?)\]', r'\1', at)
+                uid = re.sub(r'\[at:qq=(.*?)\]', r'\1', at)  
                 reply = '唔~Ta还没有设置Steam个人资料为公开呢~'
                 await self.cursor.execute('SELECT steam64id,renderType,sp1 FROM steamInfo WHERE qq = ?', (uid,))
                 data = await self.cursor.fetchall()
@@ -196,9 +224,11 @@ class Stats:
                     return None
 
             
+            
             img = f'https://interface.100oj.com/stat/render.php?steamid={data[0][0]}&render={data[0][1]}&sp1={data[0][2]}&limit={limit}'
             
-            async with aiohttp.ClientSession() as session:
+            timeout = aiohttp.ClientTimeout(total=60)
+            async with aiohttp.ClientSession(timeout=timeout) as session:
                 req = await session.get(img)
                 data = await req.read()
             
@@ -210,7 +240,6 @@ class Stats:
         except Exception as e:
             await matcher.send('诶鸭出错啦~')
             raise e
-
 
 
     async def stats(self, bot: Bot, matcher: Matcher, event: Union[GroupMessageEvent, PrivateMessageEvent], arg: Message = CommandArg()) -> None:
