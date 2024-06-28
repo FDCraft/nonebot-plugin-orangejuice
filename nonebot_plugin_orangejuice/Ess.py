@@ -185,7 +185,7 @@ class Ess:
 
     def check(self, event: Union[GroupMessageEvent, PrivateMessageEvent], module: str = None) -> bool:
         # Todo: Group Config
-        if event.user_id in self.config['blacklist']:
+        if str(event.user_id) in self.config['blacklist']:
             return False
         
         if isinstance(event, PrivateMessageEvent):
