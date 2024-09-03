@@ -200,7 +200,7 @@ class Stats:
             if uid:
                 await self.lucky_orb(matcher, uid)
                 
-                reply = '唔~你还没有设置Steam个人资料为公开呢~\n更改为公开后可以先在https://interface.100oj.com/stat/player.php来查看是否已经可以查询到数据，确认可查到后再次使用该功能。'
+                reply = '唔~你还没有设置Steam个人资料为公开呢~\n更改为公开后可以先在https://interface.100oj.com/stat/player.php来查看是否已经可以查询到数据，确认可查到后再次使用该功能。(该设置有一定的延迟。)'
                 await self.cursor.execute('SELECT steam64id,renderType,sp1 FROM steamInfo WHERE qq = ?', (uid,))
                 data = await self.cursor.fetchall()
                 if data == [] or data is None:
@@ -278,11 +278,11 @@ class Stats:
                 match list_args[1]:
                     case '':
                         await matcher.finish('请输入出图类型代码。')
-                    case type if int(type) in range(0, 8):
+                    case type if int(type) in range(0, 9):
                         type = list_args[1]
                         await self.type(uid, type, matcher)
                     case _:
-                        await matcher.finish('这不是一个有效的出图类型代码。它应该介于0与7之间。')
+                        await matcher.finish('这不是一个有效的出图类型代码。它应该介于0与8之间。')
             case 'pin' | '-p':
                 uid = str(event.user_id)
                 match list_args[1]:
@@ -297,7 +297,7 @@ class Stats:
                 uid = str(event.user_id)
                 match list_args[1]:
                     case limit if limit.isdigit():
-                        limit: str = str(min(int(list_args[1]), 10))
+                        limit: str = list_args[1]
                         await self.send_stats(matcher, uid=uid, limit=limit)
                     case _:
                         await self.send_stats(matcher, uid=uid)
@@ -305,7 +305,7 @@ class Stats:
                 at = list_args[0]
                 match list_args[1]:
                     case limit if limit.isdigit():
-                        limit: str = str(min(int(list_args[1]), 10))
+                        limit: str = list_args[1]
                         await self.send_stats(matcher, at=at, limit=limit)
                     case _:
                         await self.send_stats(matcher, at=at)
@@ -313,7 +313,7 @@ class Stats:
                 steam64id = list_args[0]
                 match list_args[1]:
                     case limit if limit.isdigit():
-                        limit: str = str(min(int(list_args[1]), 10))
+                        limit: str = list_args[1]
                         await self.send_stats(matcher, steam64id=steam64id, limit=limit)
                     case _:
                         await self.send_stats(matcher, steam64id=steam64id)
