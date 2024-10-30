@@ -19,10 +19,6 @@ _✨ [Sorabot](https://100oj.com/zh/%E5%B7%A5%E5%85%B7/SoraBot%E4%BD%BF%E7%94%A8
 
 </div>
 
-##  ⚠ 警告
-
-本项目尚处于快速开发阶段，配置文件可能会经常变动，在更新版本前请务必做好数据的备份！
-
 ## 📖 介绍
 
 [Sorabot](https://100oj.com/zh/%E5%B7%A5%E5%85%B7/SoraBot%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97)的 Nonebot 实现，提供 100% Orange Juice 的卡面查询、组卡器查询、数据统计、表情短码与相关的娱乐功能。
