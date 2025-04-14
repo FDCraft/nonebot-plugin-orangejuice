@@ -102,7 +102,7 @@ class Stats:
         
     async def unbind(self, uid: str, matcher: Matcher) -> None:
         try:
-            await self.cursor.execute('DELETE FROM steamInfo WHERE qq = ?', (uid,))
+            await self.cursor.execute('UPDATE steamInfo SET steam64id = 0 WHERE qq = ?', (uid,))
             await self.db.commit()
             await matcher.send('解绑成功~')
             return None
@@ -203,7 +203,7 @@ class Stats:
                 reply = '唔~你还没有设置Steam个人资料为公开呢~\n更改为公开后可以先在https://interface.100oj.com/stat/player.php来查看是否已经可以查询到数据，确认可查到后再次使用该功能。(该设置有一定的延迟。)'
                 await self.cursor.execute('SELECT steam64id,renderType,sp1 FROM steamInfo WHERE qq = ?', (uid,))
                 data = await self.cursor.fetchall()
-                if data == [] or data is None:
+                if data == [] or data is None or data[0][0] == 0:
                     await matcher.send('你还没有绑定过Steam哦~请使用 #stat bind <steam64id> 来进行绑定。')
                     return None
                 
@@ -211,7 +211,7 @@ class Stats:
                 reply = '唔~Ta还没有设置Steam个人资料为公开呢~'
                 await self.cursor.execute('SELECT steam64id,renderType,sp1 FROM steamInfo WHERE steam64id = ?', (steam64id,))
                 data = await self.cursor.fetchall()
-                if data == [] or data is None:
+                if data == [] or data is None or data[0][0] == 0:
                     data = ((steam64id, 0, 0),)
 
             if at:
@@ -219,7 +219,7 @@ class Stats:
                 reply = '唔~Ta还没有设置Steam个人资料为公开呢~'
                 await self.cursor.execute('SELECT steam64id,renderType,sp1 FROM steamInfo WHERE qq = ?', (uid,))
                 data = await self.cursor.fetchall()
-                if data == [] or data is None:
+                if data == [] or data is None or data[0][0] == 0:
                     await matcher.send('Ta还没有绑定过Steam哦~')
                     return None
 
