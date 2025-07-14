@@ -1,0 +1,4665 @@
+{
+    "card": [
+        [
+            "CARD_HYPER_MARC",
+            "×16大火箭",
+            "x16 Big Rocket"
+        ],
+        [
+            "CARD_HYPER_COOP_MARC",
+            "×16大火箭",
+            "x16 Big Rocket"
+        ],
+        [
+            "CARD_HYPER_HELLIE",
+            "艾莉的超能奇迹",
+            "Ellie's Hyper Miracle"
+        ],
+        [
+            "CARD_HYPER_ELLIE",
+            "艾莉的奇迹",
+            "Ellie's Miracle"
+        ],
+        [
+            "CARD_TRAP_ENCORE",
+            "安可",
+            "Encore"
+        ],
+        [
+            "CARD_BOSS_COOP_PLUCK",
+            "拔毛",
+            "Pluck"
+        ],
+        [
+            "CARD_BOSS_COOP_RAKE",
+            "耙扫",
+            "Rake"
+        ],
+        [
+            "CARD_HYPER_SUMMER2018_DEFENDER",
+            "白色海滩的再生者",
+            "Lifeguard on the White Beach"
+        ],
+        [
+            "CARD_HYPER_COOP_CLASS_GUARDIAN",
+            "白色海滩的再生者",
+            "Lifeguard on the White Beach"
+        ],
+        [
+            "CARD_HYPER_MEI",
+            "白色圣诞大粉碎",
+            "White Christsmasher"
+        ],
+        [
+            "CARD_HYPER_COOP_MEI",
+            "白色圣诞大粉碎",
+            "White Christsmasher"
+        ],
+        [
+            "CARD_HYPER_CHRIS_CHEF",
+            "拜托了厨师长！",
+            "Chef, I Could Use Some Help!"
+        ],
+        [
+            "CARD_HYPER_CHRIS_MANAGER",
+            "拜托了店长！",
+            "Manager, I Could Use Some Help!"
+        ],
+        [
+            "CARD_BOSS_COOP_SWIPE",
+            "绑架",
+            "Swipe"
+        ],
+        [
+            "CARD_BOSS_COOP_PROTECT",
+            "保护",
+            "Protect"
+        ],
+        [
+            "CARD_SKILL_COOP_PROTECT1",
+            "保护1",
+            "Protect 1"
+        ],
+        [
+            "CARD_SKILL_COOP_PROTECT2",
+            "保护2",
+            "Protect 2"
+        ],
+        [
+            "CARD_BANNER_LOCATIONFEE",
+            "保护费",
+            "Protection Fee"
+        ],
+        [
+            "CARD_HYPER_KAE",
+            "爆燃！",
+            "Blazing!"
+        ],
+        [
+            "CARD_HYPER_COOP_KAE",
+            "爆燃！",
+            "Blazing!"
+        ],
+        [
+            "CARD_BOOST_TREASURETHIEF",
+            "宝物小偷",
+            "Treasure Thief"
+        ],
+        [
+            "CARD_EVENT_SEALEDGUARDIAN",
+            "被封印的守护者",
+            "Sealed Guardian"
+        ],
+        [
+            "CARD_BOSS_COOP_DELTA_FIELD",
+            "被扰乱的三角力场",
+            "Scrambled Delta Field"
+        ],
+        [
+            "CARD_HYPER_SHERRY",
+            "变化无常的风车",
+            "Whimsical Windmill"
+        ],
+        [
+            "CARD_HYPER_COOP_SHERRY",
+            "变化无常的风车",
+            "Whimsical Windmill"
+        ],
+        [
+            "CARD_BATTLE_PORTABLEPUDDING",
+            "便携布丁",
+            "Portable Pudding"
+        ],
+        [
+            "CARD_BOSS_COOP_PO_TECT",
+            "啵护",
+            "Po-tect"
+        ],
+        [
+            "CARD_MINIGAME_FROSTWALKER",
+            "啵噗寒冰步",
+            "Poppo Frostwalker"
+        ],
+        [
+            "CARD_TRAP_POPPOTRANSFORMATION",
+            "啵噗化",
+            "Poppoformation"
+        ],
+        [
+            "CARD_BOSS_COOP_POPPOFORMATION",
+            "啵噗化",
+            "Poppoformation"
+        ],
+        [
+            "CARD_BOSS_COOP_POPPOCALYPSE",
+            "啵噗末日",
+            "Poppocalypse"
+        ],
+        [
+            "CARD_MINIGAME_REVERSEMOVEMENT",
+            "啵噗逆行",
+            "Poppo Reverse"
+        ],
+        [
+            "CARD_BOSS_COOP_POPPO_TAX",
+            "啵噗税",
+            "Poppo Tax"
+        ],
+        [
+            "CARD_MINIGAME_TURNSKIP",
+            "啵噗停留",
+            "Poppo Stop"
+        ],
+        [
+            "CARD_MINIGAME_DOUBLEDICE",
+            "啵噗骰子",
+            "Poppo Dice"
+        ],
+        [
+            "CARD_TRAP_BANKOFPOPPO",
+            "啵噗银行",
+            "Bank of Poppo"
+        ],
+        [
+            "CARD_BOSS_COOP_POPPO_GALAXY",
+            "啵噗银河",
+            "Poppo Galaxy"
+        ],
+        [
+            "CARD_BOSS_COOP_POPPO_MARCH",
+            "啵噗游行",
+            "Poppo March"
+        ],
+        [
+            "CARD_BOOST_PUDDING",
+            "布丁",
+            "Pudding"
+        ],
+        [
+            "CARD_BOSS_COOP_PUDDING_SEEKER",
+            "布丁猎人",
+            "Pudding Seeker"
+        ],
+        [
+            "CARD_HYPER_CASTLE",
+            "不动之物体",
+            "Immovable Object"
+        ],
+        [
+            "CARD_HYPER_COOP_CASTLE",
+            "不动之物体",
+            "Immovable Object"
+        ],
+        [
+            "CARD_BOSS_COOP_IMMOVABLE_OBJECT",
+            "不动之物体",
+            "Immovable Object"
+        ],
+        [
+            "CARD_BOSS_COOP_CATCHER",
+            "捕获手",
+            "Catcher"
+        ],
+        [
+            "CARD_BATTLE_EXTENSION",
+            "部件扩张",
+            "Extension"
+        ],
+        [
+            "CARD_HYPER_STARBREAKER2",
+            "不可视的炸弹",
+            "Invisible Bomb"
+        ],
+        [
+            "CARD_HYPER_COOP_STARBREAKER2",
+            "不可视的炸弹",
+            "Invisible Bomb"
+        ],
+        [
+            "CARD_GIFT_UNLUCKYCHARM",
+            "不幸护符",
+            "Unlucky Charm"
+        ],
+        [
+            "CARD_HYPER_SORAM",
+            "才气觉醒",
+            "Awakening of Talent"
+        ],
+        [
+            "CARD_BOSS_COOP_SAVAGE_TALONS",
+            "残暴利爪",
+            "Savage Talons"
+        ],
+        [
+            "CARD_BOOST_EXTEND",
+            "残机奖励",
+            "Extend"
+        ],
+        [
+            "CARD_HYPER_POYO",
+            "超级青春Time",
+            "Super Youth Time"
+        ],
+        [
+            "CARD_BOSS_COOP_MEGA_RUSH",
+            "超级速袭",
+            "Mega Rush"
+        ],
+        [
+            "CARD_EVENT_ALLOUTMODE",
+            "超绝全力模式",
+            "Super All-Out Mode"
+        ],
+        [
+            "CARD_HYPER_QP",
+            "超能模式！",
+            "Hyper Mode"
+        ],
+        [
+            "CARD_BOOST_COMPLETIONREWARD",
+            "成功报酬",
+            "Completion Reward"
+        ],
+        [
+            "CARD_BOSS_COOP_PUDDING_BREAK",
+            "吃布丁",
+            "Pudding Break"
+        ],
+        [
+            "CARD_HYPER_MERCHANT",
+            "炽热的商人之魂",
+            "Zealous Salesman"
+        ],
+        [
+            "CARD_BOOST_DASH",
+            "冲刺！",
+            "Dash!"
+        ],
+        [
+            "CARD_HYPER_SUMMER2018_AVENGER",
+            "充满执念的复仇者",
+            "Unforgiving Avenger"
+        ],
+        [
+            "CARD_HYPER_COOP_CLASS_AVENGER",
+            "充满执念的复仇者",
+            "Unforgiving Avenger"
+        ],
+        [
+            "CARD_EVENT_PETSNAKES",
+            "宠物零食",
+            "Pet Snacks"
+        ],
+        [
+            "CARD_BOOST_CHEF_SPECIAL",
+            "厨师长特别推荐",
+            "Chef's Special"
+        ],
+        [
+            "CARD_BOOST_WARPCONTROL",
+            "传送操控",
+            "Warp Control"
+        ],
+        [
+            "CARD_BOSS_COOP_WARP_PHENOMENON",
+            "传送现象",
+            "Warp Phenomenon"
+        ],
+        [
+            "CARD_TRAP_PIGGYBANK",
+            "存钱罐",
+            "Piggy Bank"
+        ],
+        [
+            "CARD_HYPER_SAKI",
+            "大爆炸铃",
+            "Big Bang Bell"
+        ],
+        [
+            "CARD_HYPER_COOP_SAKI",
+            "大爆炸铃",
+            "Big Bang Bell"
+        ],
+        [
+            "CARD_BOSS_COOP_DOZE",
+            "打盹",
+            "Doze"
+        ],
+        [
+            "CARD_HYPER_MARCPILOT_UPGRADE",
+            "大火箭炮",
+            "Big Rocket Cannon"
+        ],
+        [
+            "CARD_BATTLE_BIGMAGNUM",
+            "大麦格农炮",
+            "Big Magnum"
+        ],
+        [
+            "CARD_EVENT_SEAGULLS",
+            "大群的海鸥",
+            "Cloud of Seagulls"
+        ],
+        [
+            "CARD_BOSS_COOP_CLOUD_OF_SEAGULLS",
+            "大群的海鸥",
+            "Cloud of Seagulls"
+        ],
+        [
+            "CARD_XMAS2018_GROWNUPSNOWBALLFIGHT",
+            "大人的打雪仗",
+            "Grown-up Snowball Fight"
+        ],
+        [
+            "CARD_BOSS_COOP_WATERMELON_SPLITTING",
+            "打西瓜",
+            "Watermelon Splitting"
+        ],
+        [
+            "CARD_BOOST_PRINCESS",
+            "大小姐的特权",
+            "Princess's Privilege"
+        ],
+        [
+            "CARD_EVENT_SCRAMBLEDEVE",
+            "大争夺·圣诞夜",
+            "Scrambled Eve"
+        ],
+        [
+            "CARD_EVENT_OUTOFAMMO",
+            "弹药用尽",
+            "Out of Ammo"
+        ],
+        [
+            "CARD_HYPER_KRILALARISPAJAMAS2",
+            "当吾封印破除之时",
+            "When My Slumber Breaks"
+        ],
+        [
+            "CARD_EVENT_HEREANDTHERE",
+            "到处都是",
+            "Here and There"
+        ],
+        [
+            "CARD_HYPER_BOURBON",
+            "抵抗之心",
+            "Heart of Resistance"
+        ],
+        [
+            "CARD_BOSS_COOP_QUAKE",
+            "地震",
+            "Quake"
+        ],
+        [
+            "CARD_BOSS_COOP_EMP",
+            "电磁脉冲",
+            "EMP"
+        ],
+        [
+            "CARD_HYPER_ARTHUR",
+            "店铺扩张战略",
+            "Branch Expansion Strategy"
+        ],
+        [
+            "CARD_HYPER_COOP_ARTHUR",
+            "店铺扩张战略",
+            "Branch Expansion Strategy"
+        ],
+        [
+            "CARD_HYPER_YUKI",
+            "赌博！",
+            "Gamble!"
+        ],
+        [
+            "CARD_HYPER_COOP_YUKI",
+            "赌博！",
+            "Gamble!"
+        ],
+        [
+            "CARD_BATTLE_SINKORSWIM",
+            "赌命一搏",
+            "Sink or Swim"
+        ],
+        [
+            "CARD_HYPER_YUUKI_DEVIL",
+            "恶魔之手",
+            "Devil Hand"
+        ],
+        [
+            "CARD_BOSS_COOP_FRANTIC",
+            "发狂",
+            "Frantic"
+        ],
+        [
+            "CARD_BOSS_COOP_LAUNCH",
+            "发射",
+            "Launch"
+        ],
+        [
+            "CARD_EVENT_REBELLION",
+            "反抗",
+            "Rebellion"
+        ],
+        [
+            "CARD_EVENT_GREATEST_TROUBLEMAKER",
+            "烦人透顶的家伙",
+            "The Greatest Troublemaker Ever"
+        ],
+        [
+            "CARD_HYPER_BALL",
+            "反射外壳",
+            "Reflective Shell"
+        ],
+        [
+            "CARD_SKILL_COOP_DEFENSEBOOST1",
+            "防御提升1",
+            "Defense Boost 1"
+        ],
+        [
+            "CARD_SKILL_COOP_DEFENSEBOOST2",
+            "防御提升2",
+            "Defense Boost 2"
+        ],
+        [
+            "CARD_BOSS_COOP_DEFENSE_DOWN",
+            "防御下降",
+            "Defense Down"
+        ],
+        [
+            "CARD_HYPER_TEQUILA2",
+            "飞天海贼",
+            "Flying Pirate"
+        ],
+        [
+            "CARD_HYPER_FERNET",
+            "飞艇轰炸",
+            "Air Strike"
+        ],
+        [
+            "CARD_HYPER_COOP_FERNET",
+            "飞艇支援",
+            "Air Support"
+        ],
+        [
+            "CARD_BOSS_COOP_FLIGHT",
+            "飞行",
+            "Flight"
+        ],
+        [
+            "CARD_TRAP_GOAWAY",
+            "飞一边去",
+            "Go Away"
+        ],
+        [
+            "CARD_SKILL_COOP_FURY_EFFECT",
+            "愤怒",
+            "Fury"
+        ],
+        [
+            "CARD_SKILL_COOP_FURY1",
+            "愤怒1",
+            "Fury 1"
+        ],
+        [
+            "CARD_SKILL_COOP_FURY2",
+            "愤怒2",
+            "Fury 2"
+        ],
+        [
+            "CARD_HYPER_MAYNIE",
+            "愤怒狂暴",
+            "Raging Madness"
+        ],
+        [
+            "CARD_HYPER_COOK",
+            "风信鸡的指引",
+            "Guidance of the Weathercock"
+        ],
+        [
+            "CARD_BOSS_COOP_DIVE",
+            "俯冲",
+            "Dive"
+        ],
+        [
+            "CARD_SKILL_COOP_AVENGER1",
+            "复仇1",
+            "Avenger 1"
+        ],
+        [
+            "CARD_SKILL_COOP_AVENGER2",
+            "复仇2",
+            "Avenger 2"
+        ],
+        [
+            "CARD_HYPER_COOP_TOMOMOSWEETEATER",
+            "复仇魔法",
+            "Magical Revenge"
+        ],
+        [
+            "CARD_HYPER_FERNET_AFFLUENCE",
+            "富豪（X）",
+            "Affluence (X)"
+        ],
+        [
+            "CARD_SKILL_COOP_REVIVE1",
+            "复活1",
+            "Revive 1"
+        ],
+        [
+            "CARD_SKILL_COOP_REVIVE2",
+            "复活2",
+            "Revive 2"
+        ],
+        [
+            "CARD_SKILL_COOP_REVIVE3",
+            "复活3",
+            "Revive 3"
+        ],
+        [
+            "CARD_HYPER_NANAKO",
+            "浮游炮展开",
+            "Deploy Bits"
+        ],
+        [
+            "CARD_SKILL_COOP_RESTORINGLIGHT1",
+            "复原之光1",
+            "Restoring Light 1"
+        ],
+        [
+            "CARD_SKILL_COOP_RESTORINGLIGHT2",
+            "复原之光2",
+            "Restoring Light 2"
+        ],
+        [
+            "CARD_HYPER_CHUU",
+            "该拿出点真本事了",
+            "I'll Get a Little Into It"
+        ],
+        [
+            "CARD_HYPER_ARU",
+            "给你的礼物",
+            "Present for You"
+        ],
+        [
+            "CARD_HYPER_COOP_ARU",
+            "给你的礼物",
+            "Present for You"
+        ],
+        [
+            "CARD_SKILL_COOP_ATTACKBOOST1",
+            "攻击提升1",
+            "Attack Boost 1"
+        ],
+        [
+            "CARD_SKILL_COOP_ATTACKBOOST2",
+            "攻击提升2",
+            "Attack Boost 2"
+        ],
+        [
+            "CARD_BOSS_COOP_ATTACK_DOWN",
+            "攻击下降",
+            "Attack Down"
+        ],
+        [
+            "CARD_BOOST_LONELYCHARIOT",
+            "孤独的暴走车",
+            "Lonely Chariot"
+        ],
+        [
+            "CARD_HYPER_KANATA",
+            "故弄玄虚",
+            "Intellectual-Sounding Bluff"
+        ],
+        [
+            "CARD_BOSS_COOP_MALFUNCTION",
+            "故障",
+            "Malfunction"
+        ],
+        [
+            "CARD_BOSS_COOP_PLAY_TAG",
+            "鬼抓人",
+            "Play Tag"
+        ],
+        [
+            "CARD_BOSS_COOP_SEAGULL_MASTER",
+            "海鸥大师",
+            "Seagull Master"
+        ],
+        [
+            "CARD_BOSS_COOP_SEAGULL_FRIEND",
+            "海鸥朋友",
+            "Seagull Friend"
+        ],
+        [
+            "CARD_BOSS_COOP_DANCE_OF_SEAGULLS",
+            "海鸥之舞",
+            "Dance of the Seagulls"
+        ],
+        [
+            "CARD_HYPER_TEQUILA",
+            "海贼在天上飞？",
+            "Do Pirates Fly in the Sky?"
+        ],
+        [
+            "CARD_HYPER_COOP_TEQUILA",
+            "海贼在天上飞？？",
+            "Do Pirates Fly in the Sky?"
+        ],
+        [
+            "CARD_BOSS_COOP_EXHAUSTION",
+            "耗尽",
+            "Exhaustion"
+        ],
+        [
+            "CARD_TRAP_IWANNASEEYOU",
+            "好想见到你",
+            "I Wanna See You"
+        ],
+        [
+            "CARD_BOSS_COOP_PLAY_WITH_BIRDS",
+            "和鸟玩",
+            "Play With Birds"
+        ],
+        [
+            "CARD_BOSS_COOP_HOME_SWEEPER",
+            "HOME清扫者",
+            "Home Sweeper"
+        ],
+        [
+            "CARD_BOSS_COOP_RUMBLE",
+            "轰鸣",
+            "Rumble"
+        ],
+        [
+            "CARD_BATTLE_RAINBOW",
+            "虹色之环",
+            "Rainbow-Colored Circle"
+        ],
+        [
+            "CARD_BOSS_COOP_AIR_STRIKE",
+            "轰炸",
+            "Air Strike"
+        ],
+        [
+            "CARD_BATTLE_SHIELD",
+            "护盾",
+            "Shield"
+        ],
+        [
+            "CARD_BATTLE_SHIELDCOUNTER",
+            "护盾反转",
+            "Shield Counter"
+        ],
+        [
+            "CARD_TRAP_EXCHANGE",
+            "互相交换",
+            "Exchange"
+        ],
+        [
+            "CARD_HYPER_MALT",
+            "黄昏色的梦",
+            "Twilight-Colored Dream"
+        ],
+        [
+            "CARD_HYPER_SORA",
+            "荒唐的性能",
+            "Extraordinary Specs"
+        ],
+        [
+            "CARD_SKILL_COOP_EVASIONBOOST1",
+            "回避提升1",
+            "Evasion Boost 1"
+        ],
+        [
+            "CARD_BOSS_COOP_EVASION_DOWN",
+            "回避下降",
+            "Evasion Down"
+        ],
+        [
+            "CARD_BOSS_COOP_REGENERATION",
+            "恢复",
+            "Regeneration"
+        ],
+        [
+            "CARD_SKILL_COOP_RECOVERY1",
+            "恢复1",
+            "Recovery 1"
+        ],
+        [
+            "CARD_BOSS_COOP_RECOVERY_MODE",
+            "恢复模式",
+            "Recovery Mode"
+        ],
+        [
+            "CARD_BOSS_COOP_RECOVERY_DOWN",
+            "恢复下降",
+            "Recovery Down"
+        ],
+        [
+            "CARD_SKILL_COOP_RECOVERYDOWN1",
+            "恢复下降1",
+            "Recovery Down 1"
+        ],
+        [
+            "CARD_EVENT_MIXPHENOMENON",
+            "混成化现象",
+            "Mix Phenomenon"
+        ],
+        [
+            "CARD_HYPER_MARCPILOT_NORMAL",
+            "火箭炮",
+            "Rocket Cannon"
+        ],
+        [
+            "CARD_BATTLE_FREIGHT",
+            "货物",
+            "Freight"
+        ],
+        [
+            "CARD_GIFT_WINDYENCHANTMENT",
+            "疾风附魔",
+            "Windy Enchantment"
+        ],
+        [
+            "CARD_BOSS_COOP_CHICKEN_ATTACK",
+            "鸡攻击之术",
+            "Chicken Attack"
+        ],
+        [
+            "CARD_BOSS_COOP_GROUPUP",
+            "集合",
+            "Group Up"
+        ],
+        [
+            "CARD_BOSS_COOP_CALL_OF_CHICKEN",
+            "鸡呼卡应",
+            "Call of the Chicken"
+        ],
+        [
+            "CARD_HYPER_SUMIKA",
+            "记录重现",
+            "Reproduction of Records"
+        ],
+        [
+            "CARD_BOSS_COOP_EXTENDED_PHOTON_RIFLE",
+            "机器光束",
+            "Robo Beam"
+        ],
+        [
+            "CARD_BOSS_COOP_ROBO_TAX",
+            "机器税",
+            "Robo Tax"
+        ],
+        [
+            "CARD_BATTLE_ACCELHYPER",
+            "极速超能",
+            "Accel Hyper"
+        ],
+        [
+            "CARD_HYPER_ALICIANRONE",
+            "急速的亚莉希安罗妮",
+            "Full Speed Alicianrone"
+        ],
+        [
+            "CARD_HYPER_SUGURI",
+            "极速装置",
+            "Accelerator"
+        ],
+        [
+            "CARD_BOSS_COOP_ROOST",
+            "鸡窝",
+            "Roost"
+        ],
+        [
+            "CARD_BOSS_COOP_ROOST_HYPER",
+            "鸡窝",
+            "Roost"
+        ],
+        [
+            "CARD_TRAP_SEALEDMEMORIES",
+            "记忆封印",
+            "Sealed Memories"
+        ],
+        [
+            "CARD_BOOST_OVERTIME",
+            "加班",
+            "Overtime"
+        ],
+        [
+            "CARD_EVENT_HOMEIMPROVEMENT",
+            "家居翻修",
+            "Home Improvement"
+        ],
+        [
+            "CARD_EVENT_ACCELERATINGSKY",
+            "加速空域",
+            "Accelerating Sky"
+        ],
+        [
+            "CARD_HYPER_MIMYUUJAILBIRD",
+            "假想越狱",
+            "Make-Believe Prison Break"
+        ],
+        [
+            "CARD_BOSS_COOP_VALUE_JUDGMENT",
+            "价值判断",
+            "Value Judgment"
+        ],
+        [
+            "CARD_BOOST_STIFFCRYSTAL",
+            "坚固的结晶",
+            "Stiff Crystal"
+        ],
+        [
+            "CARD_BOSS_COOP_SCREECH",
+            "尖鸣",
+            "Screech"
+        ],
+        [
+            "CARD_HYPER_MIUSAKI",
+            "坚实魔女",
+            "Solid Witch"
+        ],
+        [
+            "CARD_BOSS_COOP_SOLID_WITCH",
+            "坚实之魔女",
+            "Solid Witch"
+        ],
+        [
+            "CARD_HYPER_KRILALARISPAJAMAS",
+            "将吾封印撼动之物",
+            "Threats to My Slumber"
+        ],
+        [
+            "CARD_HYPER_CHICKEN",
+            "金蛋",
+            "Golden Egg"
+        ],
+        [
+            "CARD_HYPER_COOP_CHICKEN",
+            "金蛋",
+            "Golden Egg"
+        ],
+        [
+            "CARD_HYPER_ISLAY",
+            "劲敌",
+            "Rival"
+        ],
+        [
+            "CARD_BOSS_COOP_SECOND_WING",
+            "卷羽重来",
+            "Second Wing"
+        ],
+        [
+            "CARD_SKILL_COOP_FROMBEYOND_EFFECT",
+            "绝境重生",
+            "From Beyond"
+        ],
+        [
+            "CARD_SKILL_COOP_FROMBEYOND1",
+            "绝境重生1",
+            "From Beyond 1"
+        ],
+        [
+            "CARD_SKILL_COOP_FROMBEYOND2",
+            "绝境重生2",
+            "From Beyond 2"
+        ],
+        [
+            "CARD_HYPER_KIRIKO",
+            "决杀手术",
+            "Final Surgery"
+        ],
+        [
+            "CARD_HYPER_COOP_KIRIKO",
+            "决杀之手术",
+            "Final Surgery"
+        ],
+        [
+            "CARD_BOSS_COOP_WAVE_OF_DESPAIR",
+            "绝望狂潮",
+            "Wave of Despair"
+        ],
+        [
+            "CARD_BATTLE_CONTESTOFCUTENESS",
+            "可爱大对决",
+            "Contest of Cuteness"
+        ],
+        [
+            "CARD_HYPER_POMERANIUS",
+            "可爱到犯规的小狗狗",
+            "Goodest Boy"
+        ],
+        [
+            "CARD_EVENT_SOLICITATION",
+            "恐怖的推销",
+            "Scary Solicitation"
+        ],
+        [
+            "CARD_HYPER_MIRA2",
+            "空间的跳跃",
+            "Leap Through Space"
+        ],
+        [
+            "CARD_HYPER_MIRA",
+            "空间的跳跃 (标记)",
+            "Leap Through Space (Marking)"
+        ],
+        [
+            "CARD_BOSS_COOP_AURA_OF_TERROR",
+            "恐惧蔓延",
+            "Aura of Terror"
+        ],
+        [
+            "CARD_BOSS_COOP_AIR_RAID",
+            "空袭",
+            "Air Raid"
+        ],
+        [
+            "CARD_BOSS_COOP_SKY_RESTAURANT_POPPO",
+            "空中餐厅「啵噗」",
+            "Sky Restaurant 'Poppo'"
+        ],
+        [
+            "CARD_BOSS_COOP_SKY_RESTAURANT_POPPO_TRAP",
+            "空中餐厅「啵噗」",
+            "Sky Restaurant 'Poppo'"
+        ],
+        [
+            "CARD_TRAP_PURES",
+            "空中餐厅「纯洁」",
+            "Sky Restaurant 'Pures'"
+        ],
+        [
+            "CARD_BOSS_COOP_QUICK_REPAIR",
+            "快速修复",
+            "Quick Repair"
+        ],
+        [
+            "CARD_HYPER_IRU",
+            "扩散光子步枪",
+            "Extended Photon Rifle"
+        ],
+        [
+            "CARD_HYPER_COOP_IRU",
+            "扩散光子来复枪",
+            "Extended Photon Rifle"
+        ],
+        [
+            "CARD_BANNER_ENERGYDRINK",
+            "来罐饮料提提神",
+            "Feel the Rush with an Energy Drink"
+        ],
+        [
+            "CARD_BOSS_COOP_BIG_POPPO",
+            "来自深渊",
+            "From the Abyss"
+        ],
+        [
+            "CARD_BOSS_COOP_HIGHWAY_ROBBERY",
+            "拦路抢劫",
+            "Highway Robbery"
+        ],
+        [
+            "CARD_BOOST_PATHBLOCKERS",
+            "拦路者",
+            "Path Blockers"
+        ],
+        [
+            "CARD_HYPER_SUMMER2018_SUPPORT",
+            "烂漫鲜花的守护神",
+            "Guardian of Blooming Flowers"
+        ],
+        [
+            "CARD_HYPER_COOP_CLASS_SUPPORT",
+            "烂漫鲜花的守护神",
+            "Guardian of Blooming Flowers"
+        ],
+        [
+            "CARD_EVENT_UNPAIDWORK",
+            "劳而无薪",
+            "Unpaid Work"
+        ],
+        [
+            "CARD_GIFT_PRICEOFPOWER",
+            "力量的代价",
+            "Price of Power"
+        ],
+        [
+            "CARD_BOSS_COOP_PRESENT",
+            "礼物",
+            "Present"
+        ],
+        [
+            "CARD_EVENT_GIFTEXCHANGE",
+            "礼物交换",
+            "Gift Exchange"
+        ],
+        [
+            "CARD_TRAP_PRESENTTHIEF",
+            "礼物小偷",
+            "Present Thief"
+        ],
+        [
+            "CARD_BATTLE_RETREAT",
+            "临阵脱逃",
+            "Tactical Retreat"
+        ],
+        [
+            "CARD_BOSS_COOP_SNACKS",
+            "零食",
+            "Snacks"
+        ],
+        [
+            "CARD_HYPER_NATH",
+            "另一个最终兵器",
+            "Another Ultimate Weapon"
+        ],
+        [
+            "CARD_HYPER_COOP_NATH",
+            "另一个最终兵器",
+            "Another Ultimate Weapon"
+        ],
+        [
+            "CARD_HYPER_LULU",
+            "露露的幸运蛋",
+            "Lulu's Lucky Egg"
+        ],
+        [
+            "CARD_HYPER_DARKL",
+            "露露是厄运之龙",
+            "Lulu is an Unlucky Dragon"
+        ],
+        [
+            "CARD_BOSS_COOP_SNATCHER",
+            "掠夺者",
+            "Snatcher"
+        ],
+        [
+            "CARD_GIFT_POPPOTHESNATCHER",
+            "掠夺者啵噗",
+            "Poppo the Snatcher"
+        ],
+        [
+            "CARD_BANNER_FLUFFYANDFUZZY",
+            "毛茸茸软绵绵",
+            "Fluffy and Fuzzy"
+        ],
+        [
+            "CARD_BOOST_NICEJINGLE",
+            "美妙的叮铃铃",
+            "Nice Jingle"
+        ],
+        [
+            "CARD_BOOST_NICEPRESENT",
+            "美妙的礼物",
+            "Nice Present"
+        ],
+        [
+            "CARD_WINTER2022_FALSECAKE",
+            "魅樱的假蛋糕",
+            "Mio's False Cake"
+        ],
+        [
+            "CARD_BOOST_MIOSCHRISTMASCAKE",
+            "魅樱的圣诞蛋糕",
+            "Mio's Christmas Cake"
+        ],
+        [
+            "CARD_HYPER_SHIFU",
+            "梦寐以求的世界",
+            "Ideal World"
+        ],
+        [
+            "CARD_GIFT_LOSTCHILD",
+            "迷路的孩子",
+            "Lost Child"
+        ],
+        [
+            "CARD_TRAP_MIMYUU",
+            "米缪亲重锤",
+            "Mimyuu's Hammer"
+        ],
+        [
+            "CARD_HYPER_TOMOMOSWEETEATER",
+            "魔法复仇",
+            "Magical Revenge"
+        ],
+        [
+            "CARD_HYPER_MIO",
+            "魔法狱火",
+            "Magical Inferno"
+        ],
+        [
+            "CARD_BOOST_MIMIC",
+            "模仿",
+            "Mimic"
+        ],
+        [
+            "CARD_EVENT_EXTREMEALTERATION",
+            "魔改",
+            "Extreme Alteration"
+        ],
+        [
+            "CARD_HYPER_WATTY",
+            "魔力解放",
+            "Torrent of Magic"
+        ],
+        [
+            "CARD_BOOST_BACKDOORTRADE",
+            "幕后交易",
+            "Backdoor Trade"
+        ],
+        [
+            "CARD_BOSS_COOP_HEN_PECKED",
+            "母鸡啄人",
+            "Hen Pecked"
+        ],
+        [
+            "CARD_HYPER_MOTHERP",
+            "母亲之力",
+            "Mother Power"
+        ],
+        [
+            "CARD_GIFT_NANAKOSBIT",
+            "奈奈子的浮游炮",
+            "Nanako's Bit"
+        ],
+        [
+            "CARD_GIFT_TICKEDOFF",
+            "你把我惹毛了！",
+            "We're Ticked Off!"
+        ],
+        [
+            "CARD_BOSS_COOP_BIRDS",
+            "鸟群",
+            "Birds"
+        ],
+        [
+            "CARD_BOSS_COOP_ENGAGE",
+            "啮合",
+            "Engage"
+        ],
+        [
+            "CARD_EVENT_SERENEHUSH",
+            "宁静",
+            "Serene Hush"
+        ],
+        [
+            "CARD_HYPER_HARUKA",
+            "暖场高手",
+            "Hype Bringer"
+        ],
+        [
+            "CARD_EVENT_PARTYTIME",
+            "派对时间",
+            "Party Time"
+        ],
+        [
+            "CARD_TRAP_FLAMETHROWER",
+            "喷射火焰",
+            "Flamethrower"
+        ],
+        [
+            "CARD_HYPER_NATSUMI",
+            "烹饪时间",
+            "Cooking Time"
+        ],
+        [
+            "CARD_HYPER_COOP_NATSUMI",
+            "烹饪时间",
+            "Cooking Time"
+        ],
+        [
+            "CARD_BOSS_COOP_ELUSIVE",
+            "飘忽不定",
+            "Elusive"
+        ],
+        [
+            "CARD_HYPER_HALENA",
+            "平安的旅途",
+            "Safe Journey"
+        ],
+        [
+            "CARD_BOSS_COOP_BALANCE_CURRENTS",
+            "平衡电流",
+            "Balance Currents"
+        ],
+        [
+            "CARD_BOSS_COOP_BALANCE_CURRENCY",
+            "平衡货币",
+            "Balance Currency"
+        ],
+        [
+            "CARD_BOSS_COOP_SPLASH_WATER",
+            "泼水",
+            "Splash Water"
+        ],
+        [
+            "CARD_HYPER_TOMOMOCASUAL",
+            "奇迹红豆冰淇淋",
+            "Miracle Red Bean Ice Cream"
+        ],
+        [
+            "CARD_HYPER_COOP_TOMOMOCASUAL",
+            "奇迹红豆冰淇淋",
+            "Miracle Red Bean Ice Cream"
+        ],
+        [
+            "CARD_HYPER_NICO",
+            "奇迹漫步",
+            "Miracle Walker"
+        ],
+        [
+            "CARD_HYPER_KRILA2",
+            "起舞吧长耳兽",
+            "Dance, Long-Eared Beasts!"
+        ],
+        [
+            "CARD_HYPER_COOP_KRILATRAP",
+            "起舞吧长耳兽",
+            "Dance, Long-Eared Beasts!"
+        ],
+        [
+            "CARD_BOOST_FLIPOUT",
+            "迁怒于人",
+            "Flip Out"
+        ],
+        [
+            "CARD_HYPER_HKAI",
+            "前主角的光辉时刻",
+            "Ex-Protagonist's Moment of Glory"
+        ],
+        [
+            "CARD_BOSS_COOP_SNATCH",
+            "抢夺",
+            "Snatch"
+        ],
+        [
+            "CARD_EVENT_FORCEDREVIVAL",
+            "强制复活",
+            "Forced Revival"
+        ],
+        [
+            "CARD_HYPER_SEAGULL",
+            "乔纳桑·速袭",
+            "Jonathan Rush"
+        ],
+        [
+            "CARD_HYPER_COOP_SEAGULL",
+            "乔纳桑·速袭",
+            "Jonathan Rush"
+        ],
+        [
+            "CARD_HYPER_ARNELLE",
+            "情报官",
+            "Intelligence Officer"
+        ],
+        [
+            "CARD_GIFT_METALLICMONOCOQUE",
+            "全金属单体结构",
+            "Metallic Monocoque"
+        ],
+        [
+            "CARD_BOOST_FULL_BURST",
+            "全力爆发",
+            "Full Burst"
+        ],
+        [
+            "CARD_HYPER_GRAIN",
+            "全炮门开启",
+            "All Guns at the Ready"
+        ],
+        [
+            "CARD_BOSS_COOP_SWARM",
+            "群鸡起舞",
+            "Swarm"
+        ],
+        [
+            "CARD_BOSS_COOP_HEADLESS_CHICKEN",
+            "群鸡无首",
+            "Headless Chicken"
+        ],
+        [
+            "CARD_BATTLE_ONFIRE",
+            "燃起来吧！",
+            "I'm on Fire!"
+        ],
+        [
+            "CARD_BOSS_COOP_PROTECT_DEBUFF",
+            "扰乱",
+            "Scrambled"
+        ],
+        [
+            "CARD_TRAP_HEAT300",
+            "热度300%",
+            "Heat 300%"
+        ],
+        [
+            "CARD_HYPER_SWEETBREAKER",
+            "融化的记忆",
+            "Melting Memories"
+        ],
+        [
+            "CARD_HYPER_COOP_SWEETBREAKER",
+            "融化的记忆",
+            "Melting Memories"
+        ],
+        [
+            "CARD_BOSS_COOP_RAMPAGE",
+            "撒野",
+            "Rampage"
+        ],
+        [
+            "CARD_BOSS_COOP_RAMPAGE_HYPER",
+            "撒野",
+            "Rampage"
+        ],
+        [
+            "CARD_HYPER_SHAM",
+            "三角力场",
+            "Delta Field"
+        ],
+        [
+            "CARD_HYPER_COOP_SHAM",
+            "三角力场",
+            "Delta Field"
+        ],
+        [
+            "CARD_BOSS_COOP_SANDWICH_THIEVES",
+            "三明治小偷",
+            "Sandwich Thieves"
+        ],
+        [
+            "CARD_BOOST_COOKIE",
+            "纱季的曲奇",
+            "Saki's Cookie"
+        ],
+        [
+            "CARD_HYPER_TOMOMO",
+            "杀戮魔法",
+            "Magical Massacre"
+        ],
+        [
+            "CARD_HYPER_COOP_TOMOMO",
+            "杀戮魔法",
+            "Magical Massacre"
+        ],
+        [
+            "CARD_EVENT_STARBLAZINGLIGHT",
+            "烧毁星球之光",
+            "Star-Blasting Light"
+        ],
+        [
+            "CARD_HYPER_FERNET_NOBILITY",
+            "社交界亮相",
+            "New Nobility"
+        ],
+        [
+            "CARD_HYPER_POPPO",
+            "神出鬼没",
+            "Ubiquitous"
+        ],
+        [
+            "CARD_HYPER_COOP_POPPO",
+            "神出鬼没",
+            "Ubiquitous"
+        ],
+        [
+            "CARD_BOSS_COOP_UBIQUITOUS",
+            "神出鬼没",
+            "Ubiquitous"
+        ],
+        [
+            "CARD_BOSS_COOP_IDENTITY_CRISIS",
+            "身份认同危机",
+            "Identity Crisis"
+        ],
+        [
+            "CARD_BOSS_COOP_BEAK_OF_GODBIRD",
+            "神鸟之喙",
+            "Beak of the Godbird"
+        ],
+        [
+            "CARD_EVENT_HOLYNIGHT",
+            "神圣之夜",
+            "Holy Night"
+        ],
+        [
+            "CARD_BOOST_GENTLEMANSBATTLE",
+            "绅士的决斗",
+            "Gentleman's Battle"
+        ],
+        [
+            "CARD_BOOST_COOP_GENTLEMANSBATTLE",
+            "绅士的决斗",
+            "Gentleman's Battle"
+        ],
+        [
+            "CARD_TRAP_TRAGEDY",
+            "深夜的惨剧",
+            "Tragedy in the Dead of Night"
+        ],
+        [
+            "CARD_HYPER_ARUSCRAMBLE",
+            "圣诞小姐的工作",
+            "Santa's Job"
+        ],
+        [
+            "CARD_HYPER_COOP_ARUSCRAMBLE",
+            "圣诞小姐的工作",
+            "Santa's Job"
+        ],
+        [
+            "CARD_HYPER_MIOFESTIVE",
+            "圣诞狱火",
+            "Christmas Inferno"
+        ],
+        [
+            "CARD_HYPER_LONERIDER",
+            "升档",
+            "Upshift"
+        ],
+        [
+            "CARD_HYPER_KYUPITA",
+            "圣露眼",
+            "Saint Eyes"
+        ],
+        [
+            "CARD_SKILL_COOP_HEALTHBOOST1",
+            "生命提升1",
+            "Health Boost 1"
+        ],
+        [
+            "CARD_SKILL_COOP_HEALTHBOOST2",
+            "生命提升2",
+            "Health Boost 2"
+        ],
+        [
+            "CARD_BOSS_COOP_HEALTH_DOWN",
+            "生命下降",
+            "Health Down"
+        ],
+        [
+            "CARD_GIFT_RANGEDTRAPS",
+            "手长脚也长",
+            "Look How Long My Arms and Legs Are Now"
+        ],
+        [
+            "CARD_SKILL_COOP_GUARDIANSPIRIT_EFFECT",
+            "守护灵",
+            "Guardian Spirit"
+        ],
+        [
+            "CARD_SKILL_COOP_GUARDIANSPIRIT1",
+            "守护灵1",
+            "Guardian Spirit 1"
+        ],
+        [
+            "CARD_SKILL_COOP_GUARDIANSPIRIT2",
+            "守护灵2",
+            "Guardian Spirit 2"
+        ],
+        [
+            "CARD_BOSS_COOP_HUNT",
+            "狩猎",
+            "Hunt"
+        ],
+        [
+            "CARD_HYPER_TEOTORATTA",
+            "兽之魔女",
+            "Beast Witch"
+        ],
+        [
+            "CARD_HYPER_CEOREPARQUE",
+            "束发魔女",
+            "Witch's Hair Lock"
+        ],
+        [
+            "CARD_HYPER_HIME",
+            "束缚之锁",
+            "Binding Chains"
+        ],
+        [
+            "CARD_HYPER_COOP_HIME",
+            "束缚之锁",
+            "Binding Chains"
+        ],
+        [
+            "CARD_BOSS_COOP_RANSOM_NOTE",
+            "赎金勒索字条",
+            "Ransom Note"
+        ],
+        [
+            "CARD_COOP_BOOST_RANSOM_NOTE",
+            "赎金勒索字条",
+            "Ransom Note"
+        ],
+        [
+            "CARD_BATTLE_SERIOUSBATTLE",
+            "殊死对决",
+            "Serious Battle"
+        ],
+        [
+            "CARD_BOSS_COOP_RUSH2",
+            "双重速袭",
+            "Double Rush"
+        ],
+        [
+            "CARD_HYPER_KYOKO",
+            "水晶障壁",
+            "Crystal Barrier"
+        ],
+        [
+            "CARD_BATTLE_QUICKRESTORATION",
+            "瞬间再生",
+            "Quick Restoration"
+        ],
+        [
+            "CARD_BOSS_COOP_CHASE_AROUND",
+            "四处追逐",
+            "Chase Around"
+        ],
+        [
+            "CARD_BOSS_COOP_DEATH_AND_TAXES",
+            "死亡与纳税",
+            "Death and Taxes"
+        ],
+        [
+            "CARD_BOSS_COOP_RUSH",
+            "速袭",
+            "Rush"
+        ],
+        [
+            "CARD_BOOST_GO_WITH_FLOW",
+            "随风而行",
+            "Go with the Flow"
+        ],
+        [
+            "CARD_BOOST_PASSIONATE",
+            "探究心",
+            "Passionate Research"
+        ],
+        [
+            "CARD_BOSS_COOP_GREED",
+            "贪婪",
+            "Greed"
+        ],
+        [
+            "CARD_HYPER_CUTIES",
+            "特别演出",
+            "Special Stage"
+        ],
+        [
+            "CARD_BOSS_COOP_PREMIUM_REGENERATION",
+            "特权恢复",
+            "Premium Regeneration"
+        ],
+        [
+            "CARD_HYPER_SWEETBLOGGER",
+            "甜点成堆大作战",
+            "Operation: A Mountain of Sweets"
+        ],
+        [
+            "CARD_BOOST_SWEETDESTROYER",
+            "甜点的破坏者",
+            "Sweet Destroyer"
+        ],
+        [
+            "CARD_HYPER_QPD",
+            "甜点守护者",
+            "Sweet Guardian"
+        ],
+        [
+            "CARD_HYPER_COOP_QPD",
+            "甜点守护者",
+            "Sweet Guardian"
+        ],
+        [
+            "CARD_HYPER_SWEETCREATOR",
+            "甜点天堂",
+            "Sweet Paradise"
+        ],
+        [
+            "CARD_HYPER_SWEETCREATORCOOP",
+            "甜点天堂",
+            "Sweet Paradise"
+        ],
+        [
+            "CARD_GIFT_VALENTINESDAY2018",
+            "甜点战争！",
+            "Sweet Battle!"
+        ],
+        [
+            "CARD_GIFT_VALENTINESDAY2018_BINDER",
+            "甜点战争！",
+            "Sweet Battle!"
+        ],
+        [
+            "CARD_HYPER_SWEETMAKER",
+            "甜点制作者的魔法",
+            "Sweet Maker's Magic"
+        ],
+        [
+            "CARD_HYPER_SWEETCREATOR2",
+            "甜点纵溺",
+            "Sweet Indulgence"
+        ],
+        [
+            "CARD_HYPER_YUUKI_ANGEL",
+            "天使之手",
+            "Angel Hand"
+        ],
+        [
+            "CARD_TRAP_WANTED",
+            "通缉令",
+            "Wanted"
+        ],
+        [
+            "CARD_HYPER_NONAME",
+            "统治者",
+            "Overseer"
+        ],
+        [
+            "CARD_HYPER_COOP_NONAME",
+            "统治者",
+            "Overseer"
+        ],
+        [
+            "CARD_BOOST_AMBUSH",
+            "偷袭",
+            "Ambush"
+        ],
+        [
+            "CARD_BOOST_COOP_AMBUSH",
+            "偷袭",
+            "Ambush"
+        ],
+        [
+            "CARD_TRAP_ASSAULT",
+            "突击",
+            "Assault"
+        ],
+        [
+            "CARD_BOSS_COOP_ASSAULTFIELD",
+            "突击领域",
+            "Assault Field"
+        ],
+        [
+            "CARD_BATTLE_RBITS",
+            "兔子浮游炮",
+            "Rbits"
+        ],
+        [
+            "CARD_HYPER_ARTHUR2",
+            "兔子模玩店",
+            "Rbit Hobby Shop"
+        ],
+        [
+            "CARD_HYPER_COOP_ARTHUR2",
+            "兔子模玩店",
+            "Rbit Hobby Shop"
+        ],
+        [
+            "CARD_HYPER_KYOUSUKE",
+            "脱衣",
+            "Cast Off"
+        ],
+        [
+            "CARD_EVENT_DINNER",
+            "晚餐",
+            "Dinner"
+        ],
+        [
+            "CARD_EVENT_COOP_DINNER",
+            "晚餐",
+            "Dinner"
+        ],
+        [
+            "CARD_BOSS_COOP_PERFECT_REFLECTIVE_SHELL",
+            "完美反射外装",
+            "Perfect Reflective Shell"
+        ],
+        [
+            "CARD_HYPER_KRILA",
+            "玩偶使",
+            "Plushie Master"
+        ],
+        [
+            "CARD_HYPER_COOP_KRILAEVENT",
+            "玩偶使",
+            "Plushie Master"
+        ],
+        [
+            "CARD_BOSS_COOP_PLAY",
+            "玩耍",
+            "Play"
+        ],
+        [
+            "CARD_TRAP_TOYSTORE",
+            "为了玩具店的未来",
+            "For the Future of the Toy Store"
+        ],
+        [
+            "CARD_TRAP_DANGEROUSPUDDING",
+            "危险布丁",
+            "Dangerous Pudding"
+        ],
+        [
+            "CARD_EVENT_OHMYFRIEND",
+            "我的朋友呀",
+            "Oh My Friend"
+        ],
+        [
+            "CARD_BOOST_MYWILDFRIENDS",
+            "我的野生朋友们",
+            "My Wild Friends"
+        ],
+        [
+            "CARD_BOSS_COOP_TURBO",
+            "涡轮",
+            "Turbo"
+        ],
+        [
+            "CARD_HYPER_BOSSROBO",
+            "涡轮满载",
+            "Turbo Charged"
+        ],
+        [
+            "CARD_EVENT_WARUDA",
+            "我们是阴谋组",
+            "We Are Waruda"
+        ],
+        [
+            "CARD_EVENT_INDISCRIMINATEFIRESUPPORT",
+            "无差别火力支援",
+            "Indiscriminate Fire Support"
+        ],
+        [
+            "CARD_TRAP_BRUTALPRANK",
+            "无情的恶作剧",
+            "Brutal Prank"
+        ],
+        [
+            "CARD_TRAP_INVASION",
+            "袭来",
+            "Invasion"
+        ],
+        [
+            "CARD_GIFT_BLOODLUST",
+            "鲜血渴望",
+            "Bloodlust"
+        ],
+        [
+            "CARD_TRAP_BANANANA",
+            "香蕉奈奈子",
+            "BanaNana"
+        ],
+        [
+            "CARD_BOSS_COOP_TIRE_OUT",
+            "消耗",
+            "Tire Out"
+        ],
+        [
+            "CARD_GIFT_REDBLUE",
+            "小红＆小蓝",
+            "Red & Blue"
+        ],
+        [
+            "CARD_TRAP_PIYOPIYO",
+            "小鸡小鸡大游行",
+            "Piyopiyo Procession"
+        ],
+        [
+            "CARD_BOSS_COOP_PIYO_MARCH",
+            "小鸡游行",
+            "Piyo March"
+        ],
+        [
+            "CARD_HYPER_MESCAL",
+            "小麦格农炮",
+            "Little Magnum"
+        ],
+        [
+            "CARD_BOSS_COOP_NAP",
+            "小睡",
+            "Nap"
+        ],
+        [
+            "CARD_BATTLE_MOUSSETHETHIEF",
+            "小偷唠鼠",
+            "Mousse the Thief"
+        ],
+        [
+            "CARD_EVENT_LITTLEWAR",
+            "小小的战争",
+            "Little War"
+        ],
+        [
+            "CARD_HYPER_COOP_MIMYUU",
+            "邪恶的间谍行动～执行",
+            "Evil Spy Work ― Execution"
+        ],
+        [
+            "CARD_HYPER_COOP_YUKIDANGEROUS",
+            "邪恶的主谋",
+            "Evil Mastermind"
+        ],
+        [
+            "CARD_BOSS_COOP_TITHE",
+            "信仰税",
+            "Tithe"
+        ],
+        [
+            "CARD_BOSS_COOP_HYPE_MODE",
+            "兴奋模式",
+            "Hype Mode"
+        ],
+        [
+            "CARD_BOSS_COOP_HYPE_IT_UP",
+            "兴奋起来",
+            "Hype It Up"
+        ],
+        [
+            "CARD_BATTLE_REVERSE",
+            "性格反转力场",
+            "Reverse Attribute Field"
+        ],
+        [
+            "CARD_HYPER_STARBREAKER",
+            "星球的导火线",
+            "Star Blasting Fuse"
+        ],
+        [
+            "CARD_HYPER_COOP_STARBREAKER",
+            "星球的导火线",
+            "Star Blasting Fuse"
+        ],
+        [
+            "CARD_BOSS_COOP_STAR_MANIA",
+            "星星狂热",
+            "Star Mania"
+        ],
+        [
+            "CARD_HYPER_REIKA",
+            "星星收集者",
+            "Star Collector"
+        ],
+        [
+            "CARD_GIFT_LUCKYSEVENS",
+            "幸运7",
+            "Lucky Sevens"
+        ],
+        [
+            "CARD_GIFT_LUCKYCHARM",
+            "幸运护符",
+            "Lucky Charm"
+        ],
+        [
+            "CARD_HYPER_SUGURI_V2",
+            "星之再生",
+            "Revival of Stars"
+        ],
+        [
+            "CARD_HYPER_SYURA",
+            "修罗场模式",
+            "Beyond Hell"
+        ],
+        [
+            "CARD_BOSS_COOP_REST",
+            "休息",
+            "Rest"
+        ],
+        [
+            "CARD_BATTLE_DECPTIVEDISARMING",
+            "虚假除械",
+            "Deceptive Disarming"
+        ],
+        [
+            "CARD_BOSS_COOP_FALSE_HOPE",
+            "虚假的希望",
+            "False Hope"
+        ],
+        [
+            "CARD_BOSS_COOP_IMAGINARY_NUMBERS",
+            "虚数",
+            "Imaginary Numbers"
+        ],
+        [
+            "CARD_XMAS2018_SNOWBALLREFLECTOR",
+            "雪球反射器",
+            "Snowball Reflector"
+        ],
+        [
+            "CARD_BOOST_PRESIDENT",
+            "学生会长的特权",
+            "President's Privilege"
+        ],
+        [
+            "CARD_HYPER_MIXEDPOPPO",
+            "亚空间通道",
+            "Subspace Tunnel"
+        ],
+        [
+            "CARD_HYPER_SUMMER2018_ATTACKER",
+            "炎炎烈日的最终兵器",
+            "Ultimate Weapon in the Sun"
+        ],
+        [
+            "CARD_HYPER_COOP_CLASS_ATTACKER",
+            "炎炎烈日的最终兵器",
+            "Ultimate Weapon in the Sun"
+        ],
+        [
+            "CARD_SKILL_COOP_MOVEMENTBOOST1",
+            "移动提升1",
+            "Movement Boost 1"
+        ],
+        [
+            "CARD_SKILL_COOP_MOVEMENTBOOST2",
+            "移动提升2",
+            "Movement Boost 2"
+        ],
+        [
+            "CARD_HYPER_YUKIDANGEROUS",
+            "阴谋的操纵者",
+            "Evil Mastermind"
+        ],
+        [
+            "CARD_HYPER_MIMYUU",
+            "阴谋的间谍行动～预备",
+            "Evil Spy Work ― Preparation"
+        ],
+        [
+            "CARD_HYPER_MIMYUU2",
+            "阴谋的间谍行动～执行",
+            "Evil Spy Work ― Execution"
+        ],
+        [
+            "CARD_BATTLE_DARKSIDEOFBUSINESS",
+            "阴谋的资金筹集",
+            "Dark Side of Business"
+        ],
+        [
+            "CARD_HYPER_TOMATO",
+            "阴谋机器人出动！",
+            "Waruda Machine, Blast Off!"
+        ],
+        [
+            "CARD_HYPER_COOP_TOMATO",
+            "阴谋机器人出动！！",
+            "Waruda Machine, Blast Off!"
+        ],
+        [
+            "CARD_HYPER_TSIH",
+            "隐身启动",
+            "Stealth On"
+        ],
+        [
+            "CARD_HYPER_COOP_TSIH",
+            "隐身启动",
+            "Stealth On"
+        ],
+        [
+            "CARD_HYPER_SUGURI46",
+            "永恒的观测者",
+            "Observer of Eternity"
+        ],
+        [
+            "CARD_HYPER_COOP_MASTER",
+            "永久流放",
+            "Banned for Life"
+        ],
+        [
+            "CARD_HYPER_MASTER",
+            "永久驱逐",
+            "Banned for Life"
+        ],
+        [
+            "CARD_BOSS_COOP_TEMPTATION",
+            "诱惑",
+            "Temptation"
+        ],
+        [
+            "CARD_SKILL_COOP_ADVANTAGE1",
+            "优势1",
+            "Advantage 1"
+        ],
+        [
+            "CARD_SKILL_COOP_ADVANTAGE2",
+            "优势2",
+            "Advantage 2"
+        ],
+        [
+            "CARD_BOOST_LONGSHOT",
+            "远距离射击",
+            "Long-Distance Shot"
+        ],
+        [
+            "CARD_BATTLE_COMINGBACKSTRONGER",
+            "越挫越勇",
+            "Coming Back Stronger"
+        ],
+        [
+            "CARD_HYPER_HIMEV2",
+            "月夜之舞",
+            "Dance in the Moonlit Night"
+        ],
+        [
+            "CARD_BOSS_COOP_PSYCHED_UP",
+            "跃跃欲试",
+            "Psyched Up"
+        ],
+        [
+            "CARD_TRAP_BADPUDDING",
+            "糟糕的布丁",
+            "Bad Pudding"
+        ],
+        [
+            "CARD_BOSS_COOP_ROOST_BOOST",
+            "增强鸡窝",
+            "Roost Boost"
+        ],
+        [
+            "CARD_BOSS_COOP_ROOST_BOOST_HYPER",
+            "增强鸡窝",
+            "Roost Boost"
+        ],
+        [
+            "CARD_HYPER_PEAT",
+            "湛蓝乌鸦·再临",
+            "Blue Crow the Second"
+        ],
+        [
+            "CARD_HYPER_MEITRUE",
+            "真·白色圣诞大粉碎",
+            "True White Christsmasher"
+        ],
+        [
+            "CARD_HYPER_COOP_MEITRUE",
+            "真·白色圣诞大粉碎",
+            "True White Christsmasher"
+        ],
+        [
+            "CARD_SKILL_COOP_HEAL1",
+            "治疗1",
+            "Heal 1"
+        ],
+        [
+            "CARD_EVENT_PLAYOFTHEGODS",
+            "众神的嬉戏",
+            "Play of the Gods"
+        ],
+        [
+            "CARD_HYPER_KAI",
+            "主角的特权",
+            "Protagonist's Privilege"
+        ],
+        [
+            "CARD_HYPER_COOP_KAI",
+            "主角的特权",
+            "Protagonist's Privilege"
+        ],
+        [
+            "CARD_BOSS_COOP_CHASE",
+            "追逐",
+            "Chase"
+        ],
+        [
+            "CARD_BOSS_COOP_PECK",
+            "啄",
+            "Peck"
+        ],
+        [
+            "CARD_BOSS_COOP_HIDE_AND_SEEK",
+            "捉迷藏",
+            "Hide And Seek"
+        ],
+        [
+            "CARD_HYPER_ALTE",
+            "自爆",
+            "Self-Destruct"
+        ],
+        [
+            "CARD_HYPER_COOP_ALTE",
+            "自爆",
+            "Self-Destruct"
+        ],
+        [
+            "CARD_BATTLE_DESPERATEMODIFICATION",
+            "自暴自弃的改造",
+            "Desperate Modification"
+        ],
+        [
+            "CARD_BOSS_COOP_SELF_DESTRUCTION",
+            "自毁",
+            "Self Destruction"
+        ],
+        [
+            "CARD_BOSS_COOP_FINAL_WARNING",
+            "最终警告",
+            "Final Warning"
+        ],
+        [
+            "CARD_BATTLE_FINALBATTLE",
+            "最终决战",
+            "Final Battle"
+        ]
+    ],
+    "unit": [
+        [
+            "CARD_UNIT_ALTE",
+            "阿露特",
+            "Alte"
+        ],
+        [
+            "CARD_UNIT_ARNELLE",
+            "阿妮尔",
+            "Arnelle"
+        ],
+        [
+            "CARD_UNIT_ISLAY",
+            "艾拉",
+            "Islay"
+        ],
+        [
+            "CARD_UNIT_ELLIE",
+            "艾莉",
+            "Ellie"
+        ],
+        [
+            "CARD_UNIT_PEAT",
+            "彼特",
+            "Peat"
+        ],
+        [
+            "CARD_UNIT_BOURBON",
+            "波本",
+            "Bourbon"
+        ],
+        [
+            "CARD_UNIT_POMERANIUS",
+            "波美拉尼亚斯",
+            "Pomeranius"
+        ],
+        [
+            "CARD_UNIT_POYO",
+            "啵悠",
+            "Poyo"
+        ],
+        [
+            "CARD_UNIT_HELLIE",
+            "超能艾莉",
+            "Hyper Ellie"
+        ],
+        [
+            "CARD_UNIT_CHUU",
+            "䌷",
+            "Chuu"
+        ],
+        [
+            "CARD_UNIT_HARUKA",
+            "春留果",
+            "Haruka"
+        ],
+        [
+            "CARD_UNIT_BIG_POPPO",
+            "大啵噗",
+            "Big Poppo"
+        ],
+        [
+            "CARD_UNIT_BIG_POPPO_NORMAL",
+            "大啵噗",
+            "Big Poppo"
+        ],
+        [
+            "CARD_UNIT_BOSS_CHICKEN",
+            "大春夫",
+            "Big the Haruo"
+        ],
+        [
+            "CARD_UNIT_BOSS_CHICKEN_HYPER",
+            "大春夫",
+            "Big the Haruo"
+        ],
+        [
+            "CARD_UNIT_BIG_THE_JONATHAN",
+            "大乔纳桑",
+            "Big the Jonathan"
+        ],
+        [
+            "CARD_UNIT_BIG_THE_JONATHAN_HYPER",
+            "大乔纳桑",
+            "Big the Jonathan"
+        ],
+        [
+            "CARD_UNIT_MANAGER",
+            "店长",
+            "Store Manager"
+        ],
+        [
+            "CARD_UNIT_MANAGER_MP",
+            "店长",
+            "Store Manager"
+        ],
+        [
+            "CARD_UNIT_FERNET",
+            "菲尔涅特",
+            "Fernet"
+        ],
+        [
+            "CARD_UNIT_CASTLE",
+            "飞天城堡",
+            "Flying Castle"
+        ],
+        [
+            "CARD_UNIT_CASTLE_MP",
+            "飞天城堡",
+            "Flying Castle"
+        ],
+        [
+            "CARD_UNIT_GRAIN",
+            "格雷因",
+            "Grain"
+        ],
+        [
+            "CARD_UNIT_LONERIDER",
+            "孤独车手",
+            "Lone Rider"
+        ],
+        [
+            "CARD_UNIT_HALENA",
+            "哈琳娜",
+            "Halena"
+        ],
+        [
+            "CARD_UNIT_SEAGULL",
+            "海鸥",
+            "Seagull"
+        ],
+        [
+            "CARD_UNIT_SEAGULL_MP",
+            "海鸥",
+            "Seagull"
+        ],
+        [
+            "CARD_UNIT_TEQMINION",
+            "海贼小弟",
+            "Pirate Crew Member"
+        ],
+        [
+            "CARD_UNIT_DARKL",
+            "黑暗露露",
+            "Dark Lulu"
+        ],
+        [
+            "CARD_UNIT_CHICKEN",
+            "鸡",
+            "Chicken"
+        ],
+        [
+            "CARD_UNIT_HIME",
+            "姬梦",
+            "Hime"
+        ],
+        [
+            "CARD_UNIT_ROBOBALL",
+            "机器球",
+            "Robo Ball"
+        ],
+        [
+            "CARD_UNIT_ROBOBALL_MP",
+            "机器球",
+            "Robo Ball"
+        ],
+        [
+            "CARD_UNIT_CHICKEN_MP",
+            "鸡",
+            "Chicken"
+        ],
+        [
+            "CARD_UNIT_KAE",
+            "佳爱",
+            "Kae"
+        ],
+        [
+            "CARD_UNIT_MIOFESTIVE",
+            "节庆魅樱",
+            "Mio (Festive)"
+        ],
+        [
+            "CARD_UNIT_KYOUSUKE",
+            "京介",
+            "Kyousuke"
+        ],
+        [
+            "CARD_UNIT_KYOKO",
+            "京子",
+            "Kyoko"
+        ],
+        [
+            "CARD_UNIT_KAI",
+            "凯",
+            "Kai"
+        ],
+        [
+            "CARD_UNIT_KRILA",
+            "克里拉拉莉丝",
+            "Krila"
+        ],
+        [
+            "CARD_UNIT_CHRIS",
+            "克丽丝",
+            "Chris"
+        ],
+        [
+            "CARD_UNIT_CEOREPARQUE",
+            "柯欧蕾帕露可",
+            "Ceoreparque"
+        ],
+        [
+            "CARD_UNIT_COOK",
+            "库克",
+            "Cook"
+        ],
+        [
+            "CARD_UNIT_LULU",
+            "露露",
+            "Lulu"
+        ],
+        [
+            "CARD_UNIT_BOSS_ROPOCHI",
+            "萝啵鸡",
+            "RoPoChi"
+        ],
+        [
+            "CARD_UNIT_BOSS_ROPOCHI_HYPER",
+            "萝啵鸡",
+            "RoPoChi"
+        ],
+        [
+            "CARD_UNIT_BOSS_ROBOBALL",
+            "M10机器人",
+            "M10 Robot"
+        ],
+        [
+            "CARD_UNIT_MARC",
+            "玛儿",
+            "Marc"
+        ],
+        [
+            "CARD_UNIT_MARC_PILOT",
+            "玛儿（飞行员）",
+            "Marc (Pilot)"
+        ],
+        [
+            "CARD_UNIT_POPPO",
+            "玛丽啵噗",
+            "Marie Poppo"
+        ],
+        [
+            "CARD_UNIT_MIXEDPOPPO",
+            "玛丽啵噗（混成）",
+            "Marie Poppo (Mixed)"
+        ],
+        [
+            "CARD_UNIT_MAYNIE",
+            "梅妮",
+            "Maynie"
+        ],
+        [
+            "CARD_UNIT_MESCAL",
+            "梅丝卡尔",
+            "Mescal"
+        ],
+        [
+            "CARD_UNIT_MEI",
+            "梅依",
+            "Mei"
+        ],
+        [
+            "CARD_UNIT_MIO",
+            "魅樱",
+            "Mio"
+        ],
+        [
+            "CARD_UNIT_MIUSAKI",
+            "美羽咲",
+            "Miusaki"
+        ],
+        [
+            "CARD_UNIT_MIRA",
+            "米拉",
+            "Mira"
+        ],
+        [
+            "CARD_UNIT_MIMYUU",
+            "米缪",
+            "Mimyuu"
+        ],
+        [
+            "CARD_UNIT_MALT",
+            "莫尔特",
+            "Malt"
+        ],
+        [
+            "CARD_UNIT_MOTHERP",
+            "母亲啵噗",
+            "Mother Poppo"
+        ],
+        [
+            "CARD_UNIT_NATH",
+            "娜德",
+            "Nath"
+        ],
+        [
+            "CARD_UNIT_NANAKO",
+            "奈奈子",
+            "Nanako"
+        ],
+        [
+            "CARD_UNIT_NICO",
+            "妮可",
+            "Nico"
+        ],
+        [
+            "CARD_UNIT_NONAME",
+            "NoName",
+            "NoName"
+        ],
+        [
+            "CARD_UNIT_NONAME_HEAD",
+            "NoName（头）",
+            "NoName (Head)"
+        ],
+        [
+            "CARD_UNIT_SUMIKA",
+            "栖海花",
+            "Sumika"
+        ],
+        [
+            "CARD_UNIT_MIMYUUJAILBIRD",
+            "囚犯米缪",
+            "Mimyuu (Jailbird)"
+        ],
+        [
+            "CARD_UNIT_QP",
+            "QP",
+            "QP"
+        ],
+        [
+            "CARD_UNIT_KYUPITA",
+            "QP太",
+            "Kyupita"
+        ],
+        [
+            "CARD_UNIT_QPD",
+            "QP（危机）",
+            "QP (Dangerous)"
+        ],
+        [
+            "CARD_UNIT_SAKI",
+            "纱季",
+            "Saki"
+        ],
+        [
+            "CARD_UNIT_SWEETMAKER",
+            "纱季（甜点制作者）",
+            "Saki (Sweet Maker)"
+        ],
+        [
+            "CARD_UNIT_MERCHANT",
+            "商人",
+            "Merchant"
+        ],
+        [
+            "CARD_UNIT_FERNETNOBLE",
+            "社交界的菲尔涅特",
+            "Fernet (Noble)"
+        ],
+        [
+            "CARD_UNIT_KRILALARISPAJAMAS",
+            "睡衣克里拉拉莉丝",
+            "Krilalaris (Pajamas)"
+        ],
+        [
+            "CARD_UNIT_GOLEM",
+            "苔魔像",
+            "Moss Golem"
+        ],
+        [
+            "CARD_UNIT_TEOTORATTA",
+            "缇欧特拉塔",
+            "Teotoratta"
+        ],
+        [
+            "CARD_UNIT_SWEETCREATOR",
+            "甜点创造者",
+            "Sweet Creator"
+        ],
+        [
+            "CARD_UNIT_SWEETBREAKER",
+            "甜点破坏者",
+            "Sweet Breaker"
+        ],
+        [
+            "CARD_UNIT_TEQUILA",
+            "铁基拉",
+            "Tequila"
+        ],
+        [
+            "CARD_UNIT_TOMOMO",
+            "兔萌萌",
+            "Tomomo"
+        ],
+        [
+            "CARD_UNIT_TOMOMO_MP",
+            "兔萌萌",
+            "Tomomo"
+        ],
+        [
+            "CARD_UNIT_TOMOMO_SWEETEATER",
+            "兔萌萌（甜点品尝者）",
+            "Tomomo (Sweet Eater)"
+        ],
+        [
+            "CARD_UNIT_TOMOMO_CASUAL",
+            "兔萌萌（休闲）",
+            "Tomomo (Casual)"
+        ],
+        [
+            "CARD_UNIT_TOMATO",
+            "托玛特",
+            "Tomato"
+        ],
+        [
+            "CARD_UNIT_WATTY",
+            "沃缇",
+            "Watty"
+        ],
+        [
+            "CARD_UNIT_SHIFU",
+            "希夫",
+            "Shifu"
+        ],
+        [
+            "CARD_UNIT_SHIFUROBOT",
+            "希夫机器人",
+            "Shifu Robot"
+        ],
+        [
+            "CARD_UNIT_SHIFUROBOT_MP",
+            "希夫机器人",
+            "Shifu Robot"
+        ],
+        [
+            "CARD_UNIT_YUUKI",
+            "夕希",
+            "Yuuki"
+        ],
+        [
+            "CARD_UNIT_NATSUMI",
+            "夏美",
+            "Natsumi"
+        ],
+        [
+            "CARD_UNIT_SWEETBLOGGER",
+            "夏美（甜点评论者）",
+            "Natsumi (Sweet Blogger)"
+        ],
+        [
+            "CARD_UNIT_SHAM",
+            "夏姆",
+            "Sham"
+        ],
+        [
+            "CARD_UNIT_KANATA",
+            "夏奈多",
+            "Kanata"
+        ],
+        [
+            "CARD_UNIT_BOSS_QP",
+            "夏日野兽",
+            "Summer Beast"
+        ],
+        [
+            "CARD_UNIT_TSIH",
+            "杏",
+            "Tsih"
+        ],
+        [
+            "CARD_UNIT_REIKA",
+            "星乃丽华",
+            "Hoshino Reika"
+        ],
+        [
+            "CARD_UNIT_STARBREAKER",
+            "星球破坏者",
+            "Star Breaker"
+        ],
+        [
+            "CARD_UNIT_BOSS_POPPO",
+            "星星吞噬者",
+            "Star Devourer"
+        ],
+        [
+            "CARD_UNIT_BOSS_POPPO_HYPER",
+            "星星吞噬者",
+            "Star Devourer"
+        ],
+        [
+            "CARD_UNIT_SYURA",
+            "秀拉",
+            "Syura"
+        ],
+        [
+            "CARD_UNIT_SUGURI",
+            "须玖莉",
+            "Suguri"
+        ],
+        [
+            "CARD_UNIT_SUGURI46",
+            "须玖莉（460亿年）",
+            "Suguri(46 Billion Years)"
+        ],
+        [
+            "CARD_UNIT_SUGURI_V2",
+            "须玖莉（Ver.2）",
+            "Suguri (Ver.2)"
+        ],
+        [
+            "CARD_UNIT_SHERRY",
+            "雪莉",
+            "Sherry"
+        ],
+        [
+            "CARD_UNIT_ALICIANRONE",
+            "亚莉希安罗妮",
+            "Alicianrone"
+        ],
+        [
+            "CARD_UNIT_ARU",
+            "亚琉",
+            "Aru"
+        ],
+        [
+            "CARD_UNIT_ARUSCRAMBLE",
+            "亚琉（争夺）",
+            "Aru (Scramble)"
+        ],
+        [
+            "CARD_UNIT_ARTHUR",
+            "亚瑟",
+            "Arthur"
+        ],
+        [
+            "CARD_UNIT_IRU",
+            "依琉",
+            "Iru"
+        ],
+        [
+            "CARD_UNIT_HKAI",
+            "勇者凯",
+            "Kai (Hero)"
+        ],
+        [
+            "CARD_UNIT_SORA",
+            "优空",
+            "Sora"
+        ],
+        [
+            "CARD_UNIT_SORAMILITARY",
+            "优空（军服）",
+            "Sora (Military)"
+        ],
+        [
+            "CARD_UNIT_CUTIES",
+            "优空&夏姆 (可爱者)",
+            "Cuties"
+        ],
+        [
+            "CARD_UNIT_YUKI",
+            "由希",
+            "Yuki"
+        ],
+        [
+            "CARD_UNIT_YUKI_DANGEROUS",
+            "由希（危机）",
+            "Yuki (Dangerous)"
+        ],
+        [
+            "CARD_UNIT_HIMEV2",
+            "月夜姬梦",
+            "Hime (Moonlight)"
+        ],
+        [
+            "CARD_UNIT_KIRIKO",
+            "斩子",
+            "Kiriko"
+        ]
+    ],
+    "achievement": [
+        [
+            1,
+            "100% 鲜橙汁",
+            "100% Orange Juice"
+        ],
+        [
+            2,
+            "布丁追逐者",
+            "Pudding Chaser"
+        ],
+        [
+            3,
+            "Hyper",
+            "Hyper"
+        ],
+        [
+            4,
+            "小小的飞行员",
+            "A Little Aviator"
+        ],
+        [
+            5,
+            "守财奴",
+            "Penny Pincher"
+        ],
+        [
+            6,
+            "啵噗？",
+            "Poppo?"
+        ],
+        [
+            7,
+            "超级明星",
+            "Superstar"
+        ],
+        [
+            8,
+            "扩展包",
+            "Booster Pack"
+        ],
+        [
+            9,
+            "收藏家",
+            "Collector"
+        ],
+        [
+            10,
+            "纸牌老手",
+            "Card Shark"
+        ],
+        [
+            11,
+            "纸牌贤者",
+            "Card Sage"
+        ],
+        [
+            12,
+            "人类观测",
+            "People Watching"
+        ],
+        [
+            13,
+            "失魂落牌",
+            "Not Playing with a Full Deck of Cards"
+        ],
+        [
+            14,
+            "美妙的礼物",
+            "Nice Present"
+        ],
+        [
+            15,
+            "闪亮！",
+            "Shiny!"
+        ],
+        [
+            16,
+            "啵噗总是赢",
+            "Poppo Always Wins"
+        ],
+        [
+            17,
+            "小小的战争",
+            "Little Wars"
+        ],
+        [
+            18,
+            "星之边境",
+            "Starbound"
+        ],
+        [
+            19,
+            "比钻石更坚韧",
+            "Tougher Than Diamond"
+        ],
+        [
+            20,
+            "你家就是我家",
+            "Your Home Is My Home"
+        ],
+        [
+            21,
+            "然后他就不见了",
+            "And Away They Went"
+        ],
+        [
+            22,
+            "永久流放",
+            "Banned for Life"
+        ],
+        [
+            23,
+            "全金属兄弟",
+            "Full Metal Brother"
+        ],
+        [
+            24,
+            "天空的移动城堡",
+            "Moving Castle in the Sky"
+        ],
+        [
+            25,
+            "米缪亲重锤",
+            "Mimyuu's Hammer"
+        ],
+        [
+            26,
+            "绝对防御",
+            "Definite Defender"
+        ],
+        [
+            27,
+            "你可以逃，但……",
+            "You Can Run..."
+        ],
+        [
+            28,
+            "公平交易",
+            "Fair Trade"
+        ],
+        [
+            29,
+            "否极我全勤，泰来他人占！",
+            "Some People Have All the Luck!"
+        ],
+        [
+            30,
+            "偷了星星的少女",
+            "The Girl Who Stole the Stars"
+        ],
+        [
+            31,
+            "无人能挡",
+            "Unstoppable"
+        ],
+        [
+            32,
+            "和平主义者",
+            "Pacifist"
+        ],
+        [
+            33,
+            "决斗者",
+            "Duelist"
+        ],
+        [
+            34,
+            "战斗大师",
+            "Battle Master"
+        ],
+        [
+            35,
+            "世仇",
+            "Vendetta"
+        ],
+        [
+            36,
+            "逐步炮击",
+            "Bit by Bit"
+        ],
+        [
+            37,
+            "完全部署",
+            "Fully Deployed"
+        ],
+        [
+            38,
+            "命令不容违背",
+            "Orders Are Absolute"
+        ],
+        [
+            39,
+            "小鸡游行",
+            "Chicken Parade"
+        ],
+        [
+            40,
+            "修罗场模式",
+            "Beyond Hell"
+        ],
+        [
+            41,
+            "布丁的终结",
+            "End of Pudding"
+        ],
+        [
+            42,
+            "纱季的曲奇",
+            "Saki's Cookie"
+        ],
+        [
+            43,
+            "大爆炸",
+            "The Big Bang"
+        ],
+        [
+            44,
+            "五雷轰顶",
+            "Dropped the Bomb"
+        ],
+        [
+            45,
+            "寻找QP太",
+            "Seeking Kyupita"
+        ],
+        [
+            46,
+            "解放",
+            "Liberated"
+        ],
+        [
+            47,
+            "玫瑰之吻",
+            "Kiss from a Rose"
+        ],
+        [
+            48,
+            "伏击",
+            "Waylaid"
+        ],
+        [
+            49,
+            "千变万化",
+            "Changeling"
+        ],
+        [
+            50,
+            "完全抵御",
+            "Hard Counter"
+        ],
+        [
+            51,
+            "预算紧缺",
+            "A Tight Budget"
+        ],
+        [
+            52,
+            "再来点鸡",
+            "A Side Order of Chicken"
+        ],
+        [
+            53,
+            "长跑",
+            "The Long Run"
+        ],
+        [
+            54,
+            "疯狂冲刺",
+            "Mad Dash"
+        ],
+        [
+            55,
+            "扭转局势",
+            "Turned Tables"
+        ],
+        [
+            56,
+            "把它记在账上",
+            "Put It on the Bill"
+        ],
+        [
+            57,
+            "暗黑的住民",
+            "Denizen of Darkness"
+        ],
+        [
+            58,
+            "玩偶使",
+            "Plushie Master"
+        ],
+        [
+            59,
+            "群兽飞舞",
+            "Dance of the Beasts"
+        ],
+        [
+            60,
+            "战斗成瘾",
+            "Battle Addict"
+        ],
+        [
+            61,
+            "全部点燃",
+            "All Ablaze"
+        ],
+        [
+            62,
+            "不如燃烧殆尽",
+            "Better to Burn Out"
+        ],
+        [
+            63,
+            "计划销毁",
+            "Planned Demolition"
+        ],
+        [
+            64,
+            "完全荷载",
+            "Full Payload"
+        ],
+        [
+            65,
+            "反叛",
+            "Rebellion"
+        ],
+        [
+            66,
+            "冰山美人",
+            "A Cool Beauty"
+        ],
+        [
+            67,
+            "完全障壁",
+            "Total Barrier"
+        ],
+        [
+            68,
+            "这也算是陷阱？",
+            "You Call That a Trap?"
+        ],
+        [
+            69,
+            "可爱者",
+            "Cutie"
+        ],
+        [
+            70,
+            "连携攻击",
+            "Tag Team"
+        ],
+        [
+            71,
+            "带你回去",
+            "Taking You Home"
+        ],
+        [
+            72,
+            "无拘无束",
+            "Free Spirit"
+        ],
+        [
+            73,
+            "变化无常的痛袭",
+            "A Whimsical Beatdown"
+        ],
+        [
+            74,
+            "战斗飞行",
+            "Combat Flight"
+        ],
+        [
+            75,
+            "战争拥护者",
+            "Champion of War"
+        ],
+        [
+            76,
+            "坚不可摧",
+            "Unbreakable"
+        ],
+        [
+            77,
+            "长长的导火线",
+            "A Long Fuse"
+        ],
+        [
+            78,
+            "百闻不如一尝",
+            "Proof of the Pudding"
+        ],
+        [
+            79,
+            "和平拥护者",
+            "Champion of Peace"
+        ],
+        [
+            80,
+            "争斗之源",
+            "Source of Conflict"
+        ],
+        [
+            81,
+            "传统手段",
+            "The Traditional Way"
+        ],
+        [
+            82,
+            "甜蜜的结局",
+            "A Sweet Ending"
+        ],
+        [
+            83,
+            "乘着冲击波",
+            "Riding the Blast Wave"
+        ],
+        [
+            84,
+            "完全加速",
+            "Fully Accelerated"
+        ],
+        [
+            85,
+            "绅士的胜利",
+            "Gentleman's Victory"
+        ],
+        [
+            86,
+            "吝啬鬼",
+            "Miser"
+        ],
+        [
+            87,
+            "失物招领",
+            "Lost And Found"
+        ],
+        [
+            88,
+            "是谁放在这的？",
+            "Who Put This Here?"
+        ],
+        [
+            89,
+            "他们看到我在投投投投",
+            "They See Me Rolling"
+        ],
+        [
+            90,
+            "快速恢复",
+            "Quick Fix"
+        ],
+        [
+            91,
+            "在倾注而下的光芒中",
+            "In a Burst of Light"
+        ],
+        [
+            92,
+            "最终兵器",
+            "Ultimate Weapon"
+        ],
+        [
+            93,
+            "终极毁灭",
+            "Ultimate Destruction"
+        ],
+        [
+            94,
+            "全系统就绪",
+            "All Systems Go"
+        ],
+        [
+            95,
+            "我们是阴谋组",
+            "We Are Waruda"
+        ],
+        [
+            96,
+            "坏孩子篡位",
+            "Bad Kids' Usurpation"
+        ],
+        [
+            97,
+            "间谍游戏",
+            "Spy Games"
+        ],
+        [
+            98,
+            "伪证行医",
+            "Not a Real Medical License"
+        ],
+        [
+            99,
+            "医生倒下了",
+            "The Doctor is Out"
+        ],
+        [
+            100,
+            "后遗症",
+            "Lingering Effects"
+        ],
+        [
+            101,
+            "膝枕大师",
+            "Master of Thighs"
+        ],
+        [
+            102,
+            "人类最好的朋友",
+            "Man's Best Friend"
+        ],
+        [
+            103,
+            "拔得头筹",
+            "Ahead of the Game"
+        ],
+        [
+            104,
+            "忧郁之蓝",
+            "Feeling Blue"
+        ],
+        [
+            105,
+            "像蝴蝶一样躲避",
+            "Float Like a Butterfly"
+        ],
+        [
+            106,
+            "不过是发结而已",
+            "Just a Lock of Hair"
+        ],
+        [
+            107,
+            "活泼之绿",
+            "Cheerful Green"
+        ],
+        [
+            108,
+            "承受猛击",
+            "Can Take a Pummeling"
+        ],
+        [
+            109,
+            "有点迟钝",
+            "Slightly Dense"
+        ],
+        [
+            110,
+            "女子力",
+            "Girl Power"
+        ],
+        [
+            111,
+            "勒索",
+            "Extortion"
+        ],
+        [
+            112,
+            "啵噗偷走了重要的东西",
+            "Poppo Stole the Precious Things"
+        ],
+        [
+            113,
+            "赏金猎人",
+            "Bounty Hunter"
+        ],
+        [
+            114,
+            "压倒性的力量",
+            "Power Overwhelming"
+        ],
+        [
+            115,
+            "寻找朋友",
+            "Finding Friends"
+        ],
+        [
+            116,
+            "狂野派对",
+            "Wild Party"
+        ],
+        [
+            117,
+            "变大，变大，啵",
+            "Big, Bigger, Po"
+        ],
+        [
+            118,
+            "无价之宝",
+            "Priceless Treasure"
+        ],
+        [
+            119,
+            "家有新猫",
+            "New Cat in the House"
+        ],
+        [
+            120,
+            "狡猾的野兽",
+            "Beastly Cunning"
+        ],
+        [
+            121,
+            "再见布丁",
+            "Gone Pudding Gone"
+        ],
+        [
+            122,
+            "闲暇时间",
+            "Leisure Time"
+        ],
+        [
+            123,
+            "魔法奇迹！",
+            "Magical Miracle!"
+        ],
+        [
+            124,
+            "赖床的好日子",
+            "A Fine Day to Stay in Bed"
+        ],
+        [
+            125,
+            "Nanora！",
+            "Nanora!"
+        ],
+        [
+            126,
+            "你看不到我，拗哈哈！",
+            "Can't see me, nyahaha!"
+        ],
+        [
+            127,
+            "丢一堆石头",
+            "A Lot of Rocks"
+        ],
+        [
+            128,
+            "噢，铁基拉",
+            "Oh, Tequila"
+        ],
+        [
+            129,
+            "天生注定是海盗",
+            "A Pirate I Was Meant to Be"
+        ],
+        [
+            130,
+            "海盗的财宝",
+            "Pirate's Booty"
+        ],
+        [
+            131,
+            "捣蛋鬼",
+            "Troublemaker"
+        ],
+        [
+            132,
+            "红蓝大作战",
+            "Red vs Blue"
+        ],
+        [
+            133,
+            "南瓜大粉碎",
+            "Pumpkin Smasher"
+        ],
+        [
+            134,
+            "小夏",
+            "Nacchan"
+        ],
+        [
+            135,
+            "满汉全席",
+            "True Feast"
+        ],
+        [
+            136,
+            "厨艺大师",
+            "Master Chef"
+        ],
+        [
+            137,
+            "圣诞小姐的小捣蛋鬼",
+            "Santa's Little Menace"
+        ],
+        [
+            138,
+            "超能小兔兔",
+            "A Hyper Bunny"
+        ],
+        [
+            139,
+            "妮可的礼物！",
+            "Nico's Presents!"
+        ],
+        [
+            140,
+            "工作中的爸爸",
+            "Working Dad"
+        ],
+        [
+            141,
+            "欢迎来到玩具店",
+            "Welcome to the Toy Store"
+        ],
+        [
+            142,
+            "销量纪录",
+            "Record Sales"
+        ],
+        [
+            143,
+            "交错的圣诞节",
+            "Crossed Christmases"
+        ],
+        [
+            144,
+            "快乐游戏",
+            "Fun and Games"
+        ],
+        [
+            145,
+            "幸运抽奖",
+            "Lucky Draw"
+        ],
+        [
+            146,
+            "奖杯收集者",
+            "Trophy Collector"
+        ],
+        [
+            147,
+            "假小子",
+            "Tomboy"
+        ],
+        [
+            148,
+            "重型武器",
+            "Heavy Duty"
+        ],
+        [
+            149,
+            "强袭一号",
+            "Strike Force One"
+        ],
+        [
+            150,
+            "说出我们的名字",
+            "Say Our Name"
+        ],
+        [
+            151,
+            "英雄的印记",
+            "Mark of a Hero"
+        ],
+        [
+            152,
+            "谜雾幻镜",
+            "Smoke and Mirrors"
+        ],
+        [
+            153,
+            "鸡窝",
+            "Roost"
+        ],
+        [
+            154,
+            "残暴利爪",
+            "Savage Talons"
+        ],
+        [
+            155,
+            "故障",
+            "Malfunction"
+        ],
+        [
+            156,
+            "虚数",
+            "Imaginary Numbers"
+        ],
+        [
+            157,
+            "星星狂热",
+            "Star Mania"
+        ],
+        [
+            158,
+            "死亡与纳税",
+            "Death and Taxes"
+        ],
+        [
+            159,
+            "百折不挠",
+            "Power Through"
+        ],
+        [
+            160,
+            "稳如泰山",
+            "Steady Does it"
+        ],
+        [
+            161,
+            "轻微擦伤",
+            "Just a Small Scratch"
+        ],
+        [
+            162,
+            "复仇滋味",
+            "Taste of Revenge"
+        ],
+        [
+            163,
+            "动物庄园",
+            "Animal Farm"
+        ],
+        [
+            164,
+            "效率理论",
+            "Efficiency Theory"
+        ],
+        [
+            165,
+            "价值判断",
+            "Value Judgment"
+        ],
+        [
+            166,
+            "终极组合",
+            "Ultimate Duet"
+        ],
+        [
+            167,
+            "座无虚席",
+            "Full House"
+        ],
+        [
+            168,
+            "新星诞生",
+            "A New Star is Born"
+        ],
+        [
+            169,
+            "野兽们的暮光",
+            "Twilight of the Beasts"
+        ],
+        [
+            170,
+            "完美的策略",
+            "A Perfect Maneuver"
+        ],
+        [
+            171,
+            "盗啵空间",
+            "Poppoception"
+        ],
+        [
+            172,
+            "中招了吧",
+            "Pranked"
+        ],
+        [
+            173,
+            "惯偷",
+            "Sticky Fingers"
+        ],
+        [
+            174,
+            "快无止境",
+            "Can Always Go Faster"
+        ],
+        [
+            175,
+            "阳光下的乐趣",
+            " Fun in the Sun"
+        ],
+        [
+            176,
+            "仲夏夜之梦",
+            " A Midsummer Night's Dream"
+        ],
+        [
+            177,
+            "疯狂撒野",
+            " Total Rampage"
+        ],
+        [
+            178,
+            "夏日游戏",
+            "Summer Games   "
+        ],
+        [
+            179,
+            "究极生物",
+            "Creatures of Excellence"
+        ],
+        [
+            180,
+            "飞得最高",
+            "Who Flies Highest"
+        ],
+        [
+            181,
+            "风车对决",
+            "Fighting the Windmills "
+        ],
+        [
+            182,
+            "手偶之主",
+            "Master of Puppets"
+        ],
+        [
+            183,
+            "惩罚之声",
+            "Voice of Punishment"
+        ],
+        [
+            184,
+            "治愈之声",
+            "Voice of Healing"
+        ],
+        [
+            185,
+            "公会成员",
+            "Guild Mate"
+        ],
+        [
+            186,
+            "战斗十字",
+            "The Cross of Battle"
+        ],
+        [
+            187,
+            "竞争对手",
+            "Rivalry"
+        ],
+        [
+            188,
+            "一包布丁",
+            "A Pack of Pudding"
+        ],
+        [
+            189,
+            "风险收益",
+            "The Odds Paid Off"
+        ],
+        [
+            190,
+            "真正的火力支援",
+            "Serious Fire Support"
+        ],
+        [
+            191,
+            "肮脏的生意",
+            "Dirty Business"
+        ],
+        [
+            192,
+            "命中注定",
+            "Bound by Destiny"
+        ],
+        [
+            193,
+            "备受爱戴",
+            "Loved by Fans"
+        ],
+        [
+            194,
+            "好运连连",
+            "Lucky Streak"
+        ],
+        [
+            195,
+            "大“混”乱",
+            "A Big Mix-up"
+        ],
+        [
+            196,
+            "大老啵特别服务",
+            "Big Po's Special"
+        ],
+        [
+            197,
+            "救赎的故事",
+            "Redemption Story"
+        ],
+        [
+            198,
+            "奴仆之主",
+            "Master of the Minions"
+        ],
+        [
+            199,
+            "听妈妈的话",
+            "Mama Knows Best"
+        ],
+        [
+            200,
+            "魔力 BBQ",
+            "A Magical BBQ"
+        ],
+        [
+            201,
+            "失落星球的守护者",
+            "Guardian of a Lost Planet"
+        ],
+        [
+            202,
+            "拥有强大的力量……",
+            "With Great Power..."
+        ],
+        [
+            203,
+            "智慧随年龄而至",
+            "With Age Comes Wisdom"
+        ],
+        [
+            204,
+            "栖海花是栖海花",
+            "Sumika is Sumika"
+        ],
+        [
+            205,
+            "超空间计算",
+            "Hyper Space Computing"
+        ],
+        [
+            206,
+            "手足相争",
+            "Sibling Rivalry"
+        ],
+        [
+            207,
+            "森之魔女",
+            "Forest Witch"
+        ],
+        [
+            208,
+            "我是谁？",
+            "Who Am I?"
+        ],
+        [
+            209,
+            "诞生于幸运星之下",
+            "Born Under a Lucky Star"
+        ],
+        [
+            210,
+            "蛋",
+            "Eggs"
+        ],
+        [
+            211,
+            "妈妈的乖孩子",
+            "Mama's Girl"
+        ],
+        [
+            212,
+            "大狩猎",
+            "Big Game Hunters"
+        ],
+        [
+            213,
+            "小狩猎",
+            "Small Game Hunter"
+        ],
+        [
+            214,
+            "命运的相遇",
+            "Destined Meeting"
+        ],
+        [
+            215,
+            "急速魔女",
+            "Witch of Speed"
+        ],
+        [
+            216,
+            "奋进心",
+            "Extra Motivated"
+        ],
+        [
+            217,
+            "连砍",
+            "Fast Cut"
+        ],
+        [
+            218,
+            "魔女中的野兽",
+            "A Beast of a Witch"
+        ],
+        [
+            219,
+            "动物朋友",
+            "Beast Friends"
+        ],
+        [
+            220,
+            "不听话的朋友",
+            " Unruly Friend"
+        ],
+        [
+            221,
+            "宝藏猎人",
+            "Treasure Hunter"
+        ],
+        [
+            222,
+            "弱点",
+            "Weak Point"
+        ],
+        [
+            223,
+            "情报控制",
+            "Information Control"
+        ],
+        [
+            224,
+            "易怒",
+            "Easily Aggravated"
+        ],
+        [
+            225,
+            "气疯了",
+            "Fuming Mad"
+        ],
+        [
+            226,
+            "盖棺定论",
+            "Closing Argument"
+        ],
+        [
+            227,
+            "欢迎光临！",
+            "Welcome, Dear Customer!"
+        ],
+        [
+            228,
+            "您需要点单吗？",
+            "May I Take Your Order?"
+        ],
+        [
+            229,
+            "店长——！",
+            "Manageeeeeer!"
+        ],
+        [
+            230,
+            "犬耳",
+            "Dog Ears"
+        ],
+        [
+            231,
+            "镜像",
+            "Mirror Image"
+        ],
+        [
+            232,
+            "邪恶已被封印",
+            "The Evil Is Sealed"
+        ],
+        [
+            233,
+            "我的保镖尽管看起来笨拙，却是世界最强",
+            "My Bodyguard May Be Clumsy But They Are Secretly the Strongest"
+        ],
+        [
+            234,
+            "活铠甲回忆录",
+            "The Memoirs of a Living Armor"
+        ],
+        [
+            235,
+            "如何成为新手村猎神",
+            "How to Become a Max Level Bounty Hunter in the Starting Village"
+        ],
+        [
+            236,
+            "关于我一不小心打倒了魔王这档事",
+            "That Time I Accidentally KO'd the Demon Lord"
+        ],
+        [
+            237,
+            "异世界快递员",
+            "Other World Deliveryman"
+        ],
+        [
+            238,
+            "声名远扬的史莱姆杀手",
+            "A Famous Slime Slayer"
+        ],
+        [
+            239,
+            "头奖",
+            "Jackpot"
+        ],
+        [
+            240,
+            "决胜再武装",
+            "Decisive Rearming"
+        ],
+        [
+            241,
+            "有偿加班",
+            "Paid Overtime"
+        ],
+        [
+            242,
+            "怪鸟？",
+            "Monster Bird?"
+        ],
+        [
+            243,
+            "家居制霸",
+            "Home Crasher"
+        ],
+        [
+            244,
+            "动作顺滑",
+            "Slick Moves"
+        ],
+        [
+            245,
+            "活地图",
+            "Living Atlas"
+        ],
+        [
+            246,
+            "年度引路人",
+            "Travel Guide of the Year"
+        ],
+        [
+            247,
+            "目的地不明",
+            "Destination Unknown"
+        ],
+        [
+            248,
+            "莫逆之鸡",
+            "Fowl-Weather Friends"
+        ],
+        [
+            249,
+            "小鸡胆",
+            "Chickening Out"
+        ],
+        [
+            250,
+            "鸡不暇食",
+            "Stuffed"
+        ],
+        [
+            251,
+            "飙车族",
+            "Hotrodder"
+        ],
+        [
+            252,
+            "全速前进",
+            "Pedal to the Metal"
+        ],
+        [
+            253,
+            "公路杀手",
+            "Roadkill"
+        ],
+        [
+            254,
+            "绝不气馁",
+            "Never Lose Heart"
+        ],
+        [
+            255,
+            "这个世界是绕着钱转的",
+            "Money Makes the World Go 'Round"
+        ],
+        [
+            256,
+            "恕不退款",
+            "No Refunds"
+        ],
+        [
+            257,
+            "漂浮",
+            "Afloat"
+        ],
+        [
+            258,
+            "训练日",
+            "Training Day"
+        ],
+        [
+            259,
+            "叛逆学生",
+            "Rebellious Student"
+        ],
+        [
+            260,
+            "端庄名媛",
+            "Decorous Debutante"
+        ],
+        [
+            261,
+            "有钱能使鬼推磨",
+            "Money Talks"
+        ],
+        [
+            262,
+            "潜力",
+            "Hidden Potential"
+        ],
+        [
+            263,
+            "天穹的舞步",
+            "Celestial Steps"
+        ],
+        [
+            264,
+            "月球漫步",
+            "Moonwalk"
+        ],
+        [
+            265,
+            "狂月的公主",
+            "Lunatic Princess"
+        ],
+        [
+            266,
+            "老无所依",
+            "No Country for an Old Man"
+        ],
+        [
+            267,
+            "黄昏之梦",
+            "Twilight Dreaming"
+        ],
+        [
+            268,
+            "公会的主人",
+            "Master of the Guild"
+        ],
+        [
+            269,
+            "最小的飞行员",
+            "The Littlest Aviator"
+        ],
+        [
+            270,
+            "选边站",
+            "Taking Sides"
+        ],
+        [
+            271,
+            "快枪手",
+            "Quick Draw"
+        ],
+        [
+            272,
+            "主谋",
+            "Mastermind"
+        ],
+        [
+            273,
+            "梦中世界",
+            "World of Dreams"
+        ],
+        [
+            274,
+            "冰释前嫌",
+            "Mending Bridges"
+        ],
+        [
+            275,
+            "星之丽华",
+            "Reika of Stars"
+        ],
+        [
+            276,
+            "破碎誓言",
+            "Broken Promises"
+        ],
+        [
+            277,
+            "转机",
+            "Lucky Break"
+        ],
+        [
+            278,
+            "摸摸小猫",
+            "Pet the Cat"
+        ],
+        [
+            279,
+            "水灵灵的朋友",
+            "Watery Friend"
+        ],
+        [
+            280,
+            "连你也是吗，沃缇",
+            "Et tu, Watty"
+        ],
+        [
+            281,
+            "溅射伤害",
+            "Splash Damage"
+        ],
+        [
+            282,
+            "忠肝义胆",
+            "Top Dog"
+        ],
+        [
+            283,
+            "嗅炸弹的波美拉尼亚斯",
+            "Bomb-sniffing Pomeranius"
+        ],
+        [
+            284,
+            "百般服侍",
+            "Well Treated"
+        ],
+        [
+            285,
+            "甜点宇宙的主宰者",
+            "Master of the Sweet Universe"
+        ],
+        [
+            286,
+            "创造者的心血来潮",
+            "Creator's Whim"
+        ],
+        [
+            287,
+            "创造者赏赐，创造者收取",
+            "Creator Giveth, Creator Taketh"
+        ],
+        [
+            288,
+            "活泼的神明",
+            "A Cheerful God"
+        ],
+        [
+            289,
+            "未决之争",
+            "Unsettled Argument"
+        ],
+        [
+            290,
+            "制作者降临",
+            "Meet Your Maker"
+        ],
+        [
+            291,
+            "年度食评人",
+            "Blogger of the Year"
+        ],
+        [
+            292,
+            "买到手软",
+            "Shop 'Til You Drop"
+        ],
+        [
+            293,
+            "友情帮扩",
+            "Signal Boosting"
+        ],
+        [
+            294,
+            "感受节庆",
+            "Getting Festive"
+        ],
+        [
+            295,
+            "这就有点要命了",
+            "And That's Terrible"
+        ],
+        [
+            296,
+            "一石二鸟",
+            "Had My Cake And Ate It Too"
+        ],
+        [
+            297,
+            "暗之睡衣派对",
+            "Slumber Party of Darkness"
+        ],
+        [
+            298,
+            "辗转反侧",
+            "Tossing and Turning"
+        ],
+        [
+            299,
+            "狮子今晚睡着了",
+            "The Lion Sleeps Tonight"
+        ],
+        [
+            300,
+            "表现良好",
+            "Exemplary Behavior"
+        ],
+        [
+            301,
+            "来抓我啊",
+            "Catch Me if You Can"
+        ],
+        [
+            302,
+            "明目张胆",
+            "In Plain Sight"
+        ],
+        [
+            303,
+            "大逃亡",
+            "The Great Escape"
+        ],
+        [
+            304,
+            "母仪天下",
+            "Mother Superior"
+        ],
+        [
+            305,
+            "母爱如海",
+            "Mum's the Word"
+        ],
+        [
+            306,
+            "奇妙，有趣，而又心酸。",
+            "Earthbound"
+        ],
+        [
+            307,
+            "堕入黑暗",
+            "Beholden to Darkness"
+        ],
+        [
+            308,
+            "抵御诱惑",
+            "Resisting the Call"
+        ],
+        [
+            309,
+            "厄运之蜥",
+            "Lizard of Misfortune"
+        ],
+        [
+            310,
+            "志在四方",
+            "Wandering Heart"
+        ],
+        [
+            311,
+            "无尽的报应",
+            "Endless Punishment"
+        ],
+        [
+            312,
+            "坚不可摧的奇迹",
+            "The Miracle is Unbreakable"
+        ],
+        [
+            313,
+            "愈战愈勇",
+            "Zero to Hero"
+        ],
+        [
+            314,
+            "你想活出怎样的人生",
+            "The Boy and the Hero"
+        ],
+        [
+            315,
+            "最后一搏",
+            "Second Wind"
+        ],
+        [
+            316,
+            "黑马选手",
+            "Underdoggy"
+        ],
+        [
+            317,
+            "失而复得，得而复失",
+            "Lost, Found and Lost Again"
+        ],
+        [
+            318,
+            "我最强大的战士",
+            "My Strongest Warrior"
+        ],
+        [
+            319,
+            "揭竿起义",
+            "Revolutionary"
+        ],
+        [
+            320,
+            "延迟展开",
+            "Delayed Deploy"
+        ],
+        [
+            321,
+            "啵噗银行总是赢",
+            "Bank of Poppo Always Wins"
+        ],
+        [
+            322,
+            "快乐好小伙",
+            "A Jolly Good Fellow"
+        ],
+        [
+            323,
+            "自由的天空",
+            "A Free Sky"
+        ],
+        [
+            324,
+            "遇上麻烦了？",
+            "In a Spot of Trouble?"
+        ],
+        [
+            325,
+            "保守派",
+            "Old Guard"
+        ],
+        [
+            326,
+            "这真是惨不忍睹的战果",
+            "Worst Job Ever Done"
+        ],
+        [
+            327,
+            "无可挑剔",
+            "No Complaints Whatsoever"
+        ],
+        [
+            328,
+            "啵悠啵悠",
+            "Poyo Poyo"
+        ],
+        [
+            329,
+            "新学校，新朋友",
+            "New School, New Friends"
+        ],
+        [
+            330,
+            "动物本能",
+            "Instinct of a Beast"
+        ],
+        [
+            331,
+            "䌷䌷",
+            "Chuu Chuu"
+        ],
+        [
+            332,
+            "改头换面",
+            "A New Me"
+        ],
+        [
+            333,
+            "动真格",
+            "Getting a Little Into It"
+        ],
+        [
+            334,
+            "欢欣鼓舞",
+            "Good Cheer"
+        ],
+        [
+            335,
+            "派对生物",
+            "Party People"
+        ],
+        [
+            336,
+            "请给我签名！",
+            "Sign, Please!"
+        ],
+        [
+            337,
+            "平凡的天才",
+            "An Ordinary Genius"
+        ],
+        [
+            338,
+            "智高一筹",
+            "Unmatched Intellect"
+        ],
+        [
+            339,
+            "橙运欠佳",
+            "No Match for RNG"
+        ],
+        [
+            340,
+            "Extracurricular Activity",
+            "Extracurricular Activity"
+        ],
+        [
+            341,
+            "Burst Fire",
+            "Burst Fire"
+        ],
+        [
+            342,
+            "A Dish to Die for",
+            "A Dish to Die for"
+        ],
+        [
+            343,
+            "We Do a Little Thieving",
+            "We Do a Little Thieving"
+        ],
+        [
+            344,
+            "Comeback Story",
+            "Comeback Story"
+        ],
+        [
+            345,
+            "Not Only Fluffy",
+            "Not Only Fluffy"
+        ]
+    ],
+    "field": [
+        [
+            "Vortex",
+            "俺涡",
+            "Vortex"
+        ],
+        [
+            "White Winter",
+            "白色之冬",
+            "White Winter"
+        ],
+        [
+            "Icy Hideout",
+            "冰冷的秘密基地",
+            "Icy Hideout"
+        ],
+        [
+            "Space Wanderer",
+            "不可思议的宇宙",
+            "Space Wanderer"
+        ],
+        [
+            "Treasure Island",
+            "藏宝岛",
+            "Treasure Island"
+        ],
+        [
+            "Treasure Island (Night)",
+            "藏宝岛（夜）",
+            "Treasure Island (Night)"
+        ],
+        [
+            "Sealed Archive",
+            "封印之间",
+            "Sealed Archive"
+        ],
+        [
+            "Over the Sea",
+            "海面之上",
+            "Over the Sea"
+        ],
+        [
+            "Frost Cave",
+            "寒冰洞窟",
+            "Frost Cave"
+        ],
+        [
+            "Dark Citadel",
+            "黑暗要塞",
+            "Dark Citadel"
+        ],
+        [
+            "Lagoon Flight",
+            "环礁",
+            "Lagoon Flight"
+        ],
+        [
+            "Sunset",
+            "黄昏之城",
+            "Sunset"
+        ],
+        [
+            "Warfare",
+            "激战空域",
+            "Warfare"
+        ],
+        [
+            "Practice Field",
+            "练习场地",
+            "Practice Field"
+        ],
+        [
+            "Planet Earth",
+            "绿色星球",
+            "Planet Earth"
+        ],
+        [
+            "Scarred Land",
+            "满目疮痍之地",
+            "Scarred Land"
+        ],
+        [
+            "Witch Forest",
+            "魔女之森",
+            "Witch Forest"
+        ],
+        [
+            "Farm",
+            "牧场",
+            "Farm"
+        ],
+        [
+            "Ocean Dive",
+            "深海潜水",
+            "Ocean Dive"
+        ],
+        [
+            "Christmas Miracle",
+            "神圣之夜",
+            "Christmas Miracle"
+        ],
+        [
+            "Santa's Workshop",
+            "圣诞小姐的工坊",
+            "Santa's Workshop"
+        ],
+        [
+            "Clover",
+            "四叶草",
+            "Clover"
+        ],
+        [
+            "Sweet Heaven",
+            "甜点天国",
+            "Sweet Heaven"
+        ],
+        [
+            "Tomomo's Abyss",
+            "兔萌萌空间",
+            "Tomomo's Abyss"
+        ],
+        [
+            "Pudding Chase",
+            "午后的树荫小道",
+            "Pudding Chase"
+        ],
+        [
+            "Highway Heist",
+            "午夜高速公路",
+            "Highway Heist"
+        ],
+        [
+            "Beginner Town",
+            "新手小镇",
+            "Beginner Town"
+        ],
+        [
+            "Beginner Town (Winter)",
+            "新手小镇（冬）",
+            "Beginner Town (Winter)"
+        ],
+        [
+            "Star Circuit",
+            "星之巡游",
+            "Star Circuit"
+        ],
+        [
+            "Training Program",
+            "训练程序",
+            "Training Program"
+        ],
+        [
+            "Night Flight",
+            "夜间飞行",
+            "Night Flight"
+        ],
+        [
+            "Sakura Smackdown",
+            "樱花擂台",
+            "Sakura Smackdown"
+        ],
+        [
+            "Starship",
+            "宇宙船",
+            "Starship"
+        ],
+        [
+            "Shipyard",
+            "造船厂",
+            "Shipyard"
+        ],
+        [
+            "Fungus Cave",
+            "真菌洞窟",
+            "Fungus Cave"
+        ]
+    ]
+}

@@ -14,6 +14,8 @@ from nonebot.params import CommandArg
 
 from .Ess import ess
 
+default_header = {'User-Agent': ' Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11 Edg/140.0.0.0','Accept-Language': 'zh-CN,zh;q=0.9'}
+
 mixers_dict = {
     "Air Raid": "空袭 +10%",
     "Amplify": "增幅 +10%",
@@ -70,7 +72,7 @@ class Mixer:
             return self.cache[cache_key]
         
         async with aiohttp.ClientSession() as session:
-            req = await session.get('https://orangejuice.wiki/w/api.php?format=json&action=query&prop=revisions&rvprop=content&rvslots=*&pageids=21473', timeout=300)
+            req = await session.get('https://orangejuice.wiki/w/api.php?format=json&action=query&prop=revisions&rvprop=content&rvslots=*&pageids=21473', timeout=300, headers=default_header)
             if req.status == 200:
                 json_data = await req.text()
                 data = json.loads(json_data) # {{FrontMixer\n|mixer1=Flipped\n|mixer2=Amplify\n|mixer3=Slippery Boss\n}}<!--\n\n--><noinclude>[[Category:Main page templates]]</noinclude>

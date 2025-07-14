@@ -13,7 +13,7 @@ from .Config import plugin_config
 
 ess_file_path: str = os.path.join(plugin_config.oj_data_path, 'essentialx.json')
 init_json: Dict[str, Union[str, List[str], Dict[int, Dict[str, Union[int, str, bool, List[Union[str, Dict[str, str]]]]]]]]
-current_modules: List[str] = ["Card", "Deck", "Emote", "Le", "Mixer", "Stats"]
+current_modules: List[str] = ["Card", "Emote", "Le", "Mixer", "Stats"]
 
 init_json = {
     "version": 4,

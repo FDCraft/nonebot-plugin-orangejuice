@@ -3,16 +3,23 @@ from nonebot.plugin import PluginMetadata
 from .Config import Config
 
 __plugin_meta__ = PluginMetadata(
-    name='100orangejuice',
-    description='100orangejuice',
-    usage= r'See Sorabot Docs.',
+    name='100%鲜橙汁！',
+    description='PL 的百橙战绩统计插件',
+    usage= r'''100OrangeJuice
+    \#ess help 基础管理模块帮助
+    \#stat help 统计帮助
+    \#m <count> 混合器查询
+    \#lulu 幸运蛋
+    \#mw [num] 奇迹漫步
+    \#7 浮游炮
+    \#zb <something> 占卜''',
     type="application",
     supported_adapters={"~onebot.v11"},
     homepage="https://github.com/FDCraft/nonebot-plugin-orangejuice",
     config=Config,
     extra={
         'author': 'Polaris_Light',
-        'version': '1.0.3',
+        'version': '1.1.0',
         'priority': 10
     }
 )
@@ -25,7 +32,6 @@ from nonebot.matcher import Matcher
 from .Ess import ess
 
 from .Card import card
-from .Deck import deck
 from .Emote import emote
 from .Le import le
 from .Mixer import mixer
@@ -36,9 +42,7 @@ async def help(matcher: Matcher):
     help_msg = '''100OrangeJuice
     #ess help 基础管理模块帮助
     #card help 查卡帮助
-    #icon help 查图标帮助
     #stat help 统计帮助
-    #deck <code> 卡组查看
     #m <count> 混合器查询
     #lulu 幸运蛋
     #mw [num] 奇迹漫步
@@ -62,13 +66,6 @@ on_command(
 )
 
 on_command(
-    '#icon',
-    priority=10,
-    block=True,
-    handlers=[card.icon]
-)
-
-on_command(
     '#stat',
     aliases={'#stats', '#sd'},
     priority=10,
@@ -81,13 +78,6 @@ on_command(
     priority=10,
     block=True,
     handlers=[mixer.mixer]
-)
-
-on_command(
-    '#deck',
-    priority=10,
-    block=True,
-    handlers=[deck.deck]
 )
 
 on_command(
